@@ -1,0 +1,102 @@
+{
+  "courses": [
+    {
+      "id": "primi-passi",
+      "title": "Primi passi",
+      "description": "Posizione delle mani, nomi delle note, ritmi, tasti neri, la scala di Do e l'Inno alla gioia.",
+      "level": 1,
+      "file": "primi-passi.json"
+    },
+    {
+      "id": "leggere-la-musica",
+      "title": "Leggere la musica",
+      "description": "Il rigo, le chiavi, le note, le durate e le pause: tutto ciò che serve per leggere lo spartito.",
+      "level": 1,
+      "file": "leggere-la-musica.json"
+    },
+    {
+      "id": "melodie-destra",
+      "title": "Melodie a mano destra",
+      "description": "Frasi, durate, pause, cambi di posizione e passaggio del pollice: piccole melodie da suonare solo con la destra.",
+      "level": 1,
+      "file": "melodie-destra.json"
+    },
+    {
+      "id": "mano-sinistra-melodie",
+      "title": "Mano sinistra in primo piano",
+      "description": "Melodie, bassi che camminano, valzer, salti, legato e staccato: la sinistra diventa protagonista.",
+      "level": 2,
+      "file": "mano-sinistra-melodie.json"
+    },
+    {
+      "id": "mano-sinistra-accordi",
+      "title": "Mano sinistra e accordi",
+      "description": "Le note della mano sinistra, le ottave, le triadi di Do, Fa e Sol, il basso alternato e le due mani insieme.",
+      "level": 2,
+      "file": "mano-sinistra-accordi.json"
+    },
+    {
+      "id": "due-mani",
+      "title": "Due mani insieme",
+      "description": "Dalle ottave in parallelo al moto contrario: coordinare le due mani passo dopo passo.",
+      "level": 2,
+      "file": "due-mani.json"
+    },
+    {
+      "id": "primo-repertorio",
+      "title": "Il tuo primo repertorio",
+      "description": "Fra Martino, Jingle Bells, Oh! Susanna, Greensleeves e un motivo di Per Elisa, con passi graduali.",
+      "level": 3,
+      "file": "primo-repertorio.json"
+    },
+    {
+      "id": "tecnica-scale",
+      "title": "Tecnica e scale",
+      "description": "Legato e staccato, scala di Do, cambi di posizione, dita incrociate, salti, ottave e note ribattute.",
+      "level": 3,
+      "file": "tecnica-scale.json"
+    },
+    {
+      "id": "ritmo-figure",
+      "title": "Ritmo e figure",
+      "description": "Pause, valori puntati, terzine, sincopi e il ritmo di 6/8: contare bene per suonare bene.",
+      "level": 4,
+      "file": "ritmo-figure.json"
+    },
+    {
+      "id": "accordi-rivolti",
+      "title": "Accordi, rivolti e bicordi",
+      "description": "Triadi minori, terze e seste, rivolti e progressioni con le note più vicine: accordi per davvero.",
+      "level": 4,
+      "file": "accordi-rivolti.json"
+    },
+    {
+      "id": "arpeggi-accompagnamenti",
+      "title": "Arpeggi e accompagnamenti",
+      "description": "Dall'arpeggio base al valzer: pattern di accompagnamento per la mano sinistra, con melodie sopra.",
+      "level": 4,
+      "file": "arpeggi-accompagnamenti.json"
+    },
+    {
+      "id": "nuove-tonalita",
+      "title": "Nuove tonalità",
+      "description": "Sol maggiore, Fa maggiore e La minore: alterazioni, scale e brevi brani nelle nuove tonalità.",
+      "level": 5,
+      "file": "nuove-tonalita.json"
+    },
+    {
+      "id": "espressione-mosse",
+      "title": "Espressione e mosse speciali",
+      "description": "Dinamica, pedale, glissando, acciaccature, abbellimenti e lettura a prima vista.",
+      "level": 5,
+      "file": "espressione-mosse.json"
+    },
+    {
+      "id": "pedale-dinamica",
+      "title": "Pedale e dinamica",
+      "description": "Suonare con il volume e con il pedale: forza dei tasti, crescendo, melodia in primo piano e pedale di risonanza.",
+      "level": 5,
+      "file": "pedale-dinamica.json"
+    }
+  ]
+}

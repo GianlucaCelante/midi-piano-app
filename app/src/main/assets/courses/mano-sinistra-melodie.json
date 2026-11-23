@@ -1,0 +1,1410 @@
+{
+  "id": "mano-sinistra-melodie",
+  "title": "Mano sinistra in primo piano",
+  "lessons": [
+    {
+      "id": "l1",
+      "title": "Una melodia a sinistra",
+      "description": "Cantare con la mano sinistra, un'ottava sotto.",
+      "slides": [
+        {
+          "type": "text",
+          "title": "La sinistra può cantare",
+          "body": "La mano sinistra non fa solo l'accompagnamento: può suonare anche la melodia. Il mignolo sta sul Do sotto il Do centrale e il pollice sul Sol. Suona con un tocco morbido e ascolta il suono scuro e caldo delle note basse.",
+          "id": "s1"
+        },
+        {
+          "type": "exercise",
+          "title": "Al chiaro di luna, grave",
+          "text": "La melodia tradizionale, un'ottava più bassa.",
+          "song": {
+            "title": "Al chiaro di luna, grave",
+            "timeSignature": [
+              4,
+              4
+            ],
+            "keyFifths": 0,
+            "bpm": 80,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 1.0,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 1.0,
+                "dur": 1.0,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 2.0,
+                "dur": 1.0,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 3.0,
+                "dur": 1.0,
+                "key": 50,
+                "hand": "L"
+              },
+              {
+                "beat": 4.0,
+                "dur": 2.0,
+                "key": 52,
+                "hand": "L"
+              },
+              {
+                "beat": 6.0,
+                "dur": 2.0,
+                "key": 50,
+                "hand": "L"
+              },
+              {
+                "beat": 8.0,
+                "dur": 1.0,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 9.0,
+                "dur": 1.0,
+                "key": 52,
+                "hand": "L"
+              },
+              {
+                "beat": 10.0,
+                "dur": 1.0,
+                "key": 50,
+                "hand": "L"
+              },
+              {
+                "beat": 11.0,
+                "dur": 1.0,
+                "key": 50,
+                "hand": "L"
+              },
+              {
+                "beat": 12.0,
+                "dur": 4.0,
+                "key": 48,
+                "hand": "L"
+              }
+            ]
+          },
+          "steps": [
+            {
+              "hand": "L",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Mano sinistra: premi ogni nota quando compare, senza fretta."
+            },
+            {
+              "hand": "L",
+              "mode": "tempo",
+              "speed": 0.75,
+              "loops": 2,
+              "text": "Ora segui il ritmo, un po' più piano del normale."
+            },
+            {
+              "hand": "L",
+              "mode": "tempo",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Velocità normale, con un battito regolare."
+            }
+          ],
+          "id": "s2"
+        },
+        {
+          "type": "exercise",
+          "title": "Cinque note a sinistra",
+          "text": "Sali e scendi con il pollice vicino al Sol.",
+          "song": {
+            "title": "Cinque note a sinistra",
+            "timeSignature": [
+              4,
+              4
+            ],
+            "keyFifths": 0,
+            "bpm": 70,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 1.0,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 1.0,
+                "dur": 1.0,
+                "key": 50,
+                "hand": "L"
+              },
+              {
+                "beat": 2.0,
+                "dur": 1.0,
+                "key": 52,
+                "hand": "L"
+              },
+              {
+                "beat": 3.0,
+                "dur": 1.0,
+                "key": 55,
+                "hand": "L"
+              },
+              {
+                "beat": 4.0,
+                "dur": 1.0,
+                "key": 53,
+                "hand": "L"
+              },
+              {
+                "beat": 5.0,
+                "dur": 1.0,
+                "key": 52,
+                "hand": "L"
+              },
+              {
+                "beat": 6.0,
+                "dur": 1.0,
+                "key": 50,
+                "hand": "L"
+              },
+              {
+                "beat": 8.0,
+                "dur": 1.0,
+                "key": 52,
+                "hand": "L"
+              },
+              {
+                "beat": 9.0,
+                "dur": 1.0,
+                "key": 53,
+                "hand": "L"
+              },
+              {
+                "beat": 10.0,
+                "dur": 1.0,
+                "key": 55,
+                "hand": "L"
+              },
+              {
+                "beat": 11.0,
+                "dur": 1.0,
+                "key": 52,
+                "hand": "L"
+              },
+              {
+                "beat": 12.0,
+                "dur": 4.0,
+                "key": 48,
+                "hand": "L"
+              }
+            ]
+          },
+          "steps": [
+            {
+              "hand": "L",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Mano sinistra: premi ogni nota quando compare, senza fretta."
+            },
+            {
+              "hand": "L",
+              "mode": "tempo",
+              "speed": 0.75,
+              "loops": 2,
+              "text": "Ora segui il ritmo, un po' più piano del normale."
+            },
+            {
+              "hand": "L",
+              "mode": "tempo",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Velocità normale, con un battito regolare."
+            }
+          ],
+          "id": "s3"
+        }
+      ]
+    },
+    {
+      "id": "l2",
+      "title": "Il basso che cammina",
+      "description": "Note regolari, una per tempo, che accompagnano 'camminando'.",
+      "slides": [
+        {
+          "type": "text",
+          "title": "Walking bass",
+          "body": "Un basso che cammina suona una nota per ogni tempo, sempre con lo stesso passo. Serve a dare slancio al brano, come un passo regolare. Tieni la pulsazione regolare e fai attenzione alle note che si muovono per gradi.",
+          "id": "s1"
+        },
+        {
+          "type": "exercise",
+          "title": "Passeggiata",
+          "text": "Una nota a ogni tempo, su e giù per gradi.",
+          "song": {
+            "title": "Passeggiata",
+            "timeSignature": [
+              4,
+              4
+            ],
+            "keyFifths": 0,
+            "bpm": 76,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 1.0,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 1.0,
+                "dur": 1.0,
+                "key": 50,
+                "hand": "L"
+              },
+              {
+                "beat": 2.0,
+                "dur": 1.0,
+                "key": 52,
+                "hand": "L"
+              },
+              {
+                "beat": 3.0,
+                "dur": 1.0,
+                "key": 53,
+                "hand": "L"
+              },
+              {
+                "beat": 4.0,
+                "dur": 1.0,
+                "key": 55,
+                "hand": "L"
+              },
+              {
+                "beat": 5.0,
+                "dur": 1.0,
+                "key": 53,
+                "hand": "L"
+              },
+              {
+                "beat": 6.0,
+                "dur": 1.0,
+                "key": 52,
+                "hand": "L"
+              },
+              {
+                "beat": 7.0,
+                "dur": 1.0,
+                "key": 50,
+                "hand": "L"
+              },
+              {
+                "beat": 8.0,
+                "dur": 1.0,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 9.0,
+                "dur": 1.0,
+                "key": 52,
+                "hand": "L"
+              },
+              {
+                "beat": 10.0,
+                "dur": 1.0,
+                "key": 50,
+                "hand": "L"
+              },
+              {
+                "beat": 11.0,
+                "dur": 1.0,
+                "key": 53,
+                "hand": "L"
+              },
+              {
+                "beat": 12.0,
+                "dur": 1.0,
+                "key": 52,
+                "hand": "L"
+              },
+              {
+                "beat": 13.0,
+                "dur": 1.0,
+                "key": 50,
+                "hand": "L"
+              },
+              {
+                "beat": 14.0,
+                "dur": 2.0,
+                "key": 48,
+                "hand": "L"
+              }
+            ]
+          },
+          "steps": [
+            {
+              "hand": "L",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Mano sinistra: premi ogni nota quando compare, senza fretta."
+            },
+            {
+              "hand": "L",
+              "mode": "tempo",
+              "speed": 0.75,
+              "loops": 2,
+              "text": "Ora segui il ritmo, un po' più piano del normale."
+            },
+            {
+              "hand": "L",
+              "mode": "tempo",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Velocità normale, con un battito regolare."
+            }
+          ],
+          "id": "s2"
+        },
+        {
+          "type": "exercise",
+          "title": "Salita fino al La",
+          "text": "Il pollice si sposta per raggiungere il La.",
+          "song": {
+            "title": "Salita fino al La",
+            "timeSignature": [
+              4,
+              4
+            ],
+            "keyFifths": 0,
+            "bpm": 72,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 1.0,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 1.0,
+                "dur": 1.0,
+                "key": 52,
+                "hand": "L"
+              },
+              {
+                "beat": 2.0,
+                "dur": 1.0,
+                "key": 55,
+                "hand": "L"
+              },
+              {
+                "beat": 3.0,
+                "dur": 1.0,
+                "key": 57,
+                "hand": "L"
+              },
+              {
+                "beat": 4.0,
+                "dur": 1.0,
+                "key": 55,
+                "hand": "L"
+              },
+              {
+                "beat": 5.0,
+                "dur": 1.0,
+                "key": 52,
+                "hand": "L"
+              },
+              {
+                "beat": 6.0,
+                "dur": 1.0,
+                "key": 50,
+                "hand": "L"
+              },
+              {
+                "beat": 7.0,
+                "dur": 1.0,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 8.0,
+                "dur": 1.0,
+                "key": 53,
+                "hand": "L"
+              },
+              {
+                "beat": 9.0,
+                "dur": 1.0,
+                "key": 57,
+                "hand": "L"
+              },
+              {
+                "beat": 10.0,
+                "dur": 1.0,
+                "key": 55,
+                "hand": "L"
+              },
+              {
+                "beat": 11.0,
+                "dur": 1.0,
+                "key": 52,
+                "hand": "L"
+              },
+              {
+                "beat": 12.0,
+                "dur": 1.0,
+                "key": 50,
+                "hand": "L"
+              },
+              {
+                "beat": 13.0,
+                "dur": 1.0,
+                "key": 52,
+                "hand": "L"
+              },
+              {
+                "beat": 14.0,
+                "dur": 2.0,
+                "key": 48,
+                "hand": "L"
+              }
+            ]
+          },
+          "steps": [
+            {
+              "hand": "L",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Mano sinistra: premi ogni nota quando compare, senza fretta."
+            },
+            {
+              "hand": "L",
+              "mode": "tempo",
+              "speed": 0.75,
+              "loops": 2,
+              "text": "Ora segui il ritmo, un po' più piano del normale."
+            },
+            {
+              "hand": "L",
+              "mode": "tempo",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Velocità normale, con un battito regolare."
+            }
+          ],
+          "id": "s3"
+        }
+      ]
+    },
+    {
+      "id": "l3",
+      "title": "Il valzer a sinistra",
+      "description": "Melodie in tre quarti con la mano sinistra.",
+      "slides": [
+        {
+          "type": "text",
+          "title": "Tre quarti",
+          "body": "Il valzer ha tre tempi per battuta: il primo è più forte, gli altri due più leggeri. Conta uno, due, tre e dai un piccolo accento al primo tempo. Suona con la sola mano sinistra e lascia che la melodia dondoli.",
+          "id": "s1"
+        },
+        {
+          "type": "exercise",
+          "title": "Valzer lento",
+          "text": "Una melodia semplice, un'ottava sotto la mano destra.",
+          "song": {
+            "title": "Valzer lento",
+            "timeSignature": [
+              3,
+              4
+            ],
+            "keyFifths": 0,
+            "bpm": 84,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 2.0,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 2.0,
+                "dur": 1.0,
+                "key": 52,
+                "hand": "L"
+              },
+              {
+                "beat": 3.0,
+                "dur": 2.0,
+                "key": 55,
+                "hand": "L"
+              },
+              {
+                "beat": 5.0,
+                "dur": 1.0,
+                "key": 52,
+                "hand": "L"
+              },
+              {
+                "beat": 6.0,
+                "dur": 2.0,
+                "key": 53,
+                "hand": "L"
+              },
+              {
+                "beat": 8.0,
+                "dur": 1.0,
+                "key": 50,
+                "hand": "L"
+              },
+              {
+                "beat": 9.0,
+                "dur": 3.0,
+                "key": 48,
+                "hand": "L"
+              }
+            ]
+          },
+          "steps": [
+            {
+              "hand": "L",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Mano sinistra: premi ogni nota quando compare, senza fretta."
+            },
+            {
+              "hand": "L",
+              "mode": "tempo",
+              "speed": 0.75,
+              "loops": 2,
+              "text": "Ora segui il ritmo, un po' più piano del normale."
+            },
+            {
+              "hand": "L",
+              "mode": "tempo",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Velocità normale, con un battito regolare."
+            }
+          ],
+          "id": "s2"
+        },
+        {
+          "type": "exercise",
+          "title": "Valzer saltellante",
+          "text": "Note ripetute e discesa finale.",
+          "song": {
+            "title": "Valzer saltellante",
+            "timeSignature": [
+              3,
+              4
+            ],
+            "keyFifths": 0,
+            "bpm": 88,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 1.0,
+                "key": 55,
+                "hand": "L"
+              },
+              {
+                "beat": 1.0,
+                "dur": 1.0,
+                "key": 55,
+                "hand": "L"
+              },
+              {
+                "beat": 2.0,
+                "dur": 1.0,
+                "key": 52,
+                "hand": "L"
+              },
+              {
+                "beat": 3.0,
+                "dur": 1.0,
+                "key": 53,
+                "hand": "L"
+              },
+              {
+                "beat": 4.0,
+                "dur": 1.0,
+                "key": 53,
+                "hand": "L"
+              },
+              {
+                "beat": 5.0,
+                "dur": 1.0,
+                "key": 50,
+                "hand": "L"
+              },
+              {
+                "beat": 6.0,
+                "dur": 1.0,
+                "key": 52,
+                "hand": "L"
+              },
+              {
+                "beat": 7.0,
+                "dur": 1.0,
+                "key": 50,
+                "hand": "L"
+              },
+              {
+                "beat": 8.0,
+                "dur": 1.0,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 9.0,
+                "dur": 3.0,
+                "key": 48,
+                "hand": "L"
+              }
+            ]
+          },
+          "steps": [
+            {
+              "hand": "L",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Mano sinistra: premi ogni nota quando compare, senza fretta."
+            },
+            {
+              "hand": "L",
+              "mode": "tempo",
+              "speed": 0.75,
+              "loops": 2,
+              "text": "Ora segui il ritmo, un po' più piano del normale."
+            },
+            {
+              "hand": "L",
+              "mode": "tempo",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Velocità normale, con un battito regolare."
+            }
+          ],
+          "id": "s3"
+        }
+      ]
+    },
+    {
+      "id": "l4",
+      "title": "Salti di quinta e di ottava",
+      "description": "Saltare senza guardare le dita: l'occhio resta sulla musica.",
+      "slides": [
+        {
+          "type": "text",
+          "title": "Salti",
+          "body": "Un salto sulla tastiera si impara con la mano, non con gli occhi. Dopo ogni salto la mano deve già sapere dove arrivare: prova a immaginare la distanza prima di partire. Alza leggermente la mano, vola, e atterra con le dita pronte.",
+          "id": "s1"
+        },
+        {
+          "type": "exercise",
+          "title": "Quinte e quarte",
+          "text": "Salti di quinta e di quarta tra Do, Fa e Sol.",
+          "song": {
+            "title": "Quinte e quarte",
+            "timeSignature": [
+              4,
+              4
+            ],
+            "keyFifths": 0,
+            "bpm": 68,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 2.0,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 2.0,
+                "dur": 2.0,
+                "key": 55,
+                "hand": "L"
+              },
+              {
+                "beat": 4.0,
+                "dur": 2.0,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 6.0,
+                "dur": 2.0,
+                "key": 55,
+                "hand": "L"
+              },
+              {
+                "beat": 8.0,
+                "dur": 2.0,
+                "key": 53,
+                "hand": "L"
+              },
+              {
+                "beat": 10.0,
+                "dur": 2.0,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 12.0,
+                "dur": 2.0,
+                "key": 55,
+                "hand": "L"
+              },
+              {
+                "beat": 14.0,
+                "dur": 2.0,
+                "key": 48,
+                "hand": "L"
+              }
+            ]
+          },
+          "steps": [
+            {
+              "hand": "L",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Mano sinistra: premi ogni nota quando compare, senza fretta."
+            },
+            {
+              "hand": "L",
+              "mode": "tempo",
+              "speed": 0.75,
+              "loops": 2,
+              "text": "Ora segui il ritmo, un po' più piano del normale."
+            },
+            {
+              "hand": "L",
+              "mode": "tempo",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Velocità normale, con un battito regolare."
+            }
+          ],
+          "id": "s2"
+        },
+        {
+          "type": "exercise",
+          "title": "Salti di ottava",
+          "text": "Il mignolo sul Do basso, il pollice sul Do alto.",
+          "song": {
+            "title": "Salti di ottava",
+            "timeSignature": [
+              4,
+              4
+            ],
+            "keyFifths": 0,
+            "bpm": 64,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 1.0,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 1.0,
+                "dur": 1.0,
+                "key": 60,
+                "hand": "L"
+              },
+              {
+                "beat": 2.0,
+                "dur": 1.0,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 3.0,
+                "dur": 1.0,
+                "key": 60,
+                "hand": "L"
+              },
+              {
+                "beat": 4.0,
+                "dur": 2.0,
+                "key": 55,
+                "hand": "L"
+              },
+              {
+                "beat": 6.0,
+                "dur": 2.0,
+                "key": 60,
+                "hand": "L"
+              },
+              {
+                "beat": 8.0,
+                "dur": 1.0,
+                "key": 53,
+                "hand": "L"
+              },
+              {
+                "beat": 9.0,
+                "dur": 1.0,
+                "key": 53,
+                "hand": "L"
+              },
+              {
+                "beat": 10.0,
+                "dur": 1.0,
+                "key": 52,
+                "hand": "L"
+              },
+              {
+                "beat": 11.0,
+                "dur": 1.0,
+                "key": 50,
+                "hand": "L"
+              },
+              {
+                "beat": 12.0,
+                "dur": 4.0,
+                "key": 48,
+                "hand": "L"
+              }
+            ]
+          },
+          "steps": [
+            {
+              "hand": "L",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Mano sinistra: premi ogni nota quando compare, senza fretta."
+            },
+            {
+              "hand": "L",
+              "mode": "tempo",
+              "speed": 0.75,
+              "loops": 2,
+              "text": "Ora segui il ritmo, un po' più piano del normale."
+            },
+            {
+              "hand": "L",
+              "mode": "tempo",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Velocità normale, con un battito regolare."
+            }
+          ],
+          "id": "s3"
+        }
+      ]
+    },
+    {
+      "id": "l5",
+      "title": "Legato e staccato a sinistra",
+      "description": "Due modi di suonare le stesse note.",
+      "slides": [
+        {
+          "type": "text",
+          "title": "Due tocchi",
+          "body": "Legato vuol dire suonare le note unite, senza stacchi tra l'una e l'altra. Staccato vuol dire suonarle brevi, staccate, come piccoli colpetti. Nella musica scritta il legato ha una linea curva, lo staccato un puntino sopra la nota. Qui il puntino è mostrato dalla durata più breve.",
+          "id": "s1"
+        },
+        {
+          "type": "exercise",
+          "title": "Legato",
+          "text": "Mantieni ogni nota fino a quando suona la successiva.",
+          "song": {
+            "title": "Legato",
+            "timeSignature": [
+              4,
+              4
+            ],
+            "keyFifths": 0,
+            "bpm": 66,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 2.0,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 2.0,
+                "dur": 2.0,
+                "key": 52,
+                "hand": "L"
+              },
+              {
+                "beat": 4.0,
+                "dur": 2.0,
+                "key": 55,
+                "hand": "L"
+              },
+              {
+                "beat": 6.0,
+                "dur": 2.0,
+                "key": 52,
+                "hand": "L"
+              },
+              {
+                "beat": 8.0,
+                "dur": 2.0,
+                "key": 53,
+                "hand": "L"
+              },
+              {
+                "beat": 10.0,
+                "dur": 2.0,
+                "key": 50,
+                "hand": "L"
+              },
+              {
+                "beat": 12.0,
+                "dur": 4.0,
+                "key": 48,
+                "hand": "L"
+              }
+            ]
+          },
+          "steps": [
+            {
+              "hand": "L",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Mano sinistra: premi ogni nota quando compare, senza fretta."
+            },
+            {
+              "hand": "L",
+              "mode": "tempo",
+              "speed": 0.75,
+              "loops": 2,
+              "text": "Ora segui il ritmo, un po' più piano del normale."
+            },
+            {
+              "hand": "L",
+              "mode": "tempo",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Velocità normale, con un battito regolare."
+            }
+          ],
+          "id": "s2"
+        },
+        {
+          "type": "exercise",
+          "title": "Staccato",
+          "text": "Note brevi: tocca il tasto e lascialo subito.",
+          "song": {
+            "title": "Staccato",
+            "timeSignature": [
+              4,
+              4
+            ],
+            "keyFifths": 0,
+            "bpm": 72,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 0.5,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 1.0,
+                "dur": 0.5,
+                "key": 55,
+                "hand": "L"
+              },
+              {
+                "beat": 2.0,
+                "dur": 0.5,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 3.0,
+                "dur": 0.5,
+                "key": 55,
+                "hand": "L"
+              },
+              {
+                "beat": 4.0,
+                "dur": 0.5,
+                "key": 53,
+                "hand": "L"
+              },
+              {
+                "beat": 5.0,
+                "dur": 0.5,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 6.0,
+                "dur": 0.5,
+                "key": 53,
+                "hand": "L"
+              },
+              {
+                "beat": 7.0,
+                "dur": 0.5,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 8.0,
+                "dur": 0.5,
+                "key": 55,
+                "hand": "L"
+              },
+              {
+                "beat": 9.0,
+                "dur": 0.5,
+                "key": 50,
+                "hand": "L"
+              },
+              {
+                "beat": 10.0,
+                "dur": 0.5,
+                "key": 55,
+                "hand": "L"
+              },
+              {
+                "beat": 11.0,
+                "dur": 0.5,
+                "key": 50,
+                "hand": "L"
+              },
+              {
+                "beat": 12.0,
+                "dur": 0.5,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 13.0,
+                "dur": 0.5,
+                "key": 55,
+                "hand": "L"
+              },
+              {
+                "beat": 14.0,
+                "dur": 2.0,
+                "key": 48,
+                "hand": "L"
+              }
+            ]
+          },
+          "steps": [
+            {
+              "hand": "L",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Mano sinistra: premi ogni nota quando compare, senza fretta."
+            },
+            {
+              "hand": "L",
+              "mode": "tempo",
+              "speed": 0.75,
+              "loops": 2,
+              "text": "Ora segui il ritmo, un po' più piano del normale."
+            },
+            {
+              "hand": "L",
+              "mode": "tempo",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Velocità normale, con un battito regolare."
+            }
+          ],
+          "id": "s3"
+        }
+      ]
+    },
+    {
+      "id": "l6",
+      "title": "Un brano per la sinistra",
+      "description": "Una filastrocca famosissima e una ninna nanna originale.",
+      "slides": [
+        {
+          "type": "text",
+          "title": "Due brani",
+          "body": "Ora puoi suonare due brani interi solo con la sinistra. Il primo è una melodia popolare molto conosciuta, nata come canzone per bambini. Il secondo è una ninna nanna in tre quarti: suonala piano e con le note ben legate.",
+          "id": "s1"
+        },
+        {
+          "type": "exercise",
+          "title": "Ah, vous dirai-je, maman",
+          "text": "La celebre melodia di Mozart, un'ottava sotto.",
+          "song": {
+            "title": "Ah, vous dirai-je, maman",
+            "timeSignature": [
+              4,
+              4
+            ],
+            "keyFifths": 0,
+            "bpm": 84,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 1.0,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 1.0,
+                "dur": 1.0,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 2.0,
+                "dur": 1.0,
+                "key": 55,
+                "hand": "L"
+              },
+              {
+                "beat": 3.0,
+                "dur": 1.0,
+                "key": 55,
+                "hand": "L"
+              },
+              {
+                "beat": 4.0,
+                "dur": 1.0,
+                "key": 57,
+                "hand": "L"
+              },
+              {
+                "beat": 5.0,
+                "dur": 1.0,
+                "key": 57,
+                "hand": "L"
+              },
+              {
+                "beat": 6.0,
+                "dur": 2.0,
+                "key": 55,
+                "hand": "L"
+              },
+              {
+                "beat": 8.0,
+                "dur": 1.0,
+                "key": 53,
+                "hand": "L"
+              },
+              {
+                "beat": 9.0,
+                "dur": 1.0,
+                "key": 53,
+                "hand": "L"
+              },
+              {
+                "beat": 10.0,
+                "dur": 1.0,
+                "key": 52,
+                "hand": "L"
+              },
+              {
+                "beat": 11.0,
+                "dur": 1.0,
+                "key": 52,
+                "hand": "L"
+              },
+              {
+                "beat": 12.0,
+                "dur": 1.0,
+                "key": 50,
+                "hand": "L"
+              },
+              {
+                "beat": 13.0,
+                "dur": 1.0,
+                "key": 50,
+                "hand": "L"
+              },
+              {
+                "beat": 14.0,
+                "dur": 2.0,
+                "key": 48,
+                "hand": "L"
+              }
+            ]
+          },
+          "steps": [
+            {
+              "hand": "L",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Mano sinistra: premi ogni nota quando compare, senza fretta."
+            },
+            {
+              "hand": "L",
+              "mode": "tempo",
+              "speed": 0.75,
+              "loops": 2,
+              "text": "Ora segui il ritmo, un po' più piano del normale."
+            },
+            {
+              "hand": "L",
+              "mode": "tempo",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Velocità normale, con un battito regolare."
+            }
+          ],
+          "id": "s2"
+        },
+        {
+          "type": "exercise",
+          "title": "Ninna nanna",
+          "text": "Una melodia originale in 3/4, otto battute.",
+          "song": {
+            "title": "Ninna nanna",
+            "timeSignature": [
+              3,
+              4
+            ],
+            "keyFifths": 0,
+            "bpm": 72,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 2.0,
+                "key": 55,
+                "hand": "L"
+              },
+              {
+                "beat": 2.0,
+                "dur": 1.0,
+                "key": 52,
+                "hand": "L"
+              },
+              {
+                "beat": 3.0,
+                "dur": 2.0,
+                "key": 53,
+                "hand": "L"
+              },
+              {
+                "beat": 5.0,
+                "dur": 1.0,
+                "key": 50,
+                "hand": "L"
+              },
+              {
+                "beat": 6.0,
+                "dur": 2.0,
+                "key": 52,
+                "hand": "L"
+              },
+              {
+                "beat": 8.0,
+                "dur": 1.0,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 9.0,
+                "dur": 3.0,
+                "key": 55,
+                "hand": "L"
+              },
+              {
+                "beat": 12.0,
+                "dur": 2.0,
+                "key": 55,
+                "hand": "L"
+              },
+              {
+                "beat": 14.0,
+                "dur": 1.0,
+                "key": 52,
+                "hand": "L"
+              },
+              {
+                "beat": 15.0,
+                "dur": 2.0,
+                "key": 53,
+                "hand": "L"
+              },
+              {
+                "beat": 17.0,
+                "dur": 1.0,
+                "key": 50,
+                "hand": "L"
+              },
+              {
+                "beat": 18.0,
+                "dur": 1.0,
+                "key": 52,
+                "hand": "L"
+              },
+              {
+                "beat": 19.0,
+                "dur": 1.0,
+                "key": 50,
+                "hand": "L"
+              },
+              {
+                "beat": 20.0,
+                "dur": 1.0,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 21.0,
+                "dur": 3.0,
+                "key": 48,
+                "hand": "L"
+              }
+            ]
+          },
+          "steps": [
+            {
+              "hand": "L",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Mano sinistra: premi ogni nota quando compare, senza fretta."
+            },
+            {
+              "hand": "L",
+              "mode": "tempo",
+              "speed": 0.75,
+              "loops": 2,
+              "text": "Ora segui il ritmo, un po' più piano del normale."
+            },
+            {
+              "hand": "L",
+              "mode": "tempo",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Velocità normale, con un battito regolare."
+            }
+          ],
+          "id": "s3"
+        },
+        {
+          "type": "text",
+          "id": "s9",
+          "title": "Che cosa hai imparato",
+          "body": "Hai usato la mano sinistra per cantare, camminare e accompagnare, con legato e staccato. Ora destra e sinistra hanno la stessa sicurezza, ciascuna da sola. Nel prossimo corso le farai suonare insieme."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2151 @@
+{
+  "id": "ritmo-figure",
+  "title": "Ritmo e figure",
+  "lessons": [
+    {
+      "id": "l1",
+      "title": "Il silenzio conta",
+      "description": "Le pause fanno parte del ritmo.",
+      "slides": [
+        {
+          "type": "text",
+          "title": "Pause",
+          "body": "Una pausa è un silenzio che dura quanto una nota. Dentro il ritmo non è un buco, ma una parte del disegno: va contata come le note. Quando incontri una pausa, alza leggermente la mano e continua a contare mentalmente.",
+          "id": "s1"
+        },
+        {
+          "type": "exercise",
+          "title": "Pause da contare",
+          "text": "Una pausa di un tempo in diversi punti della battuta.",
+          "song": {
+            "title": "Pause da contare",
+            "timeSignature": [
+              4,
+              4
+            ],
+            "keyFifths": 0,
+            "bpm": 72,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 1.0,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 1.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 2.0,
+                "dur": 1.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 4.0,
+                "dur": 1.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 5.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 6.0,
+                "dur": 1.0,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 8.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 9.0,
+                "dur": 1.0,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 11.0,
+                "dur": 1.0,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 12.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 14.0,
+                "dur": 2.0,
+                "key": 60,
+                "hand": "R"
+              }
+            ]
+          },
+          "steps": [
+            {
+              "hand": "R",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Mano destra: premi ogni nota quando compare, senza fretta."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 0.75,
+              "loops": 2,
+              "text": "Ora segui il ritmo, un po' più piano del normale."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Velocità normale, con un battito regolare."
+            }
+          ],
+          "id": "s2"
+        },
+        {
+          "type": "exercise",
+          "title": "Mezzo battito di pausa",
+          "text": "Pause di croma tra le note.",
+          "song": {
+            "title": "Mezzo battito di pausa",
+            "timeSignature": [
+              4,
+              4
+            ],
+            "keyFifths": 0,
+            "bpm": 66,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 0.5,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 1.0,
+                "dur": 0.5,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 2.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 3.0,
+                "dur": 1.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 4.0,
+                "dur": 0.5,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 5.0,
+                "dur": 0.5,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 6.0,
+                "dur": 1.0,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 7.0,
+                "dur": 1.0,
+                "key": 69,
+                "hand": "R"
+              },
+              {
+                "beat": 8.0,
+                "dur": 0.5,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 9.0,
+                "dur": 0.5,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 10.0,
+                "dur": 1.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 11.0,
+                "dur": 1.0,
+                "key": 72,
+                "hand": "R"
+              },
+              {
+                "beat": 12.0,
+                "dur": 4.0,
+                "key": 72,
+                "hand": "R"
+              }
+            ]
+          },
+          "steps": [
+            {
+              "hand": "R",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Mano destra: premi ogni nota quando compare, senza fretta."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 0.75,
+              "loops": 2,
+              "text": "Ora segui il ritmo, un po' più piano del normale."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Velocità normale, con un battito regolare."
+            }
+          ],
+          "id": "s3"
+        }
+      ]
+    },
+    {
+      "id": "l2",
+      "title": "Il punto che allunga",
+      "description": "La semiminima col punto e la minima col punto.",
+      "slides": [
+        {
+          "type": "text",
+          "title": "Valori puntati",
+          "body": "Un punto dopo la nota aumenta la sua durata della metà. Una semiminima col punto dura un tempo e mezzo, una minima col punto tre tempi. Spesso dopo la semiminima col punto arriva una croma: contale insieme, uno-e-due-e.",
+          "id": "s1"
+        },
+        {
+          "type": "exercise",
+          "title": "Semiminima col punto",
+          "text": "Una nota lunga e una corta, in ogni mezza battuta.",
+          "song": {
+            "title": "Semiminima col punto",
+            "timeSignature": [
+              4,
+              4
+            ],
+            "keyFifths": 0,
+            "bpm": 68,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 1.5,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 1.5,
+                "dur": 0.5,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 2.0,
+                "dur": 1.5,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 3.5,
+                "dur": 0.5,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 4.0,
+                "dur": 1.5,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 5.5,
+                "dur": 0.5,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 6.0,
+                "dur": 1.5,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 7.5,
+                "dur": 0.5,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 8.0,
+                "dur": 1.5,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 9.5,
+                "dur": 0.5,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 10.0,
+                "dur": 2.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 12.0,
+                "dur": 4.0,
+                "key": 60,
+                "hand": "R"
+              }
+            ]
+          },
+          "steps": [
+            {
+              "hand": "R",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Mano destra: premi ogni nota quando compare, senza fretta."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 0.75,
+              "loops": 2,
+              "text": "Ora segui il ritmo, un po' più piano del normale."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Velocità normale, con un battito regolare."
+            }
+          ],
+          "id": "s2"
+        },
+        {
+          "type": "exercise",
+          "title": "Minima col punto",
+          "text": "Tre tempi in una nota sola, in 3/4.",
+          "song": {
+            "title": "Minima col punto",
+            "timeSignature": [
+              3,
+              4
+            ],
+            "keyFifths": 0,
+            "bpm": 80,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 3.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 3.0,
+                "dur": 2.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 5.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 6.0,
+                "dur": 1.5,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 7.5,
+                "dur": 0.5,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 8.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 9.0,
+                "dur": 3.0,
+                "key": 60,
+                "hand": "R"
+              }
+            ]
+          },
+          "steps": [
+            {
+              "hand": "R",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Mano destra: premi ogni nota quando compare, senza fretta."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 0.75,
+              "loops": 2,
+              "text": "Ora segui il ritmo, un po' più piano del normale."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Velocità normale, con un battito regolare."
+            }
+          ],
+          "id": "s3"
+        }
+      ]
+    },
+    {
+      "id": "l3",
+      "title": "Le terzine",
+      "description": "Tre note al posto di due, ugualmente distribuite.",
+      "slides": [
+        {
+          "type": "text",
+          "title": "Terzine di crome",
+          "body": "Una terzina divide un tempo in tre parti uguali, invece che in due. Si conta tre-ple-ti, tre-ple-ti, un gruppetto per tempo. Le tre note sono scorrevoli e più brevi di una croma normale.",
+          "id": "s1"
+        },
+        {
+          "type": "exercise",
+          "title": "Terzine a destra",
+          "text": "Un gruppo di tre note per ogni tempo.",
+          "song": {
+            "title": "Terzine a destra",
+            "timeSignature": [
+              4,
+              4
+            ],
+            "keyFifths": 0,
+            "bpm": 56,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 0.333333,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 0.333333,
+                "dur": 0.333334,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 0.666667,
+                "dur": 0.333333,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 1.0,
+                "dur": 1.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 2.0,
+                "dur": 0.3333330000000001,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 2.333333,
+                "dur": 0.3333339999999998,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 2.666667,
+                "dur": 0.3333330000000001,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 3.0,
+                "dur": 1.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 4.0,
+                "dur": 0.33333299999999966,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 4.333333,
+                "dur": 0.3333340000000007,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 4.666667,
+                "dur": 0.33333299999999966,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 5.0,
+                "dur": 1.0,
+                "key": 69,
+                "hand": "R"
+              },
+              {
+                "beat": 6.0,
+                "dur": 0.33333299999999966,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 6.333333,
+                "dur": 0.3333340000000007,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 6.666667,
+                "dur": 0.33333299999999966,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 7.0,
+                "dur": 1.0,
+                "key": 69,
+                "hand": "R"
+              },
+              {
+                "beat": 8.0,
+                "dur": 0.33333299999999966,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 8.333333,
+                "dur": 0.3333340000000007,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 8.666667,
+                "dur": 0.33333299999999966,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 9.0,
+                "dur": 1.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 10.0,
+                "dur": 0.33333299999999966,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 10.333333,
+                "dur": 0.3333340000000007,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 10.666667,
+                "dur": 0.33333299999999966,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 11.0,
+                "dur": 1.0,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 12.0,
+                "dur": 4.0,
+                "key": 60,
+                "hand": "R"
+              }
+            ]
+          },
+          "steps": [
+            {
+              "hand": "R",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Mano destra: premi ogni nota quando compare, senza fretta."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 0.75,
+              "loops": 2,
+              "text": "Ora segui il ritmo, un po' più piano del normale."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Velocità normale, con un battito regolare."
+            }
+          ],
+          "id": "s2"
+        },
+        {
+          "type": "exercise",
+          "title": "Terzine sotto la melodia",
+          "text": "La sinistra suona le terzine, la destra note lunghe.",
+          "song": {
+            "title": "Terzine sotto la melodia",
+            "timeSignature": [
+              4,
+              4
+            ],
+            "keyFifths": 0,
+            "bpm": 56,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 0.333333,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 0.0,
+                "dur": 4.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 0.333333,
+                "dur": 0.333334,
+                "key": 52,
+                "hand": "L"
+              },
+              {
+                "beat": 0.666667,
+                "dur": 0.333333,
+                "key": 55,
+                "hand": "L"
+              },
+              {
+                "beat": 1.0,
+                "dur": 0.3333330000000001,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 1.333333,
+                "dur": 0.3333339999999998,
+                "key": 52,
+                "hand": "L"
+              },
+              {
+                "beat": 1.666667,
+                "dur": 0.3333330000000001,
+                "key": 55,
+                "hand": "L"
+              },
+              {
+                "beat": 2.0,
+                "dur": 0.3333330000000001,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 2.333333,
+                "dur": 0.3333339999999998,
+                "key": 52,
+                "hand": "L"
+              },
+              {
+                "beat": 2.666667,
+                "dur": 0.3333330000000001,
+                "key": 55,
+                "hand": "L"
+              },
+              {
+                "beat": 3.0,
+                "dur": 0.3333330000000001,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 3.333333,
+                "dur": 0.3333339999999998,
+                "key": 52,
+                "hand": "L"
+              },
+              {
+                "beat": 3.666667,
+                "dur": 0.3333330000000001,
+                "key": 55,
+                "hand": "L"
+              },
+              {
+                "beat": 4.0,
+                "dur": 0.33333299999999966,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 4.0,
+                "dur": 4.0,
+                "key": 69,
+                "hand": "R"
+              },
+              {
+                "beat": 4.333333,
+                "dur": 0.3333340000000007,
+                "key": 53,
+                "hand": "L"
+              },
+              {
+                "beat": 4.666667,
+                "dur": 0.33333299999999966,
+                "key": 57,
+                "hand": "L"
+              },
+              {
+                "beat": 5.0,
+                "dur": 0.33333299999999966,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 5.333333,
+                "dur": 0.3333340000000007,
+                "key": 53,
+                "hand": "L"
+              },
+              {
+                "beat": 5.666667,
+                "dur": 0.33333299999999966,
+                "key": 57,
+                "hand": "L"
+              },
+              {
+                "beat": 6.0,
+                "dur": 0.33333299999999966,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 6.333333,
+                "dur": 0.3333340000000007,
+                "key": 53,
+                "hand": "L"
+              },
+              {
+                "beat": 6.666667,
+                "dur": 0.33333299999999966,
+                "key": 57,
+                "hand": "L"
+              },
+              {
+                "beat": 7.0,
+                "dur": 0.33333299999999966,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 7.333333,
+                "dur": 0.3333340000000007,
+                "key": 53,
+                "hand": "L"
+              },
+              {
+                "beat": 7.666667,
+                "dur": 0.33333299999999966,
+                "key": 57,
+                "hand": "L"
+              },
+              {
+                "beat": 8.0,
+                "dur": 0.33333299999999966,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 8.0,
+                "dur": 4.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 8.333333,
+                "dur": 0.3333340000000007,
+                "key": 52,
+                "hand": "L"
+              },
+              {
+                "beat": 8.666667,
+                "dur": 0.33333299999999966,
+                "key": 55,
+                "hand": "L"
+              },
+              {
+                "beat": 9.0,
+                "dur": 0.33333299999999966,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 9.333333,
+                "dur": 0.3333340000000007,
+                "key": 52,
+                "hand": "L"
+              },
+              {
+                "beat": 9.666667,
+                "dur": 0.33333299999999966,
+                "key": 55,
+                "hand": "L"
+              },
+              {
+                "beat": 10.0,
+                "dur": 0.33333299999999966,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 10.333333,
+                "dur": 0.3333340000000007,
+                "key": 52,
+                "hand": "L"
+              },
+              {
+                "beat": 10.666667,
+                "dur": 0.33333299999999966,
+                "key": 55,
+                "hand": "L"
+              },
+              {
+                "beat": 11.0,
+                "dur": 0.33333299999999966,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 11.333333,
+                "dur": 0.3333340000000007,
+                "key": 52,
+                "hand": "L"
+              },
+              {
+                "beat": 11.666667,
+                "dur": 0.33333299999999966,
+                "key": 55,
+                "hand": "L"
+              },
+              {
+                "beat": 12.0,
+                "dur": 0.33333299999999966,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 12.0,
+                "dur": 4.0,
+                "key": 72,
+                "hand": "R"
+              },
+              {
+                "beat": 12.333333,
+                "dur": 0.3333340000000007,
+                "key": 52,
+                "hand": "L"
+              },
+              {
+                "beat": 12.666667,
+                "dur": 0.33333299999999966,
+                "key": 55,
+                "hand": "L"
+              },
+              {
+                "beat": 13.0,
+                "dur": 0.33333299999999966,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 13.333333,
+                "dur": 0.3333340000000007,
+                "key": 52,
+                "hand": "L"
+              },
+              {
+                "beat": 13.666667,
+                "dur": 0.33333299999999966,
+                "key": 55,
+                "hand": "L"
+              },
+              {
+                "beat": 14.0,
+                "dur": 0.33333299999999966,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 14.333333,
+                "dur": 0.3333340000000007,
+                "key": 52,
+                "hand": "L"
+              },
+              {
+                "beat": 14.666667,
+                "dur": 0.33333299999999966,
+                "key": 55,
+                "hand": "L"
+              },
+              {
+                "beat": 15.0,
+                "dur": 0.33333299999999966,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 15.333333,
+                "dur": 0.3333340000000007,
+                "key": 52,
+                "hand": "L"
+              },
+              {
+                "beat": 15.666667,
+                "dur": 0.33333299999999966,
+                "key": 55,
+                "hand": "L"
+              }
+            ]
+          },
+          "steps": [
+            {
+              "hand": "R",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Prima solo la destra: impara la melodia."
+            },
+            {
+              "hand": "L",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Ora solo la sinistra, con calma."
+            },
+            {
+              "hand": "B",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Le due mani insieme, aspettando le note giuste."
+            },
+            {
+              "hand": "B",
+              "mode": "tempo",
+              "speed": 0.75,
+              "loops": 2,
+              "text": "Ora a tempo, piano."
+            }
+          ],
+          "id": "s3"
+        }
+      ]
+    },
+    {
+      "id": "l4",
+      "title": "Sincope e contrattempo",
+      "description": "Accenti dove non te li aspetti.",
+      "slides": [
+        {
+          "type": "text",
+          "title": "Spostare l'accento",
+          "body": "La sincope sposta l'accento dal tempo forte a quello debole. La nota comincia tra due battiti e dura fino al battito successivo, e per questo dà una sensazione di spinta. Nel contrattempo, invece, si suona sul levare tra i battiti: provalo battendo il piede sul tempo.",
+          "id": "s1"
+        },
+        {
+          "type": "exercise",
+          "title": "Note fuori tempo",
+          "text": "Crome che iniziano tra i battiti.",
+          "song": {
+            "title": "Note fuori tempo",
+            "timeSignature": [
+              4,
+              4
+            ],
+            "keyFifths": 0,
+            "bpm": 68,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 0.5,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 0.5,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 1.5,
+                "dur": 1.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 2.5,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 3.5,
+                "dur": 0.5,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 4.0,
+                "dur": 0.5,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 4.5,
+                "dur": 1.0,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 5.5,
+                "dur": 1.0,
+                "key": 69,
+                "hand": "R"
+              },
+              {
+                "beat": 6.5,
+                "dur": 1.0,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 7.5,
+                "dur": 0.5,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 8.0,
+                "dur": 0.5,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 8.5,
+                "dur": 1.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 9.5,
+                "dur": 1.0,
+                "key": 72,
+                "hand": "R"
+              },
+              {
+                "beat": 10.5,
+                "dur": 1.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 11.5,
+                "dur": 0.5,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 12.0,
+                "dur": 4.0,
+                "key": 60,
+                "hand": "R"
+              }
+            ]
+          },
+          "steps": [
+            {
+              "hand": "R",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Mano destra: premi ogni nota quando compare, senza fretta."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 0.75,
+              "loops": 2,
+              "text": "Ora segui il ritmo, un po' più piano del normale."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Velocità normale, con un battito regolare."
+            }
+          ],
+          "id": "s2"
+        },
+        {
+          "type": "exercise",
+          "title": "Sul levare",
+          "text": "La sinistra batte i tempi, la destra suona tra un battito e l'altro.",
+          "song": {
+            "title": "Sul levare",
+            "timeSignature": [
+              4,
+              4
+            ],
+            "keyFifths": 0,
+            "bpm": 72,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 2.0,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 0.5,
+                "dur": 0.5,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 1.5,
+                "dur": 0.5,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 2.0,
+                "dur": 2.0,
+                "key": 55,
+                "hand": "L"
+              },
+              {
+                "beat": 2.5,
+                "dur": 0.5,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 3.5,
+                "dur": 0.5,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 4.0,
+                "dur": 2.0,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 4.5,
+                "dur": 0.5,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 5.5,
+                "dur": 0.5,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 6.0,
+                "dur": 2.0,
+                "key": 55,
+                "hand": "L"
+              },
+              {
+                "beat": 6.5,
+                "dur": 0.5,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 7.5,
+                "dur": 0.5,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 8.0,
+                "dur": 2.0,
+                "key": 53,
+                "hand": "L"
+              },
+              {
+                "beat": 8.5,
+                "dur": 0.5,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 9.5,
+                "dur": 0.5,
+                "key": 69,
+                "hand": "R"
+              },
+              {
+                "beat": 10.0,
+                "dur": 2.0,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 10.5,
+                "dur": 0.5,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 11.5,
+                "dur": 0.5,
+                "key": 69,
+                "hand": "R"
+              },
+              {
+                "beat": 12.0,
+                "dur": 2.0,
+                "key": 55,
+                "hand": "L"
+              },
+              {
+                "beat": 12.5,
+                "dur": 0.5,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 13.5,
+                "dur": 0.5,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 14.0,
+                "dur": 2.0,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 14.5,
+                "dur": 0.5,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 15.5,
+                "dur": 0.5,
+                "key": 67,
+                "hand": "R"
+              }
+            ]
+          },
+          "steps": [
+            {
+              "hand": "R",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Prima solo la destra: impara la melodia."
+            },
+            {
+              "hand": "L",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Ora solo la sinistra, con calma."
+            },
+            {
+              "hand": "B",
+              "mode": "tempo",
+              "speed": 0.75,
+              "loops": 2,
+              "text": "Le due mani insieme, piano."
+            },
+            {
+              "hand": "B",
+              "mode": "tempo",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Velocità normale, mani ben coordinate."
+            }
+          ],
+          "id": "s3"
+        }
+      ]
+    },
+    {
+      "id": "l5",
+      "title": "Il ritmo di sei ottavi",
+      "description": "Due gruppi di tre crome: dondolare invece di marciare.",
+      "slides": [
+        {
+          "type": "text",
+          "title": "Sei ottavi",
+          "body": "Nel 6/8 ogni battuta ha sei crome divise in due gruppi di tre. Si sentono due battiti forti, come in una barca che dondola. Conta uno-due-tre, quattro-cinque-sei, con l'accento sull'uno e sul quattro.",
+          "id": "s1"
+        },
+        {
+          "type": "exercise",
+          "title": "La barca",
+          "text": "Due battiti per battuta, tre crome ciascuno.",
+          "song": {
+            "title": "La barca",
+            "timeSignature": [
+              6,
+              8
+            ],
+            "keyFifths": 0,
+            "bpm": 84,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 0.5,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 0.5,
+                "dur": 0.5,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 1.0,
+                "dur": 0.5,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 1.5,
+                "dur": 1.5,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 3.0,
+                "dur": 0.5,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 3.5,
+                "dur": 0.5,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 4.0,
+                "dur": 0.5,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 4.5,
+                "dur": 1.5,
+                "key": 69,
+                "hand": "R"
+              },
+              {
+                "beat": 6.0,
+                "dur": 0.5,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 6.5,
+                "dur": 0.5,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 7.0,
+                "dur": 0.5,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 7.5,
+                "dur": 0.5,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 8.0,
+                "dur": 0.5,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 8.5,
+                "dur": 0.5,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 9.0,
+                "dur": 3.0,
+                "key": 60,
+                "hand": "R"
+              }
+            ]
+          },
+          "steps": [
+            {
+              "hand": "R",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Mano destra: premi ogni nota quando compare, senza fretta."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 0.75,
+              "loops": 2,
+              "text": "Ora segui il ritmo, un po' più piano del normale."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Velocità normale, con un battito regolare."
+            }
+          ],
+          "id": "s2"
+        },
+        {
+          "type": "exercise",
+          "title": "La barca a due mani",
+          "text": "Con la sinistra che dondola sui due battiti.",
+          "song": {
+            "title": "La barca a due mani",
+            "timeSignature": [
+              6,
+              8
+            ],
+            "keyFifths": 0,
+            "bpm": 84,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 1.5,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 0.0,
+                "dur": 0.5,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 0.5,
+                "dur": 0.5,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 1.0,
+                "dur": 0.5,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 1.5,
+                "dur": 1.5,
+                "key": 55,
+                "hand": "L"
+              },
+              {
+                "beat": 1.5,
+                "dur": 0.5,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 2.0,
+                "dur": 0.5,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 2.5,
+                "dur": 0.5,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 3.0,
+                "dur": 1.5,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 3.0,
+                "dur": 1.5,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 4.5,
+                "dur": 1.5,
+                "key": 55,
+                "hand": "L"
+              },
+              {
+                "beat": 4.5,
+                "dur": 1.5,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 6.0,
+                "dur": 1.5,
+                "key": 53,
+                "hand": "L"
+              },
+              {
+                "beat": 6.0,
+                "dur": 0.5,
+                "key": 69,
+                "hand": "R"
+              },
+              {
+                "beat": 6.5,
+                "dur": 0.5,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 7.0,
+                "dur": 0.5,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 7.5,
+                "dur": 1.5,
+                "key": 55,
+                "hand": "L"
+              },
+              {
+                "beat": 7.5,
+                "dur": 0.5,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 8.0,
+                "dur": 0.5,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 8.5,
+                "dur": 0.5,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 9.0,
+                "dur": 3.0,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 9.0,
+                "dur": 3.0,
+                "key": 60,
+                "hand": "R"
+              }
+            ]
+          },
+          "steps": [
+            {
+              "hand": "R",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Prima solo la destra: impara la melodia."
+            },
+            {
+              "hand": "L",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Ora solo la sinistra, con calma."
+            },
+            {
+              "hand": "B",
+              "mode": "tempo",
+              "speed": 0.75,
+              "loops": 2,
+              "text": "Le due mani insieme, piano."
+            },
+            {
+              "hand": "B",
+              "mode": "tempo",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Velocità normale, mani ben coordinate."
+            }
+          ],
+          "id": "s3"
+        }
+      ]
+    },
+    {
+      "id": "l6",
+      "title": "Ritmi misti",
+      "description": "Tutte le figure insieme.",
+      "slides": [
+        {
+          "type": "text",
+          "title": "Mettere insieme",
+          "body": "Questi brani mescolano valori puntati, terzine e pause. Studiali lentamente e conta sempre i tempi a voce alta. Prima il ritmo con una sola nota, poi le note giuste.",
+          "id": "s1"
+        },
+        {
+          "type": "exercise",
+          "title": "Marcetta puntata",
+          "text": "Semiminime col punto e crome, con il basso.",
+          "song": {
+            "title": "Marcetta puntata",
+            "timeSignature": [
+              4,
+              4
+            ],
+            "keyFifths": 0,
+            "bpm": 84,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 2.0,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 0.0,
+                "dur": 1.5,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 1.5,
+                "dur": 0.5,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 2.0,
+                "dur": 2.0,
+                "key": 55,
+                "hand": "L"
+              },
+              {
+                "beat": 2.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 3.0,
+                "dur": 1.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 4.0,
+                "dur": 2.0,
+                "key": 53,
+                "hand": "L"
+              },
+              {
+                "beat": 4.0,
+                "dur": 1.5,
+                "key": 69,
+                "hand": "R"
+              },
+              {
+                "beat": 5.5,
+                "dur": 0.5,
+                "key": 69,
+                "hand": "R"
+              },
+              {
+                "beat": 6.0,
+                "dur": 2.0,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 6.0,
+                "dur": 2.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 8.0,
+                "dur": 2.0,
+                "key": 55,
+                "hand": "L"
+              },
+              {
+                "beat": 8.0,
+                "dur": 1.5,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 9.5,
+                "dur": 0.5,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 10.0,
+                "dur": 2.0,
+                "key": 55,
+                "hand": "L"
+              },
+              {
+                "beat": 10.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 11.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 12.0,
+                "dur": 4.0,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 12.0,
+                "dur": 1.0,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 13.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 14.0,
+                "dur": 2.0,
+                "key": 60,
+                "hand": "R"
+              }
+            ]
+          },
+          "steps": [
+            {
+              "hand": "R",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Prima solo la destra: impara la melodia."
+            },
+            {
+              "hand": "L",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Ora solo la sinistra, con calma."
+            },
+            {
+              "hand": "B",
+              "mode": "tempo",
+              "speed": 0.75,
+              "loops": 2,
+              "text": "Le due mani insieme, piano."
+            },
+            {
+              "hand": "B",
+              "mode": "tempo",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Velocità normale, mani ben coordinate."
+            }
+          ],
+          "id": "s2"
+        },
+        {
+          "type": "exercise",
+          "title": "Ritmo libero",
+          "text": "Terzine, puntate e una pausa.",
+          "song": {
+            "title": "Ritmo libero",
+            "timeSignature": [
+              4,
+              4
+            ],
+            "keyFifths": 0,
+            "bpm": 66,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 0.333333,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 0.333333,
+                "dur": 0.333334,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 0.666667,
+                "dur": 0.333333,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 1.0,
+                "dur": 1.5,
+                "key": 72,
+                "hand": "R"
+              },
+              {
+                "beat": 2.5,
+                "dur": 0.5,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 3.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 4.0,
+                "dur": 0.5,
+                "key": 69,
+                "hand": "R"
+              },
+              {
+                "beat": 4.5,
+                "dur": 1.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 5.5,
+                "dur": 0.5,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 6.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 7.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 8.0,
+                "dur": 0.33333299999999966,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 8.333333,
+                "dur": 0.3333340000000007,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 8.666667,
+                "dur": 0.33333299999999966,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 9.0,
+                "dur": 1.5,
+                "key": 69,
+                "hand": "R"
+              },
+              {
+                "beat": 10.5,
+                "dur": 0.5,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 11.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 12.0,
+                "dur": 2.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 15.0,
+                "dur": 1.0,
+                "key": 60,
+                "hand": "R"
+              }
+            ]
+          },
+          "steps": [
+            {
+              "hand": "R",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Mano destra: premi ogni nota quando compare, senza fretta."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 0.75,
+              "loops": 2,
+              "text": "Ora segui il ritmo, un po' più piano del normale."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Velocità normale, con un battito regolare."
+            }
+          ],
+          "id": "s3"
+        },
+        {
+          "type": "exercise",
+          "id": "s4",
+          "title": "Jingle Bells",
+          "text": "Il ritornello: ripeti le note e senti il punto prima del Re.",
+          "song": {
+            "title": "Jingle Bells (ritornello)",
+            "timeSignature": [
+              4,
+              4
+            ],
+            "keyFifths": 0,
+            "bpm": 84,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 1.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 2.0,
+                "dur": 2.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 4.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 5.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 6.0,
+                "dur": 2.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 8.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 9.0,
+                "dur": 1.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 10.0,
+                "dur": 1.5,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 11.5,
+                "dur": 0.5,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 12.0,
+                "dur": 4.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 0.0,
+                "dur": 4.0,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 4.0,
+                "dur": 4.0,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 8.0,
+                "dur": 4.0,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 12.0,
+                "dur": 4.0,
+                "key": 48,
+                "hand": "L"
+              }
+            ]
+          },
+          "steps": [
+            {
+              "hand": "R",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 1,
+              "text": "Prima solo la destra: la melodia che conosci."
+            },
+            {
+              "hand": "L",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 1,
+              "text": "Ora solo la sinistra, con calma."
+            },
+            {
+              "hand": "B",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Le due mani insieme, aspettando le note giuste."
+            },
+            {
+              "hand": "B",
+              "mode": "tempo",
+              "speed": 0.75,
+              "loops": 2,
+              "text": "Ora a tempo, piano."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

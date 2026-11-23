@@ -1,0 +1,1550 @@
+{
+  "id": "primi-passi",
+  "title": "Primi passi",
+  "lessons": [
+    {
+      "id": "l1",
+      "title": "Conosci la tastiera",
+      "description": "Tasti bianchi e neri, il Do centrale e le prime cinque note.",
+      "slides": [
+        {
+          "id": "s1",
+          "type": "text",
+          "title": "Benvenuto al pianoforte",
+          "body": "La tastiera ha tasti bianchi e tasti neri, questi ultimi raggruppati a due e a tre. Il Do centrale si trova subito a sinistra del gruppo di due tasti neri, vicino al centro della tastiera. Siediti al centro della tastiera, con gli avambracci all'altezza dei tasti e le spalle morbide. Non serve avere fretta: ogni piccolo passo conta."
+        },
+        {
+          "id": "s2",
+          "type": "text",
+          "title": "Le prime cinque note",
+          "body": "Appoggia il pollice destro sul Do centrale e un dito su ciascun tasto bianco consecutivo. Le note si chiamano Do, Re, Mi, Fa, Sol. Tieni le dita leggermente curve e il polso rilassato."
+        },
+        {
+          "type": "text",
+          "id": "s5",
+          "title": "Lo spartito sullo schermo",
+          "body": "Le cinque righe che vedi si chiamano pentagramma: le note sono i pallini, più in alto sono scritte e più a destra stanno sulla tastiera. Il Do centrale è il pallino con un trattino, appena sotto le cinque righe. Per ora segui anche il tasto illuminato e il numero del dito; nelle impostazioni puoi accendere i nomi delle note."
+        },
+        {
+          "id": "s3",
+          "type": "exercise",
+          "title": "Do Re Mi Fa Sol",
+          "text": "Suona le cinque note salendo e scendendo, una dopo l'altra.",
+          "song": {
+            "title": "Do Re Mi Fa Sol",
+            "timeSignature": [
+              4,
+              4
+            ],
+            "keyFifths": 0,
+            "bpm": 60,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 1.0,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 1.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 2.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 3.0,
+                "dur": 1.0,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 4.0,
+                "dur": 1.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 5.0,
+                "dur": 1.0,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 6.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 7.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 8.0,
+                "dur": 1.0,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 9.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 10.0,
+                "dur": 1.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 11.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 12.0,
+                "dur": 4.0,
+                "key": 60,
+                "hand": "R"
+              }
+            ]
+          },
+          "steps": [
+            {
+              "hand": "R",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Mano destra: premi ogni nota quando la vedi, senza fretta."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 0.75,
+              "loops": 2,
+              "text": "Ora segui il ritmo, un po' più piano del normale."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Alla velocità normale, con un battito regolare."
+            }
+          ]
+        },
+        {
+          "id": "s4",
+          "type": "text",
+          "title": "Ottimo inizio",
+          "body": "Hai già suonato le tue prime note e conosci il loro nome. Ripeti l'esercizio ogni tanto, guardando la mano il meno possibile. Con il tempo le dita troveranno i tasti da sole."
+        }
+      ]
+    },
+    {
+      "id": "l2",
+      "title": "Il ritmo: semiminime e minime",
+      "description": "Impara a contare i battiti e a tenere le note più lunghe.",
+      "slides": [
+        {
+          "id": "s1",
+          "type": "text",
+          "title": "Contare i battiti",
+          "body": "La musica ha un battito regolare, come il battito del cuore. La semiminima dura un battito, la minima ne dura due. Conta ad alta voce: uno, due, tre, quattro. Nei passi a tempo ascolta i quattro tic iniziali e parti con loro; se fai fatica, accendi il metronomo nelle impostazioni."
+        },
+        {
+          "id": "s2",
+          "type": "text",
+          "title": "Tenere premuto il tasto",
+          "body": "Quando una nota dura due battiti, tieni il tasto premuto per tutto il tempo. Rilascialo solo quando comincia la nota successiva. Un tocco morbido e uniforme rende il suono più bello."
+        },
+        {
+          "type": "text",
+          "id": "s5",
+          "title": "Come si scrivono le durate",
+          "body": "La semiminima è un pallino pieno con la gamba e dura un battito. La minima è un pallino vuoto con la gamba e ne dura due. La semibreve è un pallino vuoto senza gamba e dura quattro battiti, cioè una battuta intera. Le linee verticali separano le battute: qui ognuna contiene quattro battiti."
+        },
+        {
+          "id": "s3",
+          "type": "exercise",
+          "title": "Semiminime e una minima",
+          "text": "Suona le note a coppie e tieni le note lunghe.",
+          "song": {
+            "title": "Coppie di note",
+            "timeSignature": [
+              4,
+              4
+            ],
+            "keyFifths": 0,
+            "bpm": 60,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 1.0,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 1.0,
+                "dur": 1.0,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 2.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 3.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 4.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 5.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 6.0,
+                "dur": 1.0,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 7.0,
+                "dur": 1.0,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 8.0,
+                "dur": 2.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 10.0,
+                "dur": 2.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 12.0,
+                "dur": 4.0,
+                "key": 60,
+                "hand": "R"
+              }
+            ]
+          },
+          "steps": [
+            {
+              "hand": "R",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Mano destra: premi ogni nota quando la vedi, senza fretta."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 0.75,
+              "loops": 2,
+              "text": "Ora segui il ritmo, un po' più piano del normale."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Alla velocità normale, con un battito regolare."
+            }
+          ]
+        },
+        {
+          "id": "s4",
+          "type": "exercise",
+          "title": "Solo minime",
+          "text": "Ogni nota dura due battiti: conta uno-due per ciascuna.",
+          "song": {
+            "title": "Passo lento",
+            "timeSignature": [
+              4,
+              4
+            ],
+            "keyFifths": 0,
+            "bpm": 60,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 2.0,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 2.0,
+                "dur": 2.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 4.0,
+                "dur": 2.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 6.0,
+                "dur": 2.0,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 8.0,
+                "dur": 2.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 10.0,
+                "dur": 2.0,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 12.0,
+                "dur": 2.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 14.0,
+                "dur": 2.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 16.0,
+                "dur": 4.0,
+                "key": 60,
+                "hand": "R"
+              }
+            ]
+          },
+          "steps": [
+            {
+              "hand": "R",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Mano destra: premi ogni nota quando la vedi, senza fretta."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 0.75,
+              "loops": 2,
+              "text": "Ora segui il ritmo, un po' più piano del normale."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Alla velocità normale, con un battito regolare."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l3",
+      "title": "Le dita e la posizione",
+      "description": "Un dito per tasto e i salti di terza.",
+      "slides": [
+        {
+          "id": "s1",
+          "type": "text",
+          "title": "I numeri delle dita",
+          "body": "Le dita si numerano dal pollice, che è il numero 1, al mignolo, che è il numero 5. Nella posizione base il pollice sta sul Do e il mignolo sul Sol. Seguire questa regola ti evita molti errori."
+        },
+        {
+          "type": "text",
+          "id": "s5",
+          "title": "Le cinque note sul rigo",
+          "body": "Il simbolo all'inizio del rigo è la chiave di violino, usata per la mano destra. Il Do sta sul trattino sotto il rigo, il Re appena sotto la prima riga, il Mi sulla prima riga. Il Fa sta nel primo spazio e il Sol sulla seconda riga. Riga, spazio, riga, spazio: ogni passo sul rigo è un tasto bianco."
+        },
+        {
+          "id": "s2",
+          "type": "text",
+          "title": "Saltare un tasto",
+          "body": "Suonare Do e poi Mi significa saltare un tasto bianco: si chiama terza. Usa il pollice, il dito 3 e il dito 5 per Do, Mi, Sol. Mantieni la mano ferma e muovi solo le dita."
+        },
+        {
+          "id": "s3",
+          "type": "exercise",
+          "title": "Su e giù con le dita",
+          "text": "Alterna salite e discese restando nella posizione base.",
+          "song": {
+            "title": "Su e giù",
+            "timeSignature": [
+              4,
+              4
+            ],
+            "keyFifths": 0,
+            "bpm": 64,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 1.0,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 1.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 2.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 3.0,
+                "dur": 1.0,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 4.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 5.0,
+                "dur": 1.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 6.0,
+                "dur": 1.0,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 7.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 8.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 9.0,
+                "dur": 1.0,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 10.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 11.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 12.0,
+                "dur": 4.0,
+                "key": 60,
+                "hand": "R"
+              }
+            ]
+          },
+          "steps": [
+            {
+              "hand": "R",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Mano destra: premi ogni nota quando la vedi, senza fretta."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 0.75,
+              "loops": 2,
+              "text": "Ora segui il ritmo, un po' più piano del normale."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Alla velocità normale, con un battito regolare."
+            }
+          ]
+        },
+        {
+          "id": "s4",
+          "type": "exercise",
+          "title": "Salti di terza",
+          "text": "Suona Do, Mi, Sol con le dita 1, 3 e 5.",
+          "song": {
+            "title": "Terze",
+            "timeSignature": [
+              4,
+              4
+            ],
+            "keyFifths": 0,
+            "bpm": 64,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 1.0,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 1.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 2.0,
+                "dur": 1.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 3.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 4.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 5.0,
+                "dur": 1.0,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 6.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 7.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 8.0,
+                "dur": 1.0,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 9.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 10.0,
+                "dur": 1.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 11.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 12.0,
+                "dur": 4.0,
+                "key": 60,
+                "hand": "R"
+              }
+            ]
+          },
+          "steps": [
+            {
+              "hand": "R",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Mano destra: premi ogni nota quando la vedi, senza fretta."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 0.75,
+              "loops": 2,
+              "text": "Ora segui il ritmo, un po' più piano del normale."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Alla velocità normale, con un battito regolare."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l4",
+      "title": "Tasti neri e Fa diesis",
+      "description": "Il diesis alza una nota di un semitono: usiamolo per la prima volta.",
+      "slides": [
+        {
+          "id": "s1",
+          "type": "text",
+          "title": "I tasti neri",
+          "body": "I tasti neri sono i diesis e i bemolle. Un diesis alza la nota di un semitono, cioè al tasto immediatamente a destra. Per esempio il Fa diesis si trova subito a destra del Fa."
+        },
+        {
+          "id": "s2",
+          "type": "text",
+          "title": "La posizione di Mi",
+          "body": "Per suonare con il Fa diesis metti il pollice sul Mi: il dito 2 cade sul Fa diesis. Sul rigo il diesis è il segno # scritto subito dopo la chiave: vale per tutti i Fa del brano. Dopo il Sol troverai anche una nota nuova, il La. Il tasto nero è più corto e più alto, trovalo con il tatto."
+        },
+        {
+          "id": "s3",
+          "type": "exercise",
+          "title": "Mi, Fa diesis, Sol",
+          "text": "Suona il Fa diesis nel posto giusto: è il tasto nero tra Fa e Sol.",
+          "song": {
+            "title": "Fa diesis",
+            "timeSignature": [
+              4,
+              4
+            ],
+            "keyFifths": 1,
+            "bpm": 64,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 1.0,
+                "dur": 1.0,
+                "key": 66,
+                "hand": "R"
+              },
+              {
+                "beat": 2.0,
+                "dur": 1.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 3.0,
+                "dur": 1.0,
+                "key": 66,
+                "hand": "R"
+              },
+              {
+                "beat": 4.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 5.0,
+                "dur": 1.0,
+                "key": 66,
+                "hand": "R"
+              },
+              {
+                "beat": 6.0,
+                "dur": 1.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 7.0,
+                "dur": 1.0,
+                "key": 69,
+                "hand": "R"
+              },
+              {
+                "beat": 8.0,
+                "dur": 1.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 9.0,
+                "dur": 1.0,
+                "key": 66,
+                "hand": "R"
+              },
+              {
+                "beat": 10.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 11.0,
+                "dur": 1.0,
+                "key": 66,
+                "hand": "R"
+              },
+              {
+                "beat": 12.0,
+                "dur": 4.0,
+                "key": 64,
+                "hand": "R"
+              }
+            ]
+          },
+          "steps": [
+            {
+              "hand": "R",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Mano destra: premi ogni nota quando la vedi, senza fretta."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 0.75,
+              "loops": 2,
+              "text": "Ora segui il ritmo, un po' più piano del normale."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Alla velocità normale, con un battito regolare."
+            }
+          ]
+        },
+        {
+          "id": "s4",
+          "type": "exercise",
+          "title": "Posizione di Re",
+          "text": "Parti dal Re con il pollice e passa sul Fa diesis.",
+          "song": {
+            "title": "Re e Fa diesis",
+            "timeSignature": [
+              4,
+              4
+            ],
+            "keyFifths": 1,
+            "bpm": 64,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 1.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 2.0,
+                "dur": 1.0,
+                "key": 66,
+                "hand": "R"
+              },
+              {
+                "beat": 3.0,
+                "dur": 1.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 4.0,
+                "dur": 1.0,
+                "key": 69,
+                "hand": "R"
+              },
+              {
+                "beat": 5.0,
+                "dur": 1.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 6.0,
+                "dur": 1.0,
+                "key": 66,
+                "hand": "R"
+              },
+              {
+                "beat": 7.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 8.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 9.0,
+                "dur": 1.0,
+                "key": 66,
+                "hand": "R"
+              },
+              {
+                "beat": 10.0,
+                "dur": 1.0,
+                "key": 69,
+                "hand": "R"
+              },
+              {
+                "beat": 11.0,
+                "dur": 1.0,
+                "key": 66,
+                "hand": "R"
+              },
+              {
+                "beat": 12.0,
+                "dur": 4.0,
+                "key": 62,
+                "hand": "R"
+              }
+            ]
+          },
+          "steps": [
+            {
+              "hand": "R",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Mano destra: premi ogni nota quando la vedi, senza fretta."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 0.75,
+              "loops": 2,
+              "text": "Ora segui il ritmo, un po' più piano del normale."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Alla velocità normale, con un battito regolare."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l5",
+      "title": "La scala di Do e il pollice",
+      "description": "Un'ottava intera con il passaggio del pollice.",
+      "slides": [
+        {
+          "id": "s1",
+          "type": "text",
+          "title": "Che cos'è una scala",
+          "body": "La scala di Do maggiore è composta da otto note bianche consecutive, da Do a Do. Quasi tutta la musica usa le scale, quindi suonarle bene è un ottimo allenamento. Parti piano e cerca un suono uniforme."
+        },
+        {
+          "id": "s2",
+          "type": "text",
+          "title": "Il passaggio del pollice",
+          "body": "Con la mano destra le dita sono 1, 2, 3 poi il pollice passa sotto al dito 3 per suonare il Fa. Poi si continua con 2, 3, 4, 5. Il pollice deve scivolare sotto la mano senza che il polso si muova a scatti. In discesa accade il contrario: dopo il pollice sul Fa, il dito 3 lo scavalca per suonare il Mi."
+        },
+        {
+          "id": "s4",
+          "type": "exercise",
+          "title": "Scala lenta in minime",
+          "text": "Stessa scala, ma ogni nota dura due battiti: usa il tempo per preparare il pollice.",
+          "song": {
+            "title": "Scala lenta",
+            "timeSignature": [
+              4,
+              4
+            ],
+            "keyFifths": 0,
+            "bpm": 60,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 2.0,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 2.0,
+                "dur": 2.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 4.0,
+                "dur": 2.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 6.0,
+                "dur": 2.0,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 8.0,
+                "dur": 2.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 10.0,
+                "dur": 2.0,
+                "key": 69,
+                "hand": "R"
+              },
+              {
+                "beat": 12.0,
+                "dur": 2.0,
+                "key": 71,
+                "hand": "R"
+              },
+              {
+                "beat": 14.0,
+                "dur": 2.0,
+                "key": 72,
+                "hand": "R"
+              },
+              {
+                "beat": 16.0,
+                "dur": 2.0,
+                "key": 71,
+                "hand": "R"
+              },
+              {
+                "beat": 18.0,
+                "dur": 2.0,
+                "key": 69,
+                "hand": "R"
+              },
+              {
+                "beat": 20.0,
+                "dur": 2.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 22.0,
+                "dur": 2.0,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 24.0,
+                "dur": 2.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 26.0,
+                "dur": 2.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 28.0,
+                "dur": 4.0,
+                "key": 60,
+                "hand": "R"
+              }
+            ]
+          },
+          "steps": [
+            {
+              "hand": "R",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Mano destra: premi ogni nota quando la vedi, senza fretta."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 0.75,
+              "loops": 2,
+              "text": "Ora segui il ritmo, un po' più piano del normale."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Alla velocità normale, con un battito regolare."
+            }
+          ]
+        },
+        {
+          "id": "s3",
+          "type": "exercise",
+          "title": "Scala di Do in semiminime",
+          "text": "Sali fino al Do alto e scendi di nuovo, con il passaggio del pollice.",
+          "song": {
+            "title": "Scala di Do",
+            "timeSignature": [
+              4,
+              4
+            ],
+            "keyFifths": 0,
+            "bpm": 60,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 1.0,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 1.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 2.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 3.0,
+                "dur": 1.0,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 4.0,
+                "dur": 1.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 5.0,
+                "dur": 1.0,
+                "key": 69,
+                "hand": "R"
+              },
+              {
+                "beat": 6.0,
+                "dur": 1.0,
+                "key": 71,
+                "hand": "R"
+              },
+              {
+                "beat": 7.0,
+                "dur": 1.0,
+                "key": 72,
+                "hand": "R"
+              },
+              {
+                "beat": 8.0,
+                "dur": 1.0,
+                "key": 71,
+                "hand": "R"
+              },
+              {
+                "beat": 9.0,
+                "dur": 1.0,
+                "key": 69,
+                "hand": "R"
+              },
+              {
+                "beat": 10.0,
+                "dur": 1.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 11.0,
+                "dur": 1.0,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 12.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 13.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 14.0,
+                "dur": 2.0,
+                "key": 60,
+                "hand": "R"
+              }
+            ]
+          },
+          "steps": [
+            {
+              "hand": "R",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Mano destra: premi ogni nota quando la vedi, senza fretta."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 0.75,
+              "loops": 2,
+              "text": "Ora segui il ritmo, un po' più piano del normale."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Alla velocità normale, con un battito regolare."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l6",
+      "title": "Inno alla gioia",
+      "description": "Il tuo primo vero brano: il tema di Beethoven.",
+      "slides": [
+        {
+          "id": "s1",
+          "type": "text",
+          "title": "Un tema famoso",
+          "body": "L'Inno alla gioia è il tema del finale della Nona sinfonia di Beethoven, del 1824. La melodia usa solo le cinque note che già conosci. È un brano di pubblico dominio e ti permette di suonare musica vera fin da subito."
+        },
+        {
+          "id": "s2",
+          "type": "exercise",
+          "title": "Prima frase",
+          "text": "Suona le prime quattro battute dell'Inno alla gioia.",
+          "song": {
+            "title": "Inno alla gioia (prima frase)",
+            "timeSignature": [
+              4,
+              4
+            ],
+            "keyFifths": 0,
+            "bpm": 72,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 1.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 2.0,
+                "dur": 1.0,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 3.0,
+                "dur": 1.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 4.0,
+                "dur": 1.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 5.0,
+                "dur": 1.0,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 6.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 7.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 8.0,
+                "dur": 1.0,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 9.0,
+                "dur": 1.0,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 10.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 11.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 12.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 13.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 14.0,
+                "dur": 2.0,
+                "key": 62,
+                "hand": "R"
+              }
+            ]
+          },
+          "steps": [
+            {
+              "hand": "R",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Mano destra: premi ogni nota quando la vedi, senza fretta."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 0.75,
+              "loops": 2,
+              "text": "Ora segui il ritmo, un po' più piano del normale."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Alla velocità normale, con un battito regolare."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "s5",
+          "title": "Il punto e la croma",
+          "body": "Nel tema vero il Mi della quarta battuta ha un punto: dura un battito e mezzo. Il Re che lo segue è una croma, cioè mezzo battito, e arriva subito prima del terzo battito. Conta uno, due-e, tre, quattro: il Mi sull'uno, il Re breve sulla «e», il Re lungo sul tre."
+        },
+        {
+          "id": "s3",
+          "type": "exercise",
+          "title": "Tema completo",
+          "text": "Ora suona tutto il tema: la seconda frase finisce sul Do.",
+          "song": {
+            "title": "Inno alla gioia",
+            "timeSignature": [
+              4,
+              4
+            ],
+            "keyFifths": 0,
+            "bpm": 72,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 1.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 2.0,
+                "dur": 1.0,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 3.0,
+                "dur": 1.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 4.0,
+                "dur": 1.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 5.0,
+                "dur": 1.0,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 6.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 7.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 8.0,
+                "dur": 1.0,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 9.0,
+                "dur": 1.0,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 10.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 11.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 12.0,
+                "dur": 1.5,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 13.5,
+                "dur": 0.5,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 14.0,
+                "dur": 2.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 16.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 17.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 18.0,
+                "dur": 1.0,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 19.0,
+                "dur": 1.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 20.0,
+                "dur": 1.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 21.0,
+                "dur": 1.0,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 22.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 23.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 24.0,
+                "dur": 1.0,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 25.0,
+                "dur": 1.0,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 26.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 27.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 28.0,
+                "dur": 1.5,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 29.5,
+                "dur": 0.5,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 30.0,
+                "dur": 2.0,
+                "key": 60,
+                "hand": "R"
+              }
+            ]
+          },
+          "steps": [
+            {
+              "hand": "R",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Mano destra: premi ogni nota quando la vedi, senza fretta."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 0.75,
+              "loops": 2,
+              "text": "Ora segui il ritmo, un po' più piano del normale."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Alla velocità normale, con un battito regolare."
+            }
+          ]
+        },
+        {
+          "id": "s4",
+          "type": "text",
+          "title": "Complimenti",
+          "body": "Hai completato il primo corso e suoni già un brano di Beethoven. Prova a ripeterlo a memoria e con un'espressione diversa, ora più dolce ora più decisa. Nel prossimo corso la mano destra impara nuove melodie; subito dopo arriva la sinistra."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,998 @@
+{
+  "id": "leggere-la-musica",
+  "title": "Leggere la musica",
+  "lessons": [
+    {
+      "id": "l1",
+      "title": "Il rigo e la chiave di violino",
+      "description": "Cinque righe, quattro spazi e il posto del Do centrale.",
+      "slides": [
+        {
+          "type": "text",
+          "id": "s1",
+          "title": "Le cinque righe",
+          "body": "Lo spartito è scritto su cinque righe, contate dal basso: prima, seconda, terza, quarta e quinta riga. Fra una riga e l'altra ci sono gli spazi. Ogni nota si scrive su una riga o in uno spazio, e più è in alto più suona acuta."
+        },
+        {
+          "type": "text",
+          "id": "s2",
+          "title": "La chiave di violino",
+          "body": "Il simbolo all'inizio del rigo è la chiave di violino: si usa per le note acute, quelle della mano destra. Il suo ricciolo gira intorno alla seconda riga, che è il Sol. Da quel Sol puoi contare in su e in giù per trovare le altre note."
+        },
+        {
+          "type": "text",
+          "id": "s3",
+          "title": "Dove sta il Do centrale",
+          "body": "Il Do centrale non sta dentro il rigo: si scrive sotto, su un piccolo trattino chiamato taglio addizionale. È il tasto che trovi a sinistra dei due tasti neri vicino al centro della tastiera. Sullo schermo lo vedi accendersi mentre la nota passa sul cursore."
+        },
+        {
+          "type": "exercise",
+          "id": "s4",
+          "title": "Do e Re",
+          "text": "Suona il Do sotto il rigo e il Re appena sotto la prima riga.",
+          "song": {
+            "title": "Do e Re",
+            "timeSignature": [
+              4,
+              4
+            ],
+            "keyFifths": 0,
+            "bpm": 60,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 1.0,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 1.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 2.0,
+                "dur": 1.0,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 3.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 4.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 5.0,
+                "dur": 1.0,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 6.0,
+                "dur": 2.0,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 8.0,
+                "dur": 1.0,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 9.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 10.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 11.0,
+                "dur": 1.0,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 12.0,
+                "dur": 4.0,
+                "key": 60,
+                "hand": "R"
+              }
+            ]
+          },
+          "steps": [
+            {
+              "hand": "R",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Segui la nota sul rigo e premi il tasto giusto."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 0.75,
+              "loops": 2,
+              "text": "Ora a tempo, senza fretta."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Alla velocità normale."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l2",
+      "title": "Le note sul rigo",
+      "description": "Do, Re, Mi, Fa, Sol: righe e spazi.",
+      "slides": [
+        {
+          "type": "text",
+          "id": "s1",
+          "title": "Righe e spazi, uno dopo l'altro",
+          "body": "Salendo dal Do centrale, ogni nota è alternata fra un taglio, uno spazio e una riga. Il Mi sta sulla prima riga, il Fa nel primo spazio, il Sol sulla seconda riga. Quindi: riga, spazio, riga, spazio."
+        },
+        {
+          "type": "text",
+          "id": "s2",
+          "title": "Riconoscere le note",
+          "body": "Una nota più in alto sul rigo è un tasto più a destra. Una nota che sale di un passo su riga o spazio è sempre un tasto bianco vicino. Non serve ricordare tutto subito: guarda il rigo e il tasto che si accende insieme."
+        },
+        {
+          "type": "exercise",
+          "id": "s3",
+          "title": "Cinque note sul rigo",
+          "text": "Suona le cinque note, leggendole sul rigo.",
+          "song": {
+            "title": "Cinque note",
+            "timeSignature": [
+              4,
+              4
+            ],
+            "keyFifths": 0,
+            "bpm": 64,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 1.0,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 1.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 2.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 3.0,
+                "dur": 1.0,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 4.0,
+                "dur": 1.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 5.0,
+                "dur": 1.0,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 6.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 7.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 8.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 9.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 10.0,
+                "dur": 1.0,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 11.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 12.0,
+                "dur": 4.0,
+                "key": 60,
+                "hand": "R"
+              }
+            ]
+          },
+          "steps": [
+            {
+              "hand": "R",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Leggi la nota sul rigo e poi cerca il tasto."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 0.75,
+              "loops": 2,
+              "text": "A tempo, piano."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Velocità normale."
+            }
+          ]
+        },
+        {
+          "type": "exercise",
+          "id": "s4",
+          "title": "Leggere un salto",
+          "text": "Una melodia con qualche salto: leggi dove sale e dove scende.",
+          "song": {
+            "title": "Salti sul rigo",
+            "timeSignature": [
+              4,
+              4
+            ],
+            "keyFifths": 0,
+            "bpm": 60,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 1.0,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 1.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 2.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 3.0,
+                "dur": 1.0,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 4.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 5.0,
+                "dur": 1.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 6.0,
+                "dur": 2.0,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 8.0,
+                "dur": 1.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 9.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 10.0,
+                "dur": 1.0,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 11.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 12.0,
+                "dur": 4.0,
+                "key": 60,
+                "hand": "R"
+              }
+            ]
+          },
+          "steps": [
+            {
+              "hand": "R",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Guarda quanto sale o scende la nota."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 0.75,
+              "loops": 2,
+              "text": "A tempo, con calma."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l3",
+      "title": "Quanto dura una nota",
+      "description": "Semibreve, minima, semiminima e le battute.",
+      "slides": [
+        {
+          "type": "text",
+          "id": "s1",
+          "title": "Le forme delle note",
+          "body": "La semiminima è un pallino pieno con la gamba e dura un battito. La minima è un pallino vuoto con la gamba e dura due battiti. La semibreve è un pallino vuoto senza gamba e dura quattro battiti, cioè una battuta intera in 4/4."
+        },
+        {
+          "type": "text",
+          "id": "s2",
+          "title": "Le battute e il metro",
+          "body": "Le linee verticali dividono lo spartito in battute. I due numeri all'inizio dicono quanti battiti ha ogni battuta: 4/4 vuol dire quattro battiti da una semiminima. Conta sempre uno, due, tre, quattro."
+        },
+        {
+          "type": "exercise",
+          "id": "s3",
+          "title": "Durate diverse",
+          "text": "Una battuta con tutte semiminime, poi minime, poi una semibreve.",
+          "song": {
+            "title": "Durate",
+            "timeSignature": [
+              4,
+              4
+            ],
+            "keyFifths": 0,
+            "bpm": 72,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 1.0,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 1.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 2.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 3.0,
+                "dur": 1.0,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 4.0,
+                "dur": 2.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 6.0,
+                "dur": 2.0,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 8.0,
+                "dur": 2.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 10.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 11.0,
+                "dur": 1.0,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 12.0,
+                "dur": 4.0,
+                "key": 60,
+                "hand": "R"
+              }
+            ]
+          },
+          "steps": [
+            {
+              "hand": "R",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Conta i battiti e tieni premuto il tasto per tutta la durata."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 0.75,
+              "loops": 2,
+              "text": "A tempo, piano."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Velocità normale."
+            }
+          ]
+        },
+        {
+          "type": "exercise",
+          "id": "s4",
+          "title": "Contare le battute",
+          "text": "Quattro battute con durate diverse: conta ad alta voce.",
+          "song": {
+            "title": "Battute",
+            "timeSignature": [
+              4,
+              4
+            ],
+            "keyFifths": 0,
+            "bpm": 66,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 2.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 2.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 3.0,
+                "dur": 1.0,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 4.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 5.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 6.0,
+                "dur": 2.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 8.0,
+                "dur": 2.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 10.0,
+                "dur": 2.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 12.0,
+                "dur": 4.0,
+                "key": 64,
+                "hand": "R"
+              }
+            ]
+          },
+          "steps": [
+            {
+              "hand": "R",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Conta quattro battiti per ogni battuta."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 0.75,
+              "loops": 2,
+              "text": "A tempo."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l4",
+      "title": "Le pause",
+      "description": "Il silenzio ha la sua durata.",
+      "slides": [
+        {
+          "type": "text",
+          "id": "s1",
+          "title": "Il silenzio si scrive",
+          "body": "Una pausa è un segno che dice di non suonare per un certo tempo. La pausa di semiminima dura un battito, quella di minima due, quella di semibreve una battuta intera. Durante la pausa il tempo continua a scorrere."
+        },
+        {
+          "type": "text",
+          "id": "s2",
+          "title": "Aspettare con il corpo",
+          "body": "In una pausa lascia andare il tasto e tieni il battito. Conta uno, due, tre, quattro anche quando non suoni. Così la melodia respira e le note tornano al momento giusto."
+        },
+        {
+          "type": "exercise",
+          "id": "s3",
+          "title": "Una nota, una pausa",
+          "text": "Alterna note e pause di un battito.",
+          "song": {
+            "title": "Note e pause",
+            "timeSignature": [
+              4,
+              4
+            ],
+            "keyFifths": 0,
+            "bpm": 66,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 1.0,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 2.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 4.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 6.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 8.0,
+                "dur": 1.0,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 10.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 12.0,
+                "dur": 2.0,
+                "key": 67,
+                "hand": "R"
+              }
+            ]
+          },
+          "steps": [
+            {
+              "hand": "R",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Premi, poi lascia e aspetta un battito."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 0.75,
+              "loops": 2,
+              "text": "A tempo, tenendo il conto."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Velocità normale."
+            }
+          ]
+        },
+        {
+          "type": "exercise",
+          "id": "s4",
+          "title": "Pause più lunghe",
+          "text": "Alcune pause durano due battiti: continua a contare.",
+          "song": {
+            "title": "Pause lunghe",
+            "timeSignature": [
+              4,
+              4
+            ],
+            "keyFifths": 0,
+            "bpm": 60,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 1.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 4.0,
+                "dur": 1.0,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 5.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 8.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 9.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 12.0,
+                "dur": 4.0,
+                "key": 64,
+                "hand": "R"
+              }
+            ]
+          },
+          "steps": [
+            {
+              "hand": "R",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Conta durante la pausa."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 0.75,
+              "loops": 2,
+              "text": "A tempo."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l5",
+      "title": "La chiave di basso",
+      "description": "La mano sinistra si legge sul rigo più in basso.",
+      "slides": [
+        {
+          "type": "text",
+          "id": "s1",
+          "title": "Il secondo rigo",
+          "body": "Sotto il rigo della destra ce n'è un altro, con la chiave di basso: serve per le note gravi, quelle della mano sinistra. Anche qui ci sono cinque righe e quattro spazi, ma le note hanno altri nomi."
+        },
+        {
+          "type": "text",
+          "id": "s2",
+          "title": "Dove sta il Do",
+          "body": "Il Do centrale è sopra questo rigo, su un taglio addizionale, ed è lo stesso tasto del taglio sotto il rigo della destra. Il Do che suoni con il mignolo sinistro sta nel secondo spazio dal basso. Il Sol del pollice sta nel quarto spazio."
+        },
+        {
+          "type": "exercise",
+          "id": "s3",
+          "title": "Cinque note a sinistra",
+          "text": "Leggi le note sul rigo di basso e suonale con la mano sinistra.",
+          "song": {
+            "title": "Basso",
+            "timeSignature": [
+              4,
+              4
+            ],
+            "keyFifths": 0,
+            "bpm": 64,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 1.0,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 1.0,
+                "dur": 1.0,
+                "key": 50,
+                "hand": "L"
+              },
+              {
+                "beat": 2.0,
+                "dur": 1.0,
+                "key": 52,
+                "hand": "L"
+              },
+              {
+                "beat": 3.0,
+                "dur": 1.0,
+                "key": 53,
+                "hand": "L"
+              },
+              {
+                "beat": 4.0,
+                "dur": 1.0,
+                "key": 55,
+                "hand": "L"
+              },
+              {
+                "beat": 5.0,
+                "dur": 1.0,
+                "key": 53,
+                "hand": "L"
+              },
+              {
+                "beat": 6.0,
+                "dur": 1.0,
+                "key": 52,
+                "hand": "L"
+              },
+              {
+                "beat": 7.0,
+                "dur": 1.0,
+                "key": 50,
+                "hand": "L"
+              },
+              {
+                "beat": 8.0,
+                "dur": 1.0,
+                "key": 52,
+                "hand": "L"
+              },
+              {
+                "beat": 9.0,
+                "dur": 1.0,
+                "key": 50,
+                "hand": "L"
+              },
+              {
+                "beat": 10.0,
+                "dur": 1.0,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 11.0,
+                "dur": 1.0,
+                "key": 50,
+                "hand": "L"
+              },
+              {
+                "beat": 12.0,
+                "dur": 4.0,
+                "key": 48,
+                "hand": "L"
+              }
+            ]
+          },
+          "steps": [
+            {
+              "hand": "L",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Leggi la nota sul rigo di basso."
+            },
+            {
+              "hand": "L",
+              "mode": "tempo",
+              "speed": 0.75,
+              "loops": 2,
+              "text": "A tempo, piano."
+            },
+            {
+              "hand": "L",
+              "mode": "tempo",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Velocità normale."
+            }
+          ]
+        },
+        {
+          "type": "exercise",
+          "id": "s4",
+          "title": "Le due mani, leggendo",
+          "text": "Leggi insieme i due righi: la destra canta, la sinistra tiene.",
+          "song": {
+            "title": "Due righi",
+            "timeSignature": [
+              4,
+              4
+            ],
+            "keyFifths": 0,
+            "bpm": 56,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 4.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 4.0,
+                "dur": 4.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 8.0,
+                "dur": 4.0,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 12.0,
+                "dur": 4.0,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 0.0,
+                "dur": 4.0,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 4.0,
+                "dur": 4.0,
+                "key": 43,
+                "hand": "L"
+              },
+              {
+                "beat": 8.0,
+                "dur": 4.0,
+                "key": 48,
+                "hand": "L"
+              },
+              {
+                "beat": 12.0,
+                "dur": 4.0,
+                "key": 48,
+                "hand": "L"
+              }
+            ]
+          },
+          "steps": [
+            {
+              "hand": "R",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Prima solo la destra."
+            },
+            {
+              "hand": "L",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Poi solo la sinistra."
+            },
+            {
+              "hand": "B",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Le due mani insieme, aspettando."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "s9",
+          "title": "Che cosa hai imparato",
+          "body": "Sai leggere il rigo con la chiave di violino e di basso, le note, le durate e le pause. Quando suoni, guarda lo spartito e non solo il tasto illuminato. Ogni brano che segue ti farà leggere un po' più in fretta."
+        }
+      ]
+    }
+  ]
+}
