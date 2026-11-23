@@ -1,0 +1,2093 @@
+{
+ "id": "accordi-per-cominciare",
+ "title": "Accordi per cominciare",
+ "lessons": [
+  {
+   "id": "l1",
+   "title": "Due note insieme",
+   "description": "Terze e quinte con la mano destra.",
+   "slides": [
+    {
+     "id": "s1",
+     "type": "text",
+     "title": "Premere insieme",
+     "body": "Prima di suonare un accordo intero, si impara a premere due note insieme. La terza è l'intervallo fra due note a distanza di una nota intermedia, la quinta con tre note intermedie. Tieni la mano rilassata e premi le due dita nello stesso istante."
+    },
+    {
+     "id": "s2",
+     "type": "exercise",
+     "title": "Terze vicine",
+     "text": "Due note a distanza di terza, salendo.",
+     "song": {
+      "title": "Terze vicine",
+      "timeSignature": [
+       4,
+       4
+      ],
+      "keyFifths": 0,
+      "bpm": 54,
+      "notes": [
+       {
+        "beat": 0.0,
+        "dur": 2.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 2.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 2.0,
+        "dur": 2.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 2.0,
+        "dur": 2.0,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 2.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 2.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 6.0,
+        "dur": 2.0,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 6.0,
+        "dur": 2.0,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 2.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 2.0,
+        "key": 71,
+        "hand": "R"
+       },
+       {
+        "beat": 10.0,
+        "dur": 2.0,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 10.0,
+        "dur": 2.0,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 2.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 2.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 14.0,
+        "dur": 2.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 14.0,
+        "dur": 2.0,
+        "key": 65,
+        "hand": "R"
+       }
+      ]
+     },
+     "steps": [
+      {
+       "hand": "R",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Premi tutte le note dell'accordo nello stesso momento."
+      },
+      {
+       "hand": "R",
+       "mode": "tempo",
+       "speed": 0.5,
+       "loops": 2,
+       "text": "Ora a tempo, molto piano."
+      },
+      {
+       "hand": "R",
+       "mode": "tempo",
+       "speed": 0.75,
+       "loops": 2,
+       "text": "Un po' più veloce."
+      }
+     ]
+    },
+    {
+     "id": "s3",
+     "type": "exercise",
+     "title": "Quinte vuote",
+     "text": "Do e Sol insieme, poi Re e La, poi Mi e Si.",
+     "song": {
+      "title": "Quinte vuote",
+      "timeSignature": [
+       4,
+       4
+      ],
+      "keyFifths": 0,
+      "bpm": 54,
+      "notes": [
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 71,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       }
+      ]
+     },
+     "steps": [
+      {
+       "hand": "R",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Premi tutte le note dell'accordo nello stesso momento."
+      },
+      {
+       "hand": "R",
+       "mode": "tempo",
+       "speed": 0.5,
+       "loops": 2,
+       "text": "Ora a tempo, molto piano."
+      },
+      {
+       "hand": "R",
+       "mode": "tempo",
+       "speed": 0.75,
+       "loops": 2,
+       "text": "Un po' più veloce."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "l2",
+   "title": "La triade di Do",
+   "description": "Tre note insieme: Do, Mi, Sol.",
+   "slides": [
+    {
+     "id": "s1",
+     "type": "text",
+     "title": "Il primo accordo",
+     "body": "L'accordo di Do maggiore si suona con Do, Mi e Sol insieme, con i diti uno, tre e cinque della mano destra. Tieni le tre note premute per tutta la battuta. Se una nota parte prima delle altre, ripeti più piano."
+    },
+    {
+     "id": "s2",
+     "type": "exercise",
+     "title": "Do maggiore a destra",
+     "text": "Accordo di Do: premi, tieni, rilascia.",
+     "song": {
+      "title": "Do maggiore a destra",
+      "timeSignature": [
+       4,
+       4
+      ],
+      "keyFifths": 0,
+      "bpm": 54,
+      "notes": [
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       }
+      ]
+     },
+     "steps": [
+      {
+       "hand": "R",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Premi tutte le note dell'accordo nello stesso momento."
+      },
+      {
+       "hand": "R",
+       "mode": "tempo",
+       "speed": 0.5,
+       "loops": 2,
+       "text": "Ora a tempo, molto piano."
+      },
+      {
+       "hand": "R",
+       "mode": "tempo",
+       "speed": 0.75,
+       "loops": 2,
+       "text": "Un po' più veloce."
+      }
+     ]
+    },
+    {
+     "id": "s3",
+     "type": "exercise",
+     "title": "Do con il basso",
+     "text": "L'accordo a destra e una nota bassa a sinistra.",
+     "song": {
+      "title": "Do con il basso",
+      "timeSignature": [
+       4,
+       4
+      ],
+      "keyFifths": 0,
+      "bpm": 54,
+      "notes": [
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 48,
+        "hand": "L"
+       }
+      ]
+     },
+     "steps": [
+      {
+       "hand": "B",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Le due mani insieme, senza fretta: premi quando compaiono le note."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 0.5,
+       "loops": 2,
+       "text": "Ora a tempo, molto piano."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 0.75,
+       "loops": 2,
+       "text": "Un po' più veloce."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Velocità normale."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "l3",
+   "title": "Do e Sol",
+   "description": "Due accordi che si alternano.",
+   "slides": [
+    {
+     "id": "s1",
+     "type": "text",
+     "title": "Cambiare accordo",
+     "body": "Il secondo accordo da imparare è Sol maggiore, con Sol, Si e Re. Fra Do e Sol la mano si muove poco: due note restano vicine. Prepara le dita in anticipo, senza guardare la tastiera."
+    },
+    {
+     "id": "s2",
+     "type": "exercise",
+     "title": "Do, Sol, Do, Sol",
+     "text": "Un accordo ogni battuta, a destra.",
+     "song": {
+      "title": "Do, Sol, Do, Sol",
+      "timeSignature": [
+       4,
+       4
+      ],
+      "keyFifths": 0,
+      "bpm": 54,
+      "notes": [
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 59,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 59,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       }
+      ]
+     },
+     "steps": [
+      {
+       "hand": "R",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Premi tutte le note dell'accordo nello stesso momento."
+      },
+      {
+       "hand": "R",
+       "mode": "tempo",
+       "speed": 0.5,
+       "loops": 2,
+       "text": "Ora a tempo, molto piano."
+      },
+      {
+       "hand": "R",
+       "mode": "tempo",
+       "speed": 0.75,
+       "loops": 2,
+       "text": "Un po' più veloce."
+      }
+     ]
+    },
+    {
+     "id": "s3",
+     "type": "exercise",
+     "title": "Do e Sol con il basso",
+     "text": "Aggiungi la nota bassa a sinistra.",
+     "song": {
+      "title": "Do e Sol con il basso",
+      "timeSignature": [
+       4,
+       4
+      ],
+      "keyFifths": 0,
+      "bpm": 54,
+      "notes": [
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 59,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 59,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 43,
+        "hand": "L"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 43,
+        "hand": "L"
+       }
+      ]
+     },
+     "steps": [
+      {
+       "hand": "B",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Le due mani insieme, senza fretta: premi quando compaiono le note."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 0.5,
+       "loops": 2,
+       "text": "Ora a tempo, molto piano."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 0.75,
+       "loops": 2,
+       "text": "Un po' più veloce."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Velocità normale."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "l4",
+   "title": "Do, Fa, Sol",
+   "description": "I tre accordi principali.",
+   "slides": [
+    {
+     "id": "s1",
+     "type": "text",
+     "title": "Tre accordi",
+     "body": "Con Do, Fa e Sol si suonano moltissime canzoni. Il Fa maggiore è composto da Fa, La e Do. Ascolta come l'ordine Do, Fa, Sol, Do dia un senso di partenza e di arrivo."
+    },
+    {
+     "id": "s2",
+     "type": "exercise",
+     "title": "Il giro di tre accordi",
+     "text": "Do, Fa, Sol, Do, uno per battuta.",
+     "song": {
+      "title": "Il giro di tre accordi",
+      "timeSignature": [
+       4,
+       4
+      ],
+      "keyFifths": 0,
+      "bpm": 54,
+      "notes": [
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 59,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       }
+      ]
+     },
+     "steps": [
+      {
+       "hand": "R",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Premi tutte le note dell'accordo nello stesso momento."
+      },
+      {
+       "hand": "R",
+       "mode": "tempo",
+       "speed": 0.5,
+       "loops": 2,
+       "text": "Ora a tempo, molto piano."
+      },
+      {
+       "hand": "R",
+       "mode": "tempo",
+       "speed": 0.75,
+       "loops": 2,
+       "text": "Un po' più veloce."
+      }
+     ]
+    },
+    {
+     "id": "s3",
+     "type": "exercise",
+     "title": "Il giro con il basso",
+     "text": "Anche la sinistra suona la sua nota.",
+     "song": {
+      "title": "Il giro con il basso",
+      "timeSignature": [
+       4,
+       4
+      ],
+      "keyFifths": 0,
+      "bpm": 54,
+      "notes": [
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 59,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 41,
+        "hand": "L"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 43,
+        "hand": "L"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 48,
+        "hand": "L"
+       }
+      ]
+     },
+     "steps": [
+      {
+       "hand": "B",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Le due mani insieme, senza fretta: premi quando compaiono le note."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 0.5,
+       "loops": 2,
+       "text": "Ora a tempo, molto piano."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 0.75,
+       "loops": 2,
+       "text": "Un po' più veloce."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Velocità normale."
+      }
+     ]
+    },
+    {
+     "id": "s4",
+     "type": "exercise",
+     "title": "Due accordi per battuta",
+     "text": "Ogni battuta suona due volte lo stesso accordo.",
+     "song": {
+      "title": "Due accordi per battuta",
+      "timeSignature": [
+       4,
+       4
+      ],
+      "keyFifths": 0,
+      "bpm": 54,
+      "notes": [
+       {
+        "beat": 0.0,
+        "dur": 2.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 2.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 2.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 2.0,
+        "dur": 2.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 2.0,
+        "dur": 2.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 2.0,
+        "dur": 2.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 2.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 2.0,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 2.0,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 6.0,
+        "dur": 2.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 6.0,
+        "dur": 2.0,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 6.0,
+        "dur": 2.0,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 2.0,
+        "key": 59,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 2.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 2.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 10.0,
+        "dur": 2.0,
+        "key": 59,
+        "hand": "R"
+       },
+       {
+        "beat": 10.0,
+        "dur": 2.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 10.0,
+        "dur": 2.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 2.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 2.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 2.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 14.0,
+        "dur": 2.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 14.0,
+        "dur": 2.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 14.0,
+        "dur": 2.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 2.0,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 2.0,
+        "dur": 2.0,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 4.0,
+        "dur": 2.0,
+        "key": 41,
+        "hand": "L"
+       },
+       {
+        "beat": 6.0,
+        "dur": 2.0,
+        "key": 41,
+        "hand": "L"
+       },
+       {
+        "beat": 8.0,
+        "dur": 2.0,
+        "key": 43,
+        "hand": "L"
+       },
+       {
+        "beat": 10.0,
+        "dur": 2.0,
+        "key": 43,
+        "hand": "L"
+       },
+       {
+        "beat": 12.0,
+        "dur": 2.0,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 14.0,
+        "dur": 2.0,
+        "key": 48,
+        "hand": "L"
+       }
+      ]
+     },
+     "steps": [
+      {
+       "hand": "B",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Le due mani insieme, senza fretta: premi quando compaiono le note."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 0.5,
+       "loops": 2,
+       "text": "Ora a tempo, molto piano."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 0.75,
+       "loops": 2,
+       "text": "Un po' più veloce."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Velocità normale."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "l5",
+   "title": "La minore",
+   "description": "Un accordo più scuro.",
+   "slides": [
+    {
+     "id": "s1",
+     "type": "text",
+     "title": "Il colore minore",
+     "body": "L'accordo di La minore usa La, Do e Mi. Si distingue da quelli maggiori perché è più scuro e triste. Alternarlo a Do, Fa e Sol dà il giro più famoso del pop."
+    },
+    {
+     "id": "s2",
+     "type": "exercise",
+     "title": "La minore da solo",
+     "text": "Premi e senti il colore dell'accordo.",
+     "song": {
+      "title": "La minore da solo",
+      "timeSignature": [
+       4,
+       4
+      ],
+      "keyFifths": 0,
+      "bpm": 54,
+      "notes": [
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 57,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 57,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 57,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 57,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       }
+      ]
+     },
+     "steps": [
+      {
+       "hand": "R",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Premi tutte le note dell'accordo nello stesso momento."
+      },
+      {
+       "hand": "R",
+       "mode": "tempo",
+       "speed": 0.5,
+       "loops": 2,
+       "text": "Ora a tempo, molto piano."
+      },
+      {
+       "hand": "R",
+       "mode": "tempo",
+       "speed": 0.75,
+       "loops": 2,
+       "text": "Un po' più veloce."
+      }
+     ]
+    },
+    {
+     "id": "s3",
+     "type": "exercise",
+     "title": "Do, La minore, Fa, Sol",
+     "text": "Il giro dei quattro accordi.",
+     "song": {
+      "title": "Do, La minore, Fa, Sol",
+      "timeSignature": [
+       4,
+       4
+      ],
+      "keyFifths": 0,
+      "bpm": 54,
+      "notes": [
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 57,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 59,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 45,
+        "hand": "L"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 41,
+        "hand": "L"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 43,
+        "hand": "L"
+       }
+      ]
+     },
+     "steps": [
+      {
+       "hand": "B",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Le due mani insieme, senza fretta: premi quando compaiono le note."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 0.5,
+       "loops": 2,
+       "text": "Ora a tempo, molto piano."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 0.75,
+       "loops": 2,
+       "text": "Un po' più veloce."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Velocità normale."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "l6",
+   "title": "Accompagnare una melodia",
+   "description": "Gli accordi sotto una melodia semplice.",
+   "slides": [
+    {
+     "id": "s1",
+     "type": "text",
+     "title": "Cantare e accompagnare",
+     "body": "Ora la sinistra suona gli accordi e la destra la melodia. Suona piano gli accordi e un po' più forte la melodia, così si sente cosa canta. Se ti perdi, fermati e riparti dall'inizio della battuta."
+    },
+    {
+     "id": "s2",
+     "type": "exercise",
+     "title": "Giro con la melodia",
+     "text": "Gli accordi di sinistra sostengono una melodia lunga.",
+     "song": {
+      "title": "Giro con la melodia",
+      "timeSignature": [
+       4,
+       4
+      ],
+      "keyFifths": 0,
+      "bpm": 54,
+      "notes": [
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 43,
+        "hand": "L"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 47,
+        "hand": "L"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 50,
+        "hand": "L"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 45,
+        "hand": "L"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 41,
+        "hand": "L"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 45,
+        "hand": "L"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 16.0,
+        "dur": 4.0,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 16.0,
+        "dur": 4.0,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 16.0,
+        "dur": 4.0,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 20.0,
+        "dur": 4.0,
+        "key": 43,
+        "hand": "L"
+       },
+       {
+        "beat": 20.0,
+        "dur": 4.0,
+        "key": 47,
+        "hand": "L"
+       },
+       {
+        "beat": 20.0,
+        "dur": 4.0,
+        "key": 50,
+        "hand": "L"
+       },
+       {
+        "beat": 24.0,
+        "dur": 4.0,
+        "key": 45,
+        "hand": "L"
+       },
+       {
+        "beat": 24.0,
+        "dur": 4.0,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 24.0,
+        "dur": 4.0,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 28.0,
+        "dur": 4.0,
+        "key": 41,
+        "hand": "L"
+       },
+       {
+        "beat": 28.0,
+        "dur": 4.0,
+        "key": 45,
+        "hand": "L"
+       },
+       {
+        "beat": 28.0,
+        "dur": 4.0,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 16.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 20.0,
+        "dur": 4.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 24.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 28.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       }
+      ]
+     },
+     "steps": [
+      {
+       "hand": "L",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Prima la sinistra da sola."
+      },
+      {
+       "hand": "R",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Ora la destra da sola."
+      },
+      {
+       "hand": "B",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Le due mani insieme, senza fretta."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 0.5,
+       "loops": 2,
+       "text": "Ora a tempo, molto piano."
+      }
+     ]
+    },
+    {
+     "id": "s3",
+     "type": "exercise",
+     "title": "La melodia più mossa",
+     "text": "Gli stessi accordi, con una melodia in minime.",
+     "song": {
+      "title": "La melodia più mossa",
+      "timeSignature": [
+       4,
+       4
+      ],
+      "keyFifths": 0,
+      "bpm": 54,
+      "notes": [
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 43,
+        "hand": "L"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 47,
+        "hand": "L"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 50,
+        "hand": "L"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 45,
+        "hand": "L"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 41,
+        "hand": "L"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 45,
+        "hand": "L"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 16.0,
+        "dur": 4.0,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 16.0,
+        "dur": 4.0,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 16.0,
+        "dur": 4.0,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 20.0,
+        "dur": 4.0,
+        "key": 43,
+        "hand": "L"
+       },
+       {
+        "beat": 20.0,
+        "dur": 4.0,
+        "key": 47,
+        "hand": "L"
+       },
+       {
+        "beat": 20.0,
+        "dur": 4.0,
+        "key": 50,
+        "hand": "L"
+       },
+       {
+        "beat": 24.0,
+        "dur": 4.0,
+        "key": 45,
+        "hand": "L"
+       },
+       {
+        "beat": 24.0,
+        "dur": 4.0,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 24.0,
+        "dur": 4.0,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 28.0,
+        "dur": 4.0,
+        "key": 41,
+        "hand": "L"
+       },
+       {
+        "beat": 28.0,
+        "dur": 4.0,
+        "key": 45,
+        "hand": "L"
+       },
+       {
+        "beat": 28.0,
+        "dur": 4.0,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 0.0,
+        "dur": 2.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 2.0,
+        "dur": 2.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 2.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 6.0,
+        "dur": 2.0,
+        "key": 59,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 2.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 10.0,
+        "dur": 2.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 2.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 14.0,
+        "dur": 2.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 16.0,
+        "dur": 2.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 18.0,
+        "dur": 2.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 20.0,
+        "dur": 2.0,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 22.0,
+        "dur": 2.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 24.0,
+        "dur": 2.0,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 26.0,
+        "dur": 2.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 28.0,
+        "dur": 2.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 30.0,
+        "dur": 2.0,
+        "key": 60,
+        "hand": "R"
+       }
+      ]
+     },
+     "steps": [
+      {
+       "hand": "L",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Prima la sinistra da sola."
+      },
+      {
+       "hand": "R",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Ora la destra da sola."
+      },
+      {
+       "hand": "B",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Le due mani insieme, senza fretta."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 0.5,
+       "loops": 2,
+       "text": "Ora a tempo, molto piano."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

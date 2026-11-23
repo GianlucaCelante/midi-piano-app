@@ -169,7 +169,8 @@
               "loops": 2,
               "text": "Velocità normale."
             }
-          ]
+          ],
+          "touch": "target"
         },
         {
           "type": "exercise",
@@ -321,7 +322,8 @@
               "loops": 2,
               "text": "Velocità normale."
             }
-          ]
+          ],
+          "touch": "target"
         }
       ]
     },
@@ -486,7 +488,8 @@
               "loops": 2,
               "text": "Velocità normale."
             }
-          ]
+          ],
+          "touch": "target"
         },
         {
           "type": "exercise",
@@ -630,6 +633,138 @@
               "speed": 0.75,
               "loops": 2,
               "text": "A tempo."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Velocità normale."
+            }
+          ],
+          "touch": "target"
+        },
+        {
+          "type": "exercise",
+          "id": "s4",
+          "title": "Scala regolare",
+          "text": "Sali e scendi con la stessa forza su ogni nota.",
+          "song": {
+            "title": "Scala regolare",
+            "timeSignature": [
+              4,
+              4
+            ],
+            "keyFifths": 0,
+            "bpm": 66,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 1.0,
+                "key": 60,
+                "hand": "R"
+              },
+              {
+                "beat": 1.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 2.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 3.0,
+                "dur": 1.0,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 4.0,
+                "dur": 1.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 5.0,
+                "dur": 1.0,
+                "key": 69,
+                "hand": "R"
+              },
+              {
+                "beat": 6.0,
+                "dur": 1.0,
+                "key": 71,
+                "hand": "R"
+              },
+              {
+                "beat": 7.0,
+                "dur": 1.0,
+                "key": 72,
+                "hand": "R"
+              },
+              {
+                "beat": 8.0,
+                "dur": 1.0,
+                "key": 71,
+                "hand": "R"
+              },
+              {
+                "beat": 9.0,
+                "dur": 1.0,
+                "key": 69,
+                "hand": "R"
+              },
+              {
+                "beat": 10.0,
+                "dur": 1.0,
+                "key": 67,
+                "hand": "R"
+              },
+              {
+                "beat": 11.0,
+                "dur": 1.0,
+                "key": 65,
+                "hand": "R"
+              },
+              {
+                "beat": 12.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R"
+              },
+              {
+                "beat": 13.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R"
+              },
+              {
+                "beat": 14.0,
+                "dur": 2.0,
+                "key": 60,
+                "hand": "R"
+              }
+            ]
+          },
+          "touch": "even",
+          "steps": [
+            {
+              "hand": "R",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Cerca lo stesso peso su ogni dito."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 0.75,
+              "loops": 2,
+              "text": "A tempo, forza sempre uguale."
             },
             {
               "hand": "R",
@@ -803,7 +938,8 @@
               "loops": 2,
               "text": "Velocità normale."
             }
-          ]
+          ],
+          "touch": "target"
         },
         {
           "type": "exercise",
@@ -955,6 +1091,160 @@
               "loops": 2,
               "text": "Velocità normale."
             }
+          ],
+          "touch": "target"
+        },
+        {
+          "type": "exercise",
+          "id": "s4",
+          "title": "Calando",
+          "text": "Parti forte e cala un po' alla volta fino al piano.",
+          "song": {
+            "title": "Calando",
+            "timeSignature": [
+              4,
+              4
+            ],
+            "keyFifths": 0,
+            "bpm": 66,
+            "notes": [
+              {
+                "beat": 0.0,
+                "dur": 1.0,
+                "key": 67,
+                "hand": "R",
+                "vel": 110
+              },
+              {
+                "beat": 1.0,
+                "dur": 1.0,
+                "key": 65,
+                "hand": "R",
+                "vel": 105
+              },
+              {
+                "beat": 2.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R",
+                "vel": 100
+              },
+              {
+                "beat": 3.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R",
+                "vel": 95
+              },
+              {
+                "beat": 4.0,
+                "dur": 1.0,
+                "key": 60,
+                "hand": "R",
+                "vel": 90
+              },
+              {
+                "beat": 5.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R",
+                "vel": 85
+              },
+              {
+                "beat": 6.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R",
+                "vel": 80
+              },
+              {
+                "beat": 7.0,
+                "dur": 1.0,
+                "key": 65,
+                "hand": "R",
+                "vel": 75
+              },
+              {
+                "beat": 8.0,
+                "dur": 1.0,
+                "key": 67,
+                "hand": "R",
+                "vel": 70
+              },
+              {
+                "beat": 9.0,
+                "dur": 1.0,
+                "key": 65,
+                "hand": "R",
+                "vel": 65
+              },
+              {
+                "beat": 10.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R",
+                "vel": 60
+              },
+              {
+                "beat": 11.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R",
+                "vel": 55
+              },
+              {
+                "beat": 12.0,
+                "dur": 1.0,
+                "key": 60,
+                "hand": "R",
+                "vel": 50
+              },
+              {
+                "beat": 13.0,
+                "dur": 1.0,
+                "key": 62,
+                "hand": "R",
+                "vel": 45
+              },
+              {
+                "beat": 14.0,
+                "dur": 1.0,
+                "key": 64,
+                "hand": "R",
+                "vel": 40
+              },
+              {
+                "beat": 15.0,
+                "dur": 1.0,
+                "key": 60,
+                "hand": "R",
+                "vel": 35
+              }
+            ]
+          },
+          "touch": "dim",
+          "steps": [
+            {
+              "hand": "R",
+              "mode": "wait",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Ogni nota un po' più piano della precedente."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 0.75,
+              "loops": 2,
+              "text": "A tempo, cala piano piano."
+            },
+            {
+              "hand": "R",
+              "mode": "tempo",
+              "speed": 1.0,
+              "loops": 2,
+              "text": "Velocità normale."
+            }
           ]
         }
       ]
@@ -968,7 +1258,7 @@
           "type": "text",
           "id": "s1",
           "title": "Il pedale",
-          "body": "Il pedale destro solleva gli smorzatori e le note continuano a suonare anche dopo che hai alzato le dita. L'app legge il pedale della tua tastiera e prolunga il suono come un piano vero. Non può però controllare se lo premi al momento giusto: lo senti con l'orecchio."
+          "body": "Il pedale destro solleva gli smorzatori e le note continuano a suonare anche dopo che hai alzato le dita. L'app legge il pedale della tua tastiera e prolunga il suono come un piano vero. Negli esercizi di questa lezione l'app controlla anche quando lo premi e quando lo alzi, con un margine largo: il pulsante «Pedale» in alto ti dice cosa fare e diventa verde quando sei giusto. Senza pedale lo puoi toccare sullo schermo."
         },
         {
           "type": "text",
@@ -1078,6 +1368,36 @@
               "speed": 0.75,
               "loops": 2,
               "text": "A tempo, cambiando il pedale a ogni accordo."
+            }
+          ],
+          "pedal": [
+            {
+              "beat": 0.5,
+              "down": true
+            },
+            {
+              "beat": 4.0,
+              "down": false
+            },
+            {
+              "beat": 4.5,
+              "down": true
+            },
+            {
+              "beat": 8.0,
+              "down": false
+            },
+            {
+              "beat": 8.5,
+              "down": true
+            },
+            {
+              "beat": 12.0,
+              "down": false
+            },
+            {
+              "beat": 12.5,
+              "down": true
             }
           ]
         },
@@ -1245,6 +1565,36 @@
               "speed": 0.75,
               "loops": 2,
               "text": "A tempo, piano."
+            }
+          ],
+          "pedal": [
+            {
+              "beat": 0.5,
+              "down": true
+            },
+            {
+              "beat": 4.0,
+              "down": false
+            },
+            {
+              "beat": 4.5,
+              "down": true
+            },
+            {
+              "beat": 8.0,
+              "down": false
+            },
+            {
+              "beat": 8.5,
+              "down": true
+            },
+            {
+              "beat": 12.0,
+              "down": false
+            },
+            {
+              "beat": 12.5,
+              "down": true
             }
           ]
         }
@@ -1446,7 +1796,8 @@
               "loops": 2,
               "text": "A tempo, melodia in primo piano."
             }
-          ]
+          ],
+          "touch": "target"
         },
         {
           "type": "exercise",
@@ -1633,7 +1984,8 @@
               "loops": 2,
               "text": "A tempo, melodia in primo piano."
             }
-          ]
+          ],
+          "touch": "target"
         },
         {
           "type": "text",

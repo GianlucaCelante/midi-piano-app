@@ -1,0 +1,5590 @@
+{
+ "id": "tecnica-quotidiana",
+ "title": "Tecnica quotidiana",
+ "lessons": [
+  {
+   "id": "l1",
+   "title": "Cinque dita regolari",
+   "description": "Il classico esercizio che sale di grado: dita uguali, suono uguale.",
+   "slides": [
+    {
+     "id": "s1",
+     "type": "text",
+     "title": "Dita uguali",
+     "body": "Questi schemi sono tradizionali e di pubblico dominio, nello stile degli esercizi di Hanon. Ogni giro di otto crome si ripete partendo da un grado più alto. Cerca un suono uguale in tutte le dita: il quarto e il quinto dito sono i più deboli, quindi dagli attenzione."
+    },
+    {
+     "id": "s2",
+     "type": "exercise",
+     "title": "Salita in cinque dita",
+     "text": "Quattro giri che salgono di grado, le due mani all'ottava.",
+     "song": {
+      "title": "Salita in cinque dita",
+      "timeSignature": [
+       4,
+       4
+      ],
+      "keyFifths": 0,
+      "bpm": 66,
+      "notes": [
+       {
+        "beat": 0.0,
+        "dur": 0.5,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 0.5,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 1.0,
+        "dur": 0.5,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 1.5,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 2.0,
+        "dur": 0.5,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 2.5,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 3.0,
+        "dur": 0.5,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 3.5,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 0.5,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 4.5,
+        "dur": 0.5,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 5.0,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 5.5,
+        "dur": 0.5,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 6.0,
+        "dur": 0.5,
+        "key": 71,
+        "hand": "R"
+       },
+       {
+        "beat": 6.5,
+        "dur": 0.5,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 7.0,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 7.5,
+        "dur": 0.5,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 8.5,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 9.0,
+        "dur": 0.5,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 9.5,
+        "dur": 0.5,
+        "key": 71,
+        "hand": "R"
+       },
+       {
+        "beat": 10.0,
+        "dur": 0.5,
+        "key": 72,
+        "hand": "R"
+       },
+       {
+        "beat": 10.5,
+        "dur": 0.5,
+        "key": 71,
+        "hand": "R"
+       },
+       {
+        "beat": 11.0,
+        "dur": 0.5,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 11.5,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 0.5,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 12.5,
+        "dur": 0.5,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 13.0,
+        "dur": 0.5,
+        "key": 71,
+        "hand": "R"
+       },
+       {
+        "beat": 13.5,
+        "dur": 0.5,
+        "key": 72,
+        "hand": "R"
+       },
+       {
+        "beat": 14.0,
+        "dur": 0.5,
+        "key": 74,
+        "hand": "R"
+       },
+       {
+        "beat": 14.5,
+        "dur": 0.5,
+        "key": 72,
+        "hand": "R"
+       },
+       {
+        "beat": 15.0,
+        "dur": 0.5,
+        "key": 71,
+        "hand": "R"
+       },
+       {
+        "beat": 15.5,
+        "dur": 0.5,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 16.0,
+        "dur": 4.0,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 0.5,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 0.5,
+        "dur": 0.5,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 1.0,
+        "dur": 0.5,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 1.5,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 2.0,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 2.5,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 3.0,
+        "dur": 0.5,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 3.5,
+        "dur": 0.5,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 4.0,
+        "dur": 0.5,
+        "key": 50,
+        "hand": "L"
+       },
+       {
+        "beat": 4.5,
+        "dur": 0.5,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 5.0,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 5.5,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 6.0,
+        "dur": 0.5,
+        "key": 59,
+        "hand": "L"
+       },
+       {
+        "beat": 6.5,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 7.0,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 7.5,
+        "dur": 0.5,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 8.0,
+        "dur": 0.5,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 8.5,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 9.0,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 9.5,
+        "dur": 0.5,
+        "key": 59,
+        "hand": "L"
+       },
+       {
+        "beat": 10.0,
+        "dur": 0.5,
+        "key": 60,
+        "hand": "L"
+       },
+       {
+        "beat": 10.5,
+        "dur": 0.5,
+        "key": 59,
+        "hand": "L"
+       },
+       {
+        "beat": 11.0,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 11.5,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 12.0,
+        "dur": 0.5,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 12.5,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 13.0,
+        "dur": 0.5,
+        "key": 59,
+        "hand": "L"
+       },
+       {
+        "beat": 13.5,
+        "dur": 0.5,
+        "key": 60,
+        "hand": "L"
+       },
+       {
+        "beat": 14.0,
+        "dur": 0.5,
+        "key": 62,
+        "hand": "L"
+       },
+       {
+        "beat": 14.5,
+        "dur": 0.5,
+        "key": 60,
+        "hand": "L"
+       },
+       {
+        "beat": 15.0,
+        "dur": 0.5,
+        "key": 59,
+        "hand": "L"
+       },
+       {
+        "beat": 15.5,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 16.0,
+        "dur": 4.0,
+        "key": 53,
+        "hand": "L"
+       }
+      ]
+     },
+     "steps": [
+      {
+       "hand": "L",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Prima la sinistra da sola: è lei che regge il ritmo."
+      },
+      {
+       "hand": "R",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Ora la destra da sola."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 0.75,
+       "loops": 2,
+       "text": "Le due mani insieme, a tempo e un po' più piano."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 1.0,
+       "loops": 2,
+       "text": "Le due mani insieme, a velocità normale."
+      }
+     ]
+    },
+    {
+     "id": "s3",
+     "type": "exercise",
+     "title": "Salita e discesa",
+     "text": "Sali per quattro giri e poi scendi: otto battute.",
+     "song": {
+      "title": "Salita e discesa",
+      "timeSignature": [
+       4,
+       4
+      ],
+      "keyFifths": 0,
+      "bpm": 66,
+      "notes": [
+       {
+        "beat": 0.0,
+        "dur": 0.5,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 0.5,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 1.0,
+        "dur": 0.5,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 1.5,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 2.0,
+        "dur": 0.5,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 2.5,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 3.0,
+        "dur": 0.5,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 3.5,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 0.5,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 4.5,
+        "dur": 0.5,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 5.0,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 5.5,
+        "dur": 0.5,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 6.0,
+        "dur": 0.5,
+        "key": 71,
+        "hand": "R"
+       },
+       {
+        "beat": 6.5,
+        "dur": 0.5,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 7.0,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 7.5,
+        "dur": 0.5,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 8.5,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 9.0,
+        "dur": 0.5,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 9.5,
+        "dur": 0.5,
+        "key": 71,
+        "hand": "R"
+       },
+       {
+        "beat": 10.0,
+        "dur": 0.5,
+        "key": 72,
+        "hand": "R"
+       },
+       {
+        "beat": 10.5,
+        "dur": 0.5,
+        "key": 71,
+        "hand": "R"
+       },
+       {
+        "beat": 11.0,
+        "dur": 0.5,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 11.5,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 0.5,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 12.5,
+        "dur": 0.5,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 13.0,
+        "dur": 0.5,
+        "key": 71,
+        "hand": "R"
+       },
+       {
+        "beat": 13.5,
+        "dur": 0.5,
+        "key": 72,
+        "hand": "R"
+       },
+       {
+        "beat": 14.0,
+        "dur": 0.5,
+        "key": 74,
+        "hand": "R"
+       },
+       {
+        "beat": 14.5,
+        "dur": 0.5,
+        "key": 72,
+        "hand": "R"
+       },
+       {
+        "beat": 15.0,
+        "dur": 0.5,
+        "key": 71,
+        "hand": "R"
+       },
+       {
+        "beat": 15.5,
+        "dur": 0.5,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 16.0,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 16.5,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 17.0,
+        "dur": 0.5,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 17.5,
+        "dur": 0.5,
+        "key": 71,
+        "hand": "R"
+       },
+       {
+        "beat": 18.0,
+        "dur": 0.5,
+        "key": 72,
+        "hand": "R"
+       },
+       {
+        "beat": 18.5,
+        "dur": 0.5,
+        "key": 71,
+        "hand": "R"
+       },
+       {
+        "beat": 19.0,
+        "dur": 0.5,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 19.5,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 20.0,
+        "dur": 0.5,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 20.5,
+        "dur": 0.5,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 21.0,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 21.5,
+        "dur": 0.5,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 22.0,
+        "dur": 0.5,
+        "key": 71,
+        "hand": "R"
+       },
+       {
+        "beat": 22.5,
+        "dur": 0.5,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 23.0,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 23.5,
+        "dur": 0.5,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 24.0,
+        "dur": 0.5,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 24.5,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 25.0,
+        "dur": 0.5,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 25.5,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 26.0,
+        "dur": 0.5,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 26.5,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 27.0,
+        "dur": 0.5,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 27.5,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 28.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 0.5,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 0.5,
+        "dur": 0.5,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 1.0,
+        "dur": 0.5,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 1.5,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 2.0,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 2.5,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 3.0,
+        "dur": 0.5,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 3.5,
+        "dur": 0.5,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 4.0,
+        "dur": 0.5,
+        "key": 50,
+        "hand": "L"
+       },
+       {
+        "beat": 4.5,
+        "dur": 0.5,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 5.0,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 5.5,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 6.0,
+        "dur": 0.5,
+        "key": 59,
+        "hand": "L"
+       },
+       {
+        "beat": 6.5,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 7.0,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 7.5,
+        "dur": 0.5,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 8.0,
+        "dur": 0.5,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 8.5,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 9.0,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 9.5,
+        "dur": 0.5,
+        "key": 59,
+        "hand": "L"
+       },
+       {
+        "beat": 10.0,
+        "dur": 0.5,
+        "key": 60,
+        "hand": "L"
+       },
+       {
+        "beat": 10.5,
+        "dur": 0.5,
+        "key": 59,
+        "hand": "L"
+       },
+       {
+        "beat": 11.0,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 11.5,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 12.0,
+        "dur": 0.5,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 12.5,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 13.0,
+        "dur": 0.5,
+        "key": 59,
+        "hand": "L"
+       },
+       {
+        "beat": 13.5,
+        "dur": 0.5,
+        "key": 60,
+        "hand": "L"
+       },
+       {
+        "beat": 14.0,
+        "dur": 0.5,
+        "key": 62,
+        "hand": "L"
+       },
+       {
+        "beat": 14.5,
+        "dur": 0.5,
+        "key": 60,
+        "hand": "L"
+       },
+       {
+        "beat": 15.0,
+        "dur": 0.5,
+        "key": 59,
+        "hand": "L"
+       },
+       {
+        "beat": 15.5,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 16.0,
+        "dur": 0.5,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 16.5,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 17.0,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 17.5,
+        "dur": 0.5,
+        "key": 59,
+        "hand": "L"
+       },
+       {
+        "beat": 18.0,
+        "dur": 0.5,
+        "key": 60,
+        "hand": "L"
+       },
+       {
+        "beat": 18.5,
+        "dur": 0.5,
+        "key": 59,
+        "hand": "L"
+       },
+       {
+        "beat": 19.0,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 19.5,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 20.0,
+        "dur": 0.5,
+        "key": 50,
+        "hand": "L"
+       },
+       {
+        "beat": 20.5,
+        "dur": 0.5,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 21.0,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 21.5,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 22.0,
+        "dur": 0.5,
+        "key": 59,
+        "hand": "L"
+       },
+       {
+        "beat": 22.5,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 23.0,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 23.5,
+        "dur": 0.5,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 24.0,
+        "dur": 0.5,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 24.5,
+        "dur": 0.5,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 25.0,
+        "dur": 0.5,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 25.5,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 26.0,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 26.5,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 27.0,
+        "dur": 0.5,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 27.5,
+        "dur": 0.5,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 28.0,
+        "dur": 4.0,
+        "key": 48,
+        "hand": "L"
+       }
+      ]
+     },
+     "steps": [
+      {
+       "hand": "L",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Prima la sinistra da sola: è lei che regge il ritmo."
+      },
+      {
+       "hand": "R",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Ora la destra da sola."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 0.75,
+       "loops": 2,
+       "text": "Le due mani insieme, a tempo e un po' più piano."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 1.0,
+       "loops": 2,
+       "text": "Le due mani insieme, a velocità normale."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "l2",
+   "title": "Cinque dita in ordine",
+   "description": "Un altro schema sulle stesse cinque note.",
+   "slides": [
+    {
+     "id": "s1",
+     "type": "text",
+     "title": "Un'altra forma",
+     "body": "Lo stesso gesto può cambiare forma: dita in ordine, dita alternate. Il polso resta morbido e il braccio accompagna senza irrigidirsi. Se senti tensione, fermati e ricomincia più piano."
+    },
+    {
+     "id": "s2",
+     "type": "exercise",
+     "title": "Dita in ordine",
+     "text": "Uno, due, tre, quattro, cinque e ritorno: sempre uguale.",
+     "song": {
+      "title": "Dita in ordine",
+      "timeSignature": [
+       4,
+       4
+      ],
+      "keyFifths": 0,
+      "bpm": 66,
+      "notes": [
+       {
+        "beat": 0.0,
+        "dur": 0.5,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 0.5,
+        "dur": 0.5,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 1.0,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 1.5,
+        "dur": 0.5,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 2.0,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 2.5,
+        "dur": 0.5,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 3.0,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 3.5,
+        "dur": 0.5,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 0.5,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 4.5,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 5.0,
+        "dur": 0.5,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 5.5,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 6.0,
+        "dur": 0.5,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 6.5,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 7.0,
+        "dur": 0.5,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 7.5,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 8.5,
+        "dur": 0.5,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 9.0,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 9.5,
+        "dur": 0.5,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 10.0,
+        "dur": 0.5,
+        "key": 71,
+        "hand": "R"
+       },
+       {
+        "beat": 10.5,
+        "dur": 0.5,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 11.0,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 11.5,
+        "dur": 0.5,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 0.5,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 12.5,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 13.0,
+        "dur": 0.5,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 13.5,
+        "dur": 0.5,
+        "key": 71,
+        "hand": "R"
+       },
+       {
+        "beat": 14.0,
+        "dur": 0.5,
+        "key": 72,
+        "hand": "R"
+       },
+       {
+        "beat": 14.5,
+        "dur": 0.5,
+        "key": 71,
+        "hand": "R"
+       },
+       {
+        "beat": 15.0,
+        "dur": 0.5,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 15.5,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 16.0,
+        "dur": 4.0,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 0.5,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 0.5,
+        "dur": 0.5,
+        "key": 50,
+        "hand": "L"
+       },
+       {
+        "beat": 1.0,
+        "dur": 0.5,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 1.5,
+        "dur": 0.5,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 2.0,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 2.5,
+        "dur": 0.5,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 3.0,
+        "dur": 0.5,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 3.5,
+        "dur": 0.5,
+        "key": 50,
+        "hand": "L"
+       },
+       {
+        "beat": 4.0,
+        "dur": 0.5,
+        "key": 50,
+        "hand": "L"
+       },
+       {
+        "beat": 4.5,
+        "dur": 0.5,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 5.0,
+        "dur": 0.5,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 5.5,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 6.0,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 6.5,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 7.0,
+        "dur": 0.5,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 7.5,
+        "dur": 0.5,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 8.0,
+        "dur": 0.5,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 8.5,
+        "dur": 0.5,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 9.0,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 9.5,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 10.0,
+        "dur": 0.5,
+        "key": 59,
+        "hand": "L"
+       },
+       {
+        "beat": 10.5,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 11.0,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 11.5,
+        "dur": 0.5,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 12.0,
+        "dur": 0.5,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 12.5,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 13.0,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 13.5,
+        "dur": 0.5,
+        "key": 59,
+        "hand": "L"
+       },
+       {
+        "beat": 14.0,
+        "dur": 0.5,
+        "key": 60,
+        "hand": "L"
+       },
+       {
+        "beat": 14.5,
+        "dur": 0.5,
+        "key": 59,
+        "hand": "L"
+       },
+       {
+        "beat": 15.0,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 15.5,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 16.0,
+        "dur": 4.0,
+        "key": 53,
+        "hand": "L"
+       }
+      ]
+     },
+     "steps": [
+      {
+       "hand": "L",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Prima la sinistra da sola: è lei che regge il ritmo."
+      },
+      {
+       "hand": "R",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Ora la destra da sola."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 0.75,
+       "loops": 2,
+       "text": "Le due mani insieme, a tempo e un po' più piano."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 1.0,
+       "loops": 2,
+       "text": "Le due mani insieme, a velocità normale."
+      }
+     ]
+    },
+    {
+     "id": "s3",
+     "type": "exercise",
+     "title": "Dita alternate",
+     "text": "Un ordine meno ovvio: ogni dito deve sapere dove andare.",
+     "song": {
+      "title": "Dita alternate",
+      "timeSignature": [
+       4,
+       4
+      ],
+      "keyFifths": 0,
+      "bpm": 60,
+      "notes": [
+       {
+        "beat": 0.0,
+        "dur": 0.5,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 0.5,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 1.0,
+        "dur": 0.5,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 1.5,
+        "dur": 0.5,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 2.0,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 2.5,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 3.0,
+        "dur": 0.5,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 3.5,
+        "dur": 0.5,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 0.5,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 4.5,
+        "dur": 0.5,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 5.0,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 5.5,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 6.0,
+        "dur": 0.5,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 6.5,
+        "dur": 0.5,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 7.0,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 7.5,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 8.5,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 9.0,
+        "dur": 0.5,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 9.5,
+        "dur": 0.5,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 10.0,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 10.5,
+        "dur": 0.5,
+        "key": 71,
+        "hand": "R"
+       },
+       {
+        "beat": 11.0,
+        "dur": 0.5,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 11.5,
+        "dur": 0.5,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 0.5,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 12.5,
+        "dur": 0.5,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 13.0,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 13.5,
+        "dur": 0.5,
+        "key": 71,
+        "hand": "R"
+       },
+       {
+        "beat": 14.0,
+        "dur": 0.5,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 14.5,
+        "dur": 0.5,
+        "key": 72,
+        "hand": "R"
+       },
+       {
+        "beat": 15.0,
+        "dur": 0.5,
+        "key": 71,
+        "hand": "R"
+       },
+       {
+        "beat": 15.5,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 16.0,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 16.5,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 17.0,
+        "dur": 0.5,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 17.5,
+        "dur": 0.5,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 18.0,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 18.5,
+        "dur": 0.5,
+        "key": 71,
+        "hand": "R"
+       },
+       {
+        "beat": 19.0,
+        "dur": 0.5,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 19.5,
+        "dur": 0.5,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 20.0,
+        "dur": 0.5,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 20.5,
+        "dur": 0.5,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 21.0,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 21.5,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 22.0,
+        "dur": 0.5,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 22.5,
+        "dur": 0.5,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 23.0,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 23.5,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 24.0,
+        "dur": 0.5,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 24.5,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 25.0,
+        "dur": 0.5,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 25.5,
+        "dur": 0.5,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 26.0,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 26.5,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 27.0,
+        "dur": 0.5,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 27.5,
+        "dur": 0.5,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 28.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 0.5,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 0.5,
+        "dur": 0.5,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 1.0,
+        "dur": 0.5,
+        "key": 50,
+        "hand": "L"
+       },
+       {
+        "beat": 1.5,
+        "dur": 0.5,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 2.0,
+        "dur": 0.5,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 2.5,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 3.0,
+        "dur": 0.5,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 3.5,
+        "dur": 0.5,
+        "key": 50,
+        "hand": "L"
+       },
+       {
+        "beat": 4.0,
+        "dur": 0.5,
+        "key": 50,
+        "hand": "L"
+       },
+       {
+        "beat": 4.5,
+        "dur": 0.5,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 5.0,
+        "dur": 0.5,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 5.5,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 6.0,
+        "dur": 0.5,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 6.5,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 7.0,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 7.5,
+        "dur": 0.5,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 8.0,
+        "dur": 0.5,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 8.5,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 9.0,
+        "dur": 0.5,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 9.5,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 10.0,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 10.5,
+        "dur": 0.5,
+        "key": 59,
+        "hand": "L"
+       },
+       {
+        "beat": 11.0,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 11.5,
+        "dur": 0.5,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 12.0,
+        "dur": 0.5,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 12.5,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 13.0,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 13.5,
+        "dur": 0.5,
+        "key": 59,
+        "hand": "L"
+       },
+       {
+        "beat": 14.0,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 14.5,
+        "dur": 0.5,
+        "key": 60,
+        "hand": "L"
+       },
+       {
+        "beat": 15.0,
+        "dur": 0.5,
+        "key": 59,
+        "hand": "L"
+       },
+       {
+        "beat": 15.5,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 16.0,
+        "dur": 0.5,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 16.5,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 17.0,
+        "dur": 0.5,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 17.5,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 18.0,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 18.5,
+        "dur": 0.5,
+        "key": 59,
+        "hand": "L"
+       },
+       {
+        "beat": 19.0,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 19.5,
+        "dur": 0.5,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 20.0,
+        "dur": 0.5,
+        "key": 50,
+        "hand": "L"
+       },
+       {
+        "beat": 20.5,
+        "dur": 0.5,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 21.0,
+        "dur": 0.5,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 21.5,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 22.0,
+        "dur": 0.5,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 22.5,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 23.0,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 23.5,
+        "dur": 0.5,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 24.0,
+        "dur": 0.5,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 24.5,
+        "dur": 0.5,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 25.0,
+        "dur": 0.5,
+        "key": 50,
+        "hand": "L"
+       },
+       {
+        "beat": 25.5,
+        "dur": 0.5,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 26.0,
+        "dur": 0.5,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 26.5,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 27.0,
+        "dur": 0.5,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 27.5,
+        "dur": 0.5,
+        "key": 50,
+        "hand": "L"
+       },
+       {
+        "beat": 28.0,
+        "dur": 4.0,
+        "key": 48,
+        "hand": "L"
+       }
+      ]
+     },
+     "steps": [
+      {
+       "hand": "L",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Prima la sinistra da sola: è lei che regge il ritmo."
+      },
+      {
+       "hand": "R",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Ora la destra da sola."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 0.75,
+       "loops": 2,
+       "text": "Le due mani insieme, a tempo e un po' più piano."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 1.0,
+       "loops": 2,
+       "text": "Le due mani insieme, a velocità normale."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "l3",
+   "title": "Terze",
+   "description": "Due note insieme, in movimento di scala.",
+   "slides": [
+    {
+     "id": "s1",
+     "type": "text",
+     "title": "Terze in scala",
+     "body": "Le terze sono due note che si suonano insieme, a distanza di tre note nella scala. La mano deve restare ferma e compatta, senza aprirsi e chiudersi. Premi le due dita nello stesso momento: se non lo fanno, abbassa la velocità."
+    },
+    {
+     "id": "s2",
+     "type": "exercise",
+     "title": "Terze di Do",
+     "text": "Terze che salgono e scendono, sulla scala di Do.",
+     "song": {
+      "title": "Terze di Do",
+      "timeSignature": [
+       4,
+       4
+      ],
+      "keyFifths": 0,
+      "bpm": 60,
+      "notes": [
+       {
+        "beat": 0.0,
+        "dur": 1.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 1.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 1.0,
+        "dur": 1.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 1.0,
+        "dur": 1.0,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 2.0,
+        "dur": 1.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 2.0,
+        "dur": 1.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 3.0,
+        "dur": 1.0,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 3.0,
+        "dur": 1.0,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 1.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 1.0,
+        "key": 71,
+        "hand": "R"
+       },
+       {
+        "beat": 5.0,
+        "dur": 1.0,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 5.0,
+        "dur": 1.0,
+        "key": 72,
+        "hand": "R"
+       },
+       {
+        "beat": 6.0,
+        "dur": 1.0,
+        "key": 71,
+        "hand": "R"
+       },
+       {
+        "beat": 6.0,
+        "dur": 1.0,
+        "key": 74,
+        "hand": "R"
+       },
+       {
+        "beat": 7.0,
+        "dur": 1.0,
+        "key": 71,
+        "hand": "R"
+       },
+       {
+        "beat": 7.0,
+        "dur": 1.0,
+        "key": 74,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 1.0,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 1.0,
+        "key": 72,
+        "hand": "R"
+       },
+       {
+        "beat": 9.0,
+        "dur": 1.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 9.0,
+        "dur": 1.0,
+        "key": 71,
+        "hand": "R"
+       },
+       {
+        "beat": 10.0,
+        "dur": 1.0,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 10.0,
+        "dur": 1.0,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 11.0,
+        "dur": 1.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 11.0,
+        "dur": 1.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 1.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 1.0,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 13.0,
+        "dur": 1.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 13.0,
+        "dur": 1.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 14.0,
+        "dur": 2.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 14.0,
+        "dur": 2.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 2.0,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 2.0,
+        "dur": 2.0,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 4.0,
+        "dur": 2.0,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 6.0,
+        "dur": 2.0,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 8.0,
+        "dur": 2.0,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 10.0,
+        "dur": 2.0,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 12.0,
+        "dur": 2.0,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 14.0,
+        "dur": 2.0,
+        "key": 48,
+        "hand": "L"
+       }
+      ]
+     },
+     "steps": [
+      {
+       "hand": "L",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Prima la sinistra da sola: è lei che regge il ritmo."
+      },
+      {
+       "hand": "R",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Ora la destra da sola."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 0.75,
+       "loops": 2,
+       "text": "Le due mani insieme, a tempo e un po' più piano."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 1.0,
+       "loops": 2,
+       "text": "Le due mani insieme, a velocità normale."
+      }
+     ]
+    },
+    {
+     "id": "s3",
+     "type": "exercise",
+     "title": "Terze di Sol",
+     "text": "Le stesse terze in Sol maggiore: attenzione al fa diesis.",
+     "song": {
+      "title": "Terze di Sol",
+      "timeSignature": [
+       4,
+       4
+      ],
+      "keyFifths": 1,
+      "bpm": 60,
+      "notes": [
+       {
+        "beat": 0.0,
+        "dur": 1.0,
+        "key": 55,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 1.0,
+        "key": 59,
+        "hand": "R"
+       },
+       {
+        "beat": 1.0,
+        "dur": 1.0,
+        "key": 57,
+        "hand": "R"
+       },
+       {
+        "beat": 1.0,
+        "dur": 1.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 2.0,
+        "dur": 1.0,
+        "key": 59,
+        "hand": "R"
+       },
+       {
+        "beat": 2.0,
+        "dur": 1.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 3.0,
+        "dur": 1.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 3.0,
+        "dur": 1.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 1.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 1.0,
+        "key": 66,
+        "hand": "R"
+       },
+       {
+        "beat": 5.0,
+        "dur": 1.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 5.0,
+        "dur": 1.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 6.0,
+        "dur": 1.0,
+        "key": 66,
+        "hand": "R"
+       },
+       {
+        "beat": 6.0,
+        "dur": 1.0,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 7.0,
+        "dur": 1.0,
+        "key": 66,
+        "hand": "R"
+       },
+       {
+        "beat": 7.0,
+        "dur": 1.0,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 1.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 1.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 9.0,
+        "dur": 1.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 9.0,
+        "dur": 1.0,
+        "key": 66,
+        "hand": "R"
+       },
+       {
+        "beat": 10.0,
+        "dur": 1.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 10.0,
+        "dur": 1.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 11.0,
+        "dur": 1.0,
+        "key": 59,
+        "hand": "R"
+       },
+       {
+        "beat": 11.0,
+        "dur": 1.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 1.0,
+        "key": 57,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 1.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 13.0,
+        "dur": 1.0,
+        "key": 55,
+        "hand": "R"
+       },
+       {
+        "beat": 13.0,
+        "dur": 1.0,
+        "key": 59,
+        "hand": "R"
+       },
+       {
+        "beat": 14.0,
+        "dur": 2.0,
+        "key": 55,
+        "hand": "R"
+       },
+       {
+        "beat": 14.0,
+        "dur": 2.0,
+        "key": 59,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 2.0,
+        "key": 43,
+        "hand": "L"
+       },
+       {
+        "beat": 2.0,
+        "dur": 2.0,
+        "key": 43,
+        "hand": "L"
+       },
+       {
+        "beat": 4.0,
+        "dur": 2.0,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 6.0,
+        "dur": 2.0,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 8.0,
+        "dur": 2.0,
+        "key": 50,
+        "hand": "L"
+       },
+       {
+        "beat": 10.0,
+        "dur": 2.0,
+        "key": 50,
+        "hand": "L"
+       },
+       {
+        "beat": 12.0,
+        "dur": 2.0,
+        "key": 43,
+        "hand": "L"
+       },
+       {
+        "beat": 14.0,
+        "dur": 2.0,
+        "key": 43,
+        "hand": "L"
+       }
+      ]
+     },
+     "steps": [
+      {
+       "hand": "L",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Prima la sinistra da sola: è lei che regge il ritmo."
+      },
+      {
+       "hand": "R",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Ora la destra da sola."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 0.75,
+       "loops": 2,
+       "text": "Le due mani insieme, a tempo e un po' più piano."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 1.0,
+       "loops": 2,
+       "text": "Le due mani insieme, a velocità normale."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "l4",
+   "title": "Scale in due ottave",
+   "description": "Passare il pollice senza che si senta.",
+   "slides": [
+    {
+     "id": "s1",
+     "type": "text",
+     "title": "Il pollice scivola",
+     "body": "Per suonare una scala lunga il pollice passa sotto la mano. Il movimento va preparato con un po' di anticipo, senza spostare il polso. La scala ben fatta suona come un unico filo."
+    },
+    {
+     "id": "s2",
+     "type": "exercise",
+     "title": "Scala di Do in due ottave",
+     "text": "Le due mani all'ottava: sali e scendi per due ottave.",
+     "song": {
+      "title": "Scala di Do in due ottave",
+      "timeSignature": [
+       4,
+       4
+      ],
+      "keyFifths": 0,
+      "bpm": 60,
+      "notes": [
+       {
+        "beat": 0.0,
+        "dur": 0.5,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 0.5,
+        "dur": 0.5,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 1.0,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 1.5,
+        "dur": 0.5,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 2.0,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 2.5,
+        "dur": 0.5,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 3.0,
+        "dur": 0.5,
+        "key": 71,
+        "hand": "R"
+       },
+       {
+        "beat": 3.5,
+        "dur": 0.5,
+        "key": 72,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 0.5,
+        "key": 74,
+        "hand": "R"
+       },
+       {
+        "beat": 4.5,
+        "dur": 0.5,
+        "key": 76,
+        "hand": "R"
+       },
+       {
+        "beat": 5.0,
+        "dur": 0.5,
+        "key": 77,
+        "hand": "R"
+       },
+       {
+        "beat": 5.5,
+        "dur": 0.5,
+        "key": 79,
+        "hand": "R"
+       },
+       {
+        "beat": 6.0,
+        "dur": 0.5,
+        "key": 81,
+        "hand": "R"
+       },
+       {
+        "beat": 6.5,
+        "dur": 0.5,
+        "key": 83,
+        "hand": "R"
+       },
+       {
+        "beat": 7.0,
+        "dur": 0.5,
+        "key": 84,
+        "hand": "R"
+       },
+       {
+        "beat": 7.5,
+        "dur": 0.5,
+        "key": 83,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 0.5,
+        "key": 81,
+        "hand": "R"
+       },
+       {
+        "beat": 8.5,
+        "dur": 0.5,
+        "key": 79,
+        "hand": "R"
+       },
+       {
+        "beat": 9.0,
+        "dur": 0.5,
+        "key": 77,
+        "hand": "R"
+       },
+       {
+        "beat": 9.5,
+        "dur": 0.5,
+        "key": 76,
+        "hand": "R"
+       },
+       {
+        "beat": 10.0,
+        "dur": 0.5,
+        "key": 74,
+        "hand": "R"
+       },
+       {
+        "beat": 10.5,
+        "dur": 0.5,
+        "key": 72,
+        "hand": "R"
+       },
+       {
+        "beat": 11.0,
+        "dur": 0.5,
+        "key": 71,
+        "hand": "R"
+       },
+       {
+        "beat": 11.5,
+        "dur": 0.5,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 12.5,
+        "dur": 0.5,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 13.0,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 13.5,
+        "dur": 0.5,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 14.0,
+        "dur": 0.5,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 0.5,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 0.5,
+        "dur": 0.5,
+        "key": 50,
+        "hand": "L"
+       },
+       {
+        "beat": 1.0,
+        "dur": 0.5,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 1.5,
+        "dur": 0.5,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 2.0,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 2.5,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 3.0,
+        "dur": 0.5,
+        "key": 59,
+        "hand": "L"
+       },
+       {
+        "beat": 3.5,
+        "dur": 0.5,
+        "key": 60,
+        "hand": "L"
+       },
+       {
+        "beat": 4.0,
+        "dur": 0.5,
+        "key": 62,
+        "hand": "L"
+       },
+       {
+        "beat": 4.5,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "L"
+       },
+       {
+        "beat": 5.0,
+        "dur": 0.5,
+        "key": 65,
+        "hand": "L"
+       },
+       {
+        "beat": 5.5,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "L"
+       },
+       {
+        "beat": 6.0,
+        "dur": 0.5,
+        "key": 69,
+        "hand": "L"
+       },
+       {
+        "beat": 6.5,
+        "dur": 0.5,
+        "key": 71,
+        "hand": "L"
+       },
+       {
+        "beat": 7.0,
+        "dur": 0.5,
+        "key": 72,
+        "hand": "L"
+       },
+       {
+        "beat": 7.5,
+        "dur": 0.5,
+        "key": 71,
+        "hand": "L"
+       },
+       {
+        "beat": 8.0,
+        "dur": 0.5,
+        "key": 69,
+        "hand": "L"
+       },
+       {
+        "beat": 8.5,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "L"
+       },
+       {
+        "beat": 9.0,
+        "dur": 0.5,
+        "key": 65,
+        "hand": "L"
+       },
+       {
+        "beat": 9.5,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "L"
+       },
+       {
+        "beat": 10.0,
+        "dur": 0.5,
+        "key": 62,
+        "hand": "L"
+       },
+       {
+        "beat": 10.5,
+        "dur": 0.5,
+        "key": 60,
+        "hand": "L"
+       },
+       {
+        "beat": 11.0,
+        "dur": 0.5,
+        "key": 59,
+        "hand": "L"
+       },
+       {
+        "beat": 11.5,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 12.0,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 12.5,
+        "dur": 0.5,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 13.0,
+        "dur": 0.5,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 13.5,
+        "dur": 0.5,
+        "key": 50,
+        "hand": "L"
+       },
+       {
+        "beat": 14.0,
+        "dur": 0.5,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 14.5,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 14.5,
+        "dur": 4.0,
+        "key": 48,
+        "hand": "L"
+       }
+      ]
+     },
+     "steps": [
+      {
+       "hand": "L",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Prima la sinistra da sola: è lei che regge il ritmo."
+      },
+      {
+       "hand": "R",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Ora la destra da sola."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 0.75,
+       "loops": 2,
+       "text": "Le due mani insieme, a tempo e un po' più piano."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 1.0,
+       "loops": 2,
+       "text": "Le due mani insieme, a velocità normale."
+      }
+     ]
+    },
+    {
+     "id": "s3",
+     "type": "exercise",
+     "title": "Scala di Sol in due ottave",
+     "text": "Occhio al fa diesis: le dita lo ritrovano da sole.",
+     "song": {
+      "title": "Scala di Sol in due ottave",
+      "timeSignature": [
+       4,
+       4
+      ],
+      "keyFifths": 0,
+      "bpm": 60,
+      "notes": [
+       {
+        "beat": 0.0,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "R"
+       },
+       {
+        "beat": 0.5,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "R"
+       },
+       {
+        "beat": 1.0,
+        "dur": 0.5,
+        "key": 59,
+        "hand": "R"
+       },
+       {
+        "beat": 1.5,
+        "dur": 0.5,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 2.0,
+        "dur": 0.5,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 2.5,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 3.0,
+        "dur": 0.5,
+        "key": 66,
+        "hand": "R"
+       },
+       {
+        "beat": 3.5,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 0.5,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 4.5,
+        "dur": 0.5,
+        "key": 71,
+        "hand": "R"
+       },
+       {
+        "beat": 5.0,
+        "dur": 0.5,
+        "key": 72,
+        "hand": "R"
+       },
+       {
+        "beat": 5.5,
+        "dur": 0.5,
+        "key": 74,
+        "hand": "R"
+       },
+       {
+        "beat": 6.0,
+        "dur": 0.5,
+        "key": 76,
+        "hand": "R"
+       },
+       {
+        "beat": 6.5,
+        "dur": 0.5,
+        "key": 78,
+        "hand": "R"
+       },
+       {
+        "beat": 7.0,
+        "dur": 0.5,
+        "key": 79,
+        "hand": "R"
+       },
+       {
+        "beat": 7.5,
+        "dur": 0.5,
+        "key": 78,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 0.5,
+        "key": 76,
+        "hand": "R"
+       },
+       {
+        "beat": 8.5,
+        "dur": 0.5,
+        "key": 74,
+        "hand": "R"
+       },
+       {
+        "beat": 9.0,
+        "dur": 0.5,
+        "key": 72,
+        "hand": "R"
+       },
+       {
+        "beat": 9.5,
+        "dur": 0.5,
+        "key": 71,
+        "hand": "R"
+       },
+       {
+        "beat": 10.0,
+        "dur": 0.5,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 10.5,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 11.0,
+        "dur": 0.5,
+        "key": 66,
+        "hand": "R"
+       },
+       {
+        "beat": 11.5,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 0.5,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 12.5,
+        "dur": 0.5,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 13.0,
+        "dur": 0.5,
+        "key": 59,
+        "hand": "R"
+       },
+       {
+        "beat": 13.5,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "R"
+       },
+       {
+        "beat": 14.0,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 0.5,
+        "key": 43,
+        "hand": "L"
+       },
+       {
+        "beat": 0.5,
+        "dur": 0.5,
+        "key": 45,
+        "hand": "L"
+       },
+       {
+        "beat": 1.0,
+        "dur": 0.5,
+        "key": 47,
+        "hand": "L"
+       },
+       {
+        "beat": 1.5,
+        "dur": 0.5,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 2.0,
+        "dur": 0.5,
+        "key": 50,
+        "hand": "L"
+       },
+       {
+        "beat": 2.5,
+        "dur": 0.5,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 3.0,
+        "dur": 0.5,
+        "key": 54,
+        "hand": "L"
+       },
+       {
+        "beat": 3.5,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 4.0,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 4.5,
+        "dur": 0.5,
+        "key": 59,
+        "hand": "L"
+       },
+       {
+        "beat": 5.0,
+        "dur": 0.5,
+        "key": 60,
+        "hand": "L"
+       },
+       {
+        "beat": 5.5,
+        "dur": 0.5,
+        "key": 62,
+        "hand": "L"
+       },
+       {
+        "beat": 6.0,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "L"
+       },
+       {
+        "beat": 6.5,
+        "dur": 0.5,
+        "key": 66,
+        "hand": "L"
+       },
+       {
+        "beat": 7.0,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "L"
+       },
+       {
+        "beat": 7.5,
+        "dur": 0.5,
+        "key": 66,
+        "hand": "L"
+       },
+       {
+        "beat": 8.0,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "L"
+       },
+       {
+        "beat": 8.5,
+        "dur": 0.5,
+        "key": 62,
+        "hand": "L"
+       },
+       {
+        "beat": 9.0,
+        "dur": 0.5,
+        "key": 60,
+        "hand": "L"
+       },
+       {
+        "beat": 9.5,
+        "dur": 0.5,
+        "key": 59,
+        "hand": "L"
+       },
+       {
+        "beat": 10.0,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 10.5,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 11.0,
+        "dur": 0.5,
+        "key": 54,
+        "hand": "L"
+       },
+       {
+        "beat": 11.5,
+        "dur": 0.5,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 12.0,
+        "dur": 0.5,
+        "key": 50,
+        "hand": "L"
+       },
+       {
+        "beat": 12.5,
+        "dur": 0.5,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 13.0,
+        "dur": 0.5,
+        "key": 47,
+        "hand": "L"
+       },
+       {
+        "beat": 13.5,
+        "dur": 0.5,
+        "key": 45,
+        "hand": "L"
+       },
+       {
+        "beat": 14.0,
+        "dur": 0.5,
+        "key": 43,
+        "hand": "L"
+       },
+       {
+        "beat": 14.5,
+        "dur": 4.0,
+        "key": 55,
+        "hand": "R"
+       },
+       {
+        "beat": 14.5,
+        "dur": 4.0,
+        "key": 43,
+        "hand": "L"
+       }
+      ]
+     },
+     "steps": [
+      {
+       "hand": "L",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Prima la sinistra da sola: è lei che regge il ritmo."
+      },
+      {
+       "hand": "R",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Ora la destra da sola."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 0.75,
+       "loops": 2,
+       "text": "Le due mani insieme, a tempo e un po' più piano."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 1.0,
+       "loops": 2,
+       "text": "Le due mani insieme, a velocità normale."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "l5",
+   "title": "Arpeggi in due ottave",
+   "description": "Accordi spezzati che girano su tutta la tastiera.",
+   "slides": [
+    {
+     "id": "s1",
+     "type": "text",
+     "title": "L'accordo che gira",
+     "body": "L'arpeggio suona le note di un accordo una alla volta. Il pollice passa sotto la mano dopo la terza o la quinta nota. Il gomito accompagna il movimento verso l'esterno e poi torna dentro."
+    },
+    {
+     "id": "s2",
+     "type": "exercise",
+     "title": "Arpeggio di Do",
+     "text": "Do, mi, sol e di nuovo do: due ottave, su e giù.",
+     "song": {
+      "title": "Arpeggio di Do",
+      "timeSignature": [
+       4,
+       4
+      ],
+      "keyFifths": 0,
+      "bpm": 60,
+      "notes": [
+       {
+        "beat": 0.0,
+        "dur": 0.5,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 0.5,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 1.0,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 1.5,
+        "dur": 0.5,
+        "key": 72,
+        "hand": "R"
+       },
+       {
+        "beat": 2.0,
+        "dur": 0.5,
+        "key": 76,
+        "hand": "R"
+       },
+       {
+        "beat": 2.5,
+        "dur": 0.5,
+        "key": 79,
+        "hand": "R"
+       },
+       {
+        "beat": 3.0,
+        "dur": 0.5,
+        "key": 84,
+        "hand": "R"
+       },
+       {
+        "beat": 3.5,
+        "dur": 0.5,
+        "key": 79,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 0.5,
+        "key": 76,
+        "hand": "R"
+       },
+       {
+        "beat": 4.5,
+        "dur": 0.5,
+        "key": 72,
+        "hand": "R"
+       },
+       {
+        "beat": 5.0,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 5.5,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 6.0,
+        "dur": 0.5,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 6.5,
+        "dur": 0.5,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 7.0,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 7.5,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 0.5,
+        "key": 72,
+        "hand": "R"
+       },
+       {
+        "beat": 8.5,
+        "dur": 0.5,
+        "key": 76,
+        "hand": "R"
+       },
+       {
+        "beat": 9.0,
+        "dur": 0.5,
+        "key": 79,
+        "hand": "R"
+       },
+       {
+        "beat": 9.5,
+        "dur": 0.5,
+        "key": 84,
+        "hand": "R"
+       },
+       {
+        "beat": 10.0,
+        "dur": 0.5,
+        "key": 79,
+        "hand": "R"
+       },
+       {
+        "beat": 10.5,
+        "dur": 0.5,
+        "key": 76,
+        "hand": "R"
+       },
+       {
+        "beat": 11.0,
+        "dur": 0.5,
+        "key": 72,
+        "hand": "R"
+       },
+       {
+        "beat": 11.5,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 12.5,
+        "dur": 0.5,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 0.5,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 0.5,
+        "dur": 0.5,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 1.0,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 1.5,
+        "dur": 0.5,
+        "key": 60,
+        "hand": "L"
+       },
+       {
+        "beat": 2.0,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "L"
+       },
+       {
+        "beat": 2.5,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "L"
+       },
+       {
+        "beat": 3.0,
+        "dur": 0.5,
+        "key": 72,
+        "hand": "L"
+       },
+       {
+        "beat": 3.5,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "L"
+       },
+       {
+        "beat": 4.0,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "L"
+       },
+       {
+        "beat": 4.5,
+        "dur": 0.5,
+        "key": 60,
+        "hand": "L"
+       },
+       {
+        "beat": 5.0,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 5.5,
+        "dur": 0.5,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 6.0,
+        "dur": 0.5,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 6.5,
+        "dur": 0.5,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 7.0,
+        "dur": 0.5,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 7.5,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 8.0,
+        "dur": 0.5,
+        "key": 60,
+        "hand": "L"
+       },
+       {
+        "beat": 8.5,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "L"
+       },
+       {
+        "beat": 9.0,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "L"
+       },
+       {
+        "beat": 9.5,
+        "dur": 0.5,
+        "key": 72,
+        "hand": "L"
+       },
+       {
+        "beat": 10.0,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "L"
+       },
+       {
+        "beat": 10.5,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "L"
+       },
+       {
+        "beat": 11.0,
+        "dur": 0.5,
+        "key": 60,
+        "hand": "L"
+       },
+       {
+        "beat": 11.5,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 12.0,
+        "dur": 0.5,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 12.5,
+        "dur": 0.5,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 13.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 13.0,
+        "dur": 4.0,
+        "key": 48,
+        "hand": "L"
+       }
+      ]
+     },
+     "steps": [
+      {
+       "hand": "L",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Prima la sinistra da sola: è lei che regge il ritmo."
+      },
+      {
+       "hand": "R",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Ora la destra da sola."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 0.75,
+       "loops": 2,
+       "text": "Le due mani insieme, a tempo e un po' più piano."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 1.0,
+       "loops": 2,
+       "text": "Le due mani insieme, a velocità normale."
+      }
+     ]
+    },
+    {
+     "id": "s3",
+     "type": "exercise",
+     "title": "Arpeggio di La minore",
+     "text": "Lo stesso gesto con un suono più scuro.",
+     "song": {
+      "title": "Arpeggio di La minore",
+      "timeSignature": [
+       4,
+       4
+      ],
+      "keyFifths": 0,
+      "bpm": 60,
+      "notes": [
+       {
+        "beat": 0.0,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "R"
+       },
+       {
+        "beat": 0.5,
+        "dur": 0.5,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 1.0,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 1.5,
+        "dur": 0.5,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 2.0,
+        "dur": 0.5,
+        "key": 72,
+        "hand": "R"
+       },
+       {
+        "beat": 2.5,
+        "dur": 0.5,
+        "key": 76,
+        "hand": "R"
+       },
+       {
+        "beat": 3.0,
+        "dur": 0.5,
+        "key": 81,
+        "hand": "R"
+       },
+       {
+        "beat": 3.5,
+        "dur": 0.5,
+        "key": 76,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 0.5,
+        "key": 72,
+        "hand": "R"
+       },
+       {
+        "beat": 4.5,
+        "dur": 0.5,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 5.0,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 5.5,
+        "dur": 0.5,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 6.0,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "R"
+       },
+       {
+        "beat": 6.5,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "R"
+       },
+       {
+        "beat": 7.0,
+        "dur": 0.5,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 7.5,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 0.5,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 8.5,
+        "dur": 0.5,
+        "key": 72,
+        "hand": "R"
+       },
+       {
+        "beat": 9.0,
+        "dur": 0.5,
+        "key": 76,
+        "hand": "R"
+       },
+       {
+        "beat": 9.5,
+        "dur": 0.5,
+        "key": 81,
+        "hand": "R"
+       },
+       {
+        "beat": 10.0,
+        "dur": 0.5,
+        "key": 76,
+        "hand": "R"
+       },
+       {
+        "beat": 10.5,
+        "dur": 0.5,
+        "key": 72,
+        "hand": "R"
+       },
+       {
+        "beat": 11.0,
+        "dur": 0.5,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 11.5,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 0.5,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 12.5,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 0.5,
+        "key": 45,
+        "hand": "L"
+       },
+       {
+        "beat": 0.5,
+        "dur": 0.5,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 1.0,
+        "dur": 0.5,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 1.5,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 2.0,
+        "dur": 0.5,
+        "key": 60,
+        "hand": "L"
+       },
+       {
+        "beat": 2.5,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "L"
+       },
+       {
+        "beat": 3.0,
+        "dur": 0.5,
+        "key": 69,
+        "hand": "L"
+       },
+       {
+        "beat": 3.5,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "L"
+       },
+       {
+        "beat": 4.0,
+        "dur": 0.5,
+        "key": 60,
+        "hand": "L"
+       },
+       {
+        "beat": 4.5,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 5.0,
+        "dur": 0.5,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 5.5,
+        "dur": 0.5,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 6.0,
+        "dur": 0.5,
+        "key": 45,
+        "hand": "L"
+       },
+       {
+        "beat": 6.5,
+        "dur": 0.5,
+        "key": 45,
+        "hand": "L"
+       },
+       {
+        "beat": 7.0,
+        "dur": 0.5,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 7.5,
+        "dur": 0.5,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 8.0,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 8.5,
+        "dur": 0.5,
+        "key": 60,
+        "hand": "L"
+       },
+       {
+        "beat": 9.0,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "L"
+       },
+       {
+        "beat": 9.5,
+        "dur": 0.5,
+        "key": 69,
+        "hand": "L"
+       },
+       {
+        "beat": 10.0,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "L"
+       },
+       {
+        "beat": 10.5,
+        "dur": 0.5,
+        "key": 60,
+        "hand": "L"
+       },
+       {
+        "beat": 11.0,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 11.5,
+        "dur": 0.5,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 12.0,
+        "dur": 0.5,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 12.5,
+        "dur": 0.5,
+        "key": 45,
+        "hand": "L"
+       },
+       {
+        "beat": 13.0,
+        "dur": 4.0,
+        "key": 57,
+        "hand": "R"
+       },
+       {
+        "beat": 13.0,
+        "dur": 4.0,
+        "key": 45,
+        "hand": "L"
+       }
+      ]
+     },
+     "steps": [
+      {
+       "hand": "L",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Prima la sinistra da sola: è lei che regge il ritmo."
+      },
+      {
+       "hand": "R",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Ora la destra da sola."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 0.75,
+       "loops": 2,
+       "text": "Le due mani insieme, a tempo e un po' più piano."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 1.0,
+       "loops": 2,
+       "text": "Le due mani insieme, a velocità normale."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "l6",
+   "title": "Trilli, cromatica e sinistra sola",
+   "description": "Tre schemi in più per le dita.",
+   "slides": [
+    {
+     "id": "s1",
+     "type": "text",
+     "title": "Altri schemi",
+     "body": "Questi schemi allenano la velocità e l'indipendenza delle dita. Il trillo alterna due note vicine in sedicesimi: il polso resta rilassato e il movimento viene dalle dita. La scala cromatica usa tutti i tasti, bianchi e neri. L'ultimo schema allena la sinistra da sola."
+    },
+    {
+     "id": "s2",
+     "type": "exercise",
+     "title": "Trillo su due note",
+     "text": "Due note vicine, in sedicesimi regolari, con la sinistra che tiene il Do.",
+     "song": {
+      "title": "Trillo su due note",
+      "timeSignature": [
+       4,
+       4
+      ],
+      "keyFifths": 0,
+      "bpm": 56,
+      "notes": [
+       {
+        "beat": 0.0,
+        "dur": 0.25,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 0.25,
+        "dur": 0.25,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 0.5,
+        "dur": 0.25,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 0.75,
+        "dur": 0.25,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 1.0,
+        "dur": 0.25,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 1.25,
+        "dur": 0.25,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 1.5,
+        "dur": 0.25,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 1.75,
+        "dur": 0.25,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 2.0,
+        "dur": 0.25,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 2.25,
+        "dur": 0.25,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 2.5,
+        "dur": 0.25,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 2.75,
+        "dur": 0.25,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 3.0,
+        "dur": 0.25,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 3.25,
+        "dur": 0.25,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 3.5,
+        "dur": 0.25,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 3.75,
+        "dur": 0.25,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 0.25,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 4.25,
+        "dur": 0.25,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 4.5,
+        "dur": 0.25,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 4.75,
+        "dur": 0.25,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 5.0,
+        "dur": 0.25,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 5.25,
+        "dur": 0.25,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 5.5,
+        "dur": 0.25,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 5.75,
+        "dur": 0.25,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 6.0,
+        "dur": 0.25,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 6.25,
+        "dur": 0.25,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 6.5,
+        "dur": 0.25,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 6.75,
+        "dur": 0.25,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 7.0,
+        "dur": 0.25,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 7.25,
+        "dur": 0.25,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 7.5,
+        "dur": 0.25,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 7.75,
+        "dur": 0.25,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 0.25,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 8.25,
+        "dur": 0.25,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 8.5,
+        "dur": 0.25,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 8.75,
+        "dur": 0.25,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 9.0,
+        "dur": 0.25,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 9.25,
+        "dur": 0.25,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 9.5,
+        "dur": 0.25,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 9.75,
+        "dur": 0.25,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 10.0,
+        "dur": 0.25,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 10.25,
+        "dur": 0.25,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 10.5,
+        "dur": 0.25,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 10.75,
+        "dur": 0.25,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 11.0,
+        "dur": 0.25,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 11.25,
+        "dur": 0.25,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 11.5,
+        "dur": 0.25,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 11.75,
+        "dur": 0.25,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 0.25,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 12.25,
+        "dur": 0.25,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 12.5,
+        "dur": 0.25,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 12.75,
+        "dur": 0.25,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 13.0,
+        "dur": 0.25,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 13.25,
+        "dur": 0.25,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 13.5,
+        "dur": 0.25,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 13.75,
+        "dur": 0.25,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 14.0,
+        "dur": 0.25,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 14.25,
+        "dur": 0.25,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 14.5,
+        "dur": 0.25,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 14.75,
+        "dur": 0.25,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 15.0,
+        "dur": 0.25,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 15.25,
+        "dur": 0.25,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 15.5,
+        "dur": 0.25,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 15.75,
+        "dur": 0.25,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 48,
+        "hand": "L"
+       }
+      ]
+     },
+     "steps": [
+      {
+       "hand": "L",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Prima la sinistra da sola: è lei che regge il ritmo."
+      },
+      {
+       "hand": "R",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Ora la destra da sola."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 0.75,
+       "loops": 2,
+       "text": "Le due mani insieme, a tempo e un po' più piano."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 1.0,
+       "loops": 2,
+       "text": "Le due mani insieme, a velocità normale."
+      }
+     ]
+    },
+    {
+     "id": "s3",
+     "type": "exercise",
+     "title": "Scala cromatica",
+     "text": "Tutti i tasti dal Do al Do, bianchi e neri, su e giù.",
+     "song": {
+      "title": "Scala cromatica",
+      "timeSignature": [
+       4,
+       4
+      ],
+      "keyFifths": 0,
+      "bpm": 60,
+      "notes": [
+       {
+        "beat": 0.0,
+        "dur": 0.5,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 0.5,
+        "dur": 0.5,
+        "key": 61,
+        "hand": "R"
+       },
+       {
+        "beat": 1.0,
+        "dur": 0.5,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 1.5,
+        "dur": 0.5,
+        "key": 63,
+        "hand": "R"
+       },
+       {
+        "beat": 2.0,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 2.5,
+        "dur": 0.5,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 3.0,
+        "dur": 0.5,
+        "key": 66,
+        "hand": "R"
+       },
+       {
+        "beat": 3.5,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 0.5,
+        "key": 68,
+        "hand": "R"
+       },
+       {
+        "beat": 4.5,
+        "dur": 0.5,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 5.0,
+        "dur": 0.5,
+        "key": 70,
+        "hand": "R"
+       },
+       {
+        "beat": 5.5,
+        "dur": 0.5,
+        "key": 71,
+        "hand": "R"
+       },
+       {
+        "beat": 6.0,
+        "dur": 0.5,
+        "key": 72,
+        "hand": "R"
+       },
+       {
+        "beat": 6.5,
+        "dur": 0.5,
+        "key": 71,
+        "hand": "R"
+       },
+       {
+        "beat": 7.0,
+        "dur": 0.5,
+        "key": 70,
+        "hand": "R"
+       },
+       {
+        "beat": 7.5,
+        "dur": 0.5,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 0.5,
+        "key": 68,
+        "hand": "R"
+       },
+       {
+        "beat": 8.5,
+        "dur": 0.5,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 9.0,
+        "dur": 0.5,
+        "key": 66,
+        "hand": "R"
+       },
+       {
+        "beat": 9.5,
+        "dur": 0.5,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 10.0,
+        "dur": 0.5,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 10.5,
+        "dur": 0.5,
+        "key": 63,
+        "hand": "R"
+       },
+       {
+        "beat": 11.0,
+        "dur": 0.5,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 11.5,
+        "dur": 0.5,
+        "key": 61,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 0.5,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 0.5,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 0.5,
+        "dur": 0.5,
+        "key": 49,
+        "hand": "L"
+       },
+       {
+        "beat": 1.0,
+        "dur": 0.5,
+        "key": 50,
+        "hand": "L"
+       },
+       {
+        "beat": 1.5,
+        "dur": 0.5,
+        "key": 51,
+        "hand": "L"
+       },
+       {
+        "beat": 2.0,
+        "dur": 0.5,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 2.5,
+        "dur": 0.5,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 3.0,
+        "dur": 0.5,
+        "key": 54,
+        "hand": "L"
+       },
+       {
+        "beat": 3.5,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 4.0,
+        "dur": 0.5,
+        "key": 56,
+        "hand": "L"
+       },
+       {
+        "beat": 4.5,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 5.0,
+        "dur": 0.5,
+        "key": 58,
+        "hand": "L"
+       },
+       {
+        "beat": 5.5,
+        "dur": 0.5,
+        "key": 59,
+        "hand": "L"
+       },
+       {
+        "beat": 6.0,
+        "dur": 0.5,
+        "key": 60,
+        "hand": "L"
+       },
+       {
+        "beat": 6.5,
+        "dur": 0.5,
+        "key": 59,
+        "hand": "L"
+       },
+       {
+        "beat": 7.0,
+        "dur": 0.5,
+        "key": 58,
+        "hand": "L"
+       },
+       {
+        "beat": 7.5,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 8.0,
+        "dur": 0.5,
+        "key": 56,
+        "hand": "L"
+       },
+       {
+        "beat": 8.5,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 9.0,
+        "dur": 0.5,
+        "key": 54,
+        "hand": "L"
+       },
+       {
+        "beat": 9.5,
+        "dur": 0.5,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 10.0,
+        "dur": 0.5,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 10.5,
+        "dur": 0.5,
+        "key": 51,
+        "hand": "L"
+       },
+       {
+        "beat": 11.0,
+        "dur": 0.5,
+        "key": 50,
+        "hand": "L"
+       },
+       {
+        "beat": 11.5,
+        "dur": 0.5,
+        "key": 49,
+        "hand": "L"
+       },
+       {
+        "beat": 12.0,
+        "dur": 0.5,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 12.5,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 12.5,
+        "dur": 4.0,
+        "key": 48,
+        "hand": "L"
+       }
+      ]
+     },
+     "steps": [
+      {
+       "hand": "L",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Prima la sinistra da sola: è lei che regge il ritmo."
+      },
+      {
+       "hand": "R",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Ora la destra da sola."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 0.75,
+       "loops": 2,
+       "text": "Le due mani insieme, a tempo e un po' più piano."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 1.0,
+       "loops": 2,
+       "text": "Le due mani insieme, a velocità normale."
+      }
+     ]
+    },
+    {
+     "id": "s4",
+     "type": "exercise",
+     "title": "Cinque dita, solo sinistra",
+     "text": "Lo schema di salita, solo con la sinistra: la mano debole lavora di più.",
+     "song": {
+      "title": "Cinque dita, solo sinistra",
+      "timeSignature": [
+       4,
+       4
+      ],
+      "keyFifths": 0,
+      "bpm": 66,
+      "notes": [
+       {
+        "beat": 0.0,
+        "dur": 0.5,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 0.5,
+        "dur": 0.5,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 1.0,
+        "dur": 0.5,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 1.5,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 2.0,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 2.5,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 3.0,
+        "dur": 0.5,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 3.5,
+        "dur": 0.5,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 4.0,
+        "dur": 0.5,
+        "key": 50,
+        "hand": "L"
+       },
+       {
+        "beat": 4.5,
+        "dur": 0.5,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 5.0,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 5.5,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 6.0,
+        "dur": 0.5,
+        "key": 59,
+        "hand": "L"
+       },
+       {
+        "beat": 6.5,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 7.0,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 7.5,
+        "dur": 0.5,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 8.0,
+        "dur": 0.5,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 8.5,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 9.0,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 9.5,
+        "dur": 0.5,
+        "key": 59,
+        "hand": "L"
+       },
+       {
+        "beat": 10.0,
+        "dur": 0.5,
+        "key": 60,
+        "hand": "L"
+       },
+       {
+        "beat": 10.5,
+        "dur": 0.5,
+        "key": 59,
+        "hand": "L"
+       },
+       {
+        "beat": 11.0,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 11.5,
+        "dur": 0.5,
+        "key": 55,
+        "hand": "L"
+       },
+       {
+        "beat": 12.0,
+        "dur": 0.5,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 12.5,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 13.0,
+        "dur": 0.5,
+        "key": 59,
+        "hand": "L"
+       },
+       {
+        "beat": 13.5,
+        "dur": 0.5,
+        "key": 60,
+        "hand": "L"
+       },
+       {
+        "beat": 14.0,
+        "dur": 0.5,
+        "key": 62,
+        "hand": "L"
+       },
+       {
+        "beat": 14.5,
+        "dur": 0.5,
+        "key": 60,
+        "hand": "L"
+       },
+       {
+        "beat": 15.0,
+        "dur": 0.5,
+        "key": 59,
+        "hand": "L"
+       },
+       {
+        "beat": 15.5,
+        "dur": 0.5,
+        "key": 57,
+        "hand": "L"
+       },
+       {
+        "beat": 16.0,
+        "dur": 4.0,
+        "key": 53,
+        "hand": "L"
+       }
+      ]
+     },
+     "steps": [
+      {
+       "hand": "L",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Mano sinistra: premi ogni nota quando compare, senza fretta."
+      },
+      {
+       "hand": "L",
+       "mode": "tempo",
+       "speed": 0.75,
+       "loops": 2,
+       "text": "Ora a tempo, un po' più piano del normale."
+      },
+      {
+       "hand": "L",
+       "mode": "tempo",
+       "speed": 1.0,
+       "loops": 2,
+       "text": "Velocità normale, con un battito regolare."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -97,6 +97,69 @@
       "description": "Suonare con il volume e con il pedale: forza dei tasti, crescendo, melodia in primo piano e pedale di risonanza.",
       "level": 5,
       "file": "pedale-dinamica.json"
+    },
+    {
+      "id": "piu-tonalita",
+      "title": "Più tonalità",
+      "description": "Re, La e Si bemolle maggiore, Mi e Re minore: alterazioni, scale e brevi melodie in tonalità nuove.",
+      "level": 5,
+      "file": "piu-tonalita.json"
+    },
+    {
+      "id": "sinistra-pattern",
+      "title": "Pattern per la mano sinistra",
+      "description": "Basso di Alberti, ottave, boogie-woogie, basso che cammina e stride: gli accompagnamenti più usati.",
+      "level": 4,
+      "file": "sinistra-pattern.json"
+    },
+    {
+      "id": "ritmi-di-oggi",
+      "title": "Ritmi di oggi",
+      "description": "Levare, sedicesimi, swing, funk e due contro tre: il ritmo della musica di oggi.",
+      "level": 4,
+      "file": "ritmi-di-oggi.json"
+    },
+    {
+      "id": "canzoni-con-accordi",
+      "title": "Canzoni con gli accordi",
+      "description": "Il giro I-V-vi-IV in tre tonalità, il blues in 12 battute e la cadenza andalusa: accordi per suonare canzoni.",
+      "level": 3,
+      "file": "canzoni-con-accordi.json"
+    },
+    {
+      "id": "tecnica-quotidiana",
+      "title": "Tecnica quotidiana",
+      "description": "Schemi di cinque dita, terze, scale e arpeggi in due ottave: esercizi di tecnica nello stile di Hanon.",
+      "level": 3,
+      "file": "tecnica-quotidiana.json"
+    },
+    {
+      "id": "scale-arpeggi-tonalita",
+      "title": "Scale e arpeggi in ogni tonalità",
+      "description": "Scale maggiori e minori e arpeggi in tutte le tonalità, due ottave a due mani: il lavoro di base di ogni pianista.",
+      "level": 4,
+      "file": "scale-arpeggi-tonalita.json"
+    },
+    {
+      "id": "accordi-tonalita",
+      "title": "Accordi in ogni tonalità",
+      "description": "Triadi maggiori, minori, diminuite e aumentate, rivolti, accordi di settima e cadenze in più tonalità.",
+      "level": 4,
+      "file": "accordi-tonalita.json"
+    },
+    {
+      "id": "prime-due-mani",
+      "title": "Prime due mani",
+      "description": "Le prime note con tutte e due le mani: insieme, a turno, in parallelo e in contrario, fino a tre piccoli brani.",
+      "level": 1,
+      "file": "prime-due-mani.json"
+    },
+    {
+      "id": "accordi-per-cominciare",
+      "title": "Accordi per cominciare",
+      "description": "Due note insieme, la triade di Do, Do-Sol, Do-Fa-Sol e La minore: i primi accordi, con la melodia sopra.",
+      "level": 1,
+      "file": "accordi-per-cominciare.json"
     }
   ]
 }

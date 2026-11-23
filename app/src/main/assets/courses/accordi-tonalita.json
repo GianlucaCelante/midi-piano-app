@@ -1,0 +1,2873 @@
+{
+ "id": "accordi-tonalita",
+ "title": "Accordi in ogni tonalità",
+ "lessons": [
+  {
+   "id": "l1",
+   "title": "Triadi maggiori",
+   "description": "Tre note a distanza di terza: il suono luminoso.",
+   "slides": [
+    {
+     "id": "s1",
+     "type": "text",
+     "title": "La triade maggiore",
+     "body": "Una triade maggiore ha tre note: la fondamentale, la terza maggiore e la quinta. Si suona con i diti uno, tre e cinque, tenendo la mano arrotondata. Premi le tre note nello stesso istante, senza far sentire un arpeggio."
+    },
+    {
+     "id": "s2",
+     "type": "exercise",
+     "title": "Do, Fa, Sol",
+     "text": "Tre accordi maggiori e il ritorno al Do.",
+     "song": {
+      "title": "Do, Fa, Sol",
+      "timeSignature": [
+       4,
+       4
+      ],
+      "keyFifths": 0,
+      "bpm": 60,
+      "notes": [
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 72,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 55,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 59,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 43,
+        "hand": "L"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 48,
+        "hand": "L"
+       }
+      ]
+     },
+     "steps": [
+      {
+       "hand": "L",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Prima la sinistra da sola: è lei che regge il ritmo."
+      },
+      {
+       "hand": "R",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Ora la destra da sola."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 0.75,
+       "loops": 2,
+       "text": "Le due mani insieme, a tempo e un po' più piano."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 1.0,
+       "loops": 2,
+       "text": "Le due mani insieme, a velocità normale."
+      }
+     ]
+    },
+    {
+     "id": "s3",
+     "type": "exercise",
+     "title": "Re, Sol, La",
+     "text": "Gli stessi gradi in Re maggiore.",
+     "song": {
+      "title": "Re, Sol, La",
+      "timeSignature": [
+       4,
+       4
+      ],
+      "keyFifths": 2,
+      "bpm": 60,
+      "notes": [
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 66,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 55,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 59,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 57,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 61,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 66,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 50,
+        "hand": "L"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 43,
+        "hand": "L"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 45,
+        "hand": "L"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 50,
+        "hand": "L"
+       }
+      ]
+     },
+     "steps": [
+      {
+       "hand": "L",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Prima la sinistra da sola: è lei che regge il ritmo."
+      },
+      {
+       "hand": "R",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Ora la destra da sola."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 0.75,
+       "loops": 2,
+       "text": "Le due mani insieme, a tempo e un po' più piano."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 1.0,
+       "loops": 2,
+       "text": "Le due mani insieme, a velocità normale."
+      }
+     ]
+    },
+    {
+     "id": "s4",
+     "type": "exercise",
+     "title": "Mi bemolle, La bemolle, Si bemolle",
+     "text": "Gli stessi gradi in Mi bemolle maggiore: tasti neri sotto le dita.",
+     "song": {
+      "title": "Mi bemolle, La bemolle, Si bemolle",
+      "timeSignature": [
+       4,
+       4
+      ],
+      "keyFifths": -3,
+      "bpm": 60,
+      "notes": [
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 63,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 70,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 56,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 63,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 58,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 63,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 70,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 51,
+        "hand": "L"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 44,
+        "hand": "L"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 46,
+        "hand": "L"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 51,
+        "hand": "L"
+       }
+      ]
+     },
+     "steps": [
+      {
+       "hand": "L",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Prima la sinistra da sola: è lei che regge il ritmo."
+      },
+      {
+       "hand": "R",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Ora la destra da sola."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 0.75,
+       "loops": 2,
+       "text": "Le due mani insieme, a tempo e un po' più piano."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 1.0,
+       "loops": 2,
+       "text": "Le due mani insieme, a velocità normale."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "l2",
+   "title": "Triadi minori",
+   "description": "La terza si abbassa: il suono si fa più scuro.",
+   "slides": [
+    {
+     "id": "s1",
+     "type": "text",
+     "title": "Il colore minore",
+     "body": "Una triade minore ha la terza abbassata di un semitono. La mano resta quasi uguale, ma un dito cade su un tasto diverso. Ascolta con attenzione la differenza di colore rispetto agli accordi maggiori."
+    },
+    {
+     "id": "s2",
+     "type": "exercise",
+     "title": "La, Re, Mi minori",
+     "text": "I tre accordi minori principali di La minore.",
+     "song": {
+      "title": "La, Re, Mi minori",
+      "timeSignature": [
+       4,
+       4
+      ],
+      "keyFifths": 0,
+      "bpm": 60,
+      "notes": [
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 57,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 71,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 57,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 45,
+        "hand": "L"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 50,
+        "hand": "L"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 45,
+        "hand": "L"
+       }
+      ]
+     },
+     "steps": [
+      {
+       "hand": "L",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Prima la sinistra da sola: è lei che regge il ritmo."
+      },
+      {
+       "hand": "R",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Ora la destra da sola."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 0.75,
+       "loops": 2,
+       "text": "Le due mani insieme, a tempo e un po' più piano."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 1.0,
+       "loops": 2,
+       "text": "Le due mani insieme, a velocità normale."
+      }
+     ]
+    },
+    {
+     "id": "s3",
+     "type": "exercise",
+     "title": "Mi, La, Si minori",
+     "text": "Gli stessi gradi in Mi minore.",
+     "song": {
+      "title": "Mi, La, Si minori",
+      "timeSignature": [
+       4,
+       4
+      ],
+      "keyFifths": 1,
+      "bpm": 60,
+      "notes": [
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 71,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 57,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 59,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 66,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 71,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 45,
+        "hand": "L"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 47,
+        "hand": "L"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 52,
+        "hand": "L"
+       }
+      ]
+     },
+     "steps": [
+      {
+       "hand": "L",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Prima la sinistra da sola: è lei che regge il ritmo."
+      },
+      {
+       "hand": "R",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Ora la destra da sola."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 0.75,
+       "loops": 2,
+       "text": "Le due mani insieme, a tempo e un po' più piano."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 1.0,
+       "loops": 2,
+       "text": "Le due mani insieme, a velocità normale."
+      }
+     ]
+    },
+    {
+     "id": "s4",
+     "type": "exercise",
+     "title": "Re, Sol, La minori",
+     "text": "Gli stessi gradi in Re minore.",
+     "song": {
+      "title": "Re, Sol, La minori",
+      "timeSignature": [
+       4,
+       4
+      ],
+      "keyFifths": -1,
+      "bpm": 60,
+      "notes": [
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 55,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 58,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 57,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 50,
+        "hand": "L"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 43,
+        "hand": "L"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 45,
+        "hand": "L"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 50,
+        "hand": "L"
+       }
+      ]
+     },
+     "steps": [
+      {
+       "hand": "L",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Prima la sinistra da sola: è lei che regge il ritmo."
+      },
+      {
+       "hand": "R",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Ora la destra da sola."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 0.75,
+       "loops": 2,
+       "text": "Le due mani insieme, a tempo e un po' più piano."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 1.0,
+       "loops": 2,
+       "text": "Le due mani insieme, a velocità normale."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "l3",
+   "title": "Diminuite e aumentate",
+   "description": "Quattro colori su una stessa nota.",
+   "slides": [
+    {
+     "id": "s1",
+     "type": "text",
+     "title": "Due colori nuovi",
+     "body": "La triade diminuita ha due terze minori: suona tesa e instabile. La triade aumentata ha due terze maggiori: suona sospesa e un po' misteriosa. Insieme agli accordi maggiore e minore formano i quattro tipi di triade."
+    },
+    {
+     "id": "s2",
+     "type": "exercise",
+     "title": "Quattro colori su Do",
+     "text": "Do maggiore, minore, diminuito e aumentato.",
+     "song": {
+      "title": "Quattro colori su Do",
+      "timeSignature": [
+       4,
+       4
+      ],
+      "keyFifths": 0,
+      "bpm": 60,
+      "notes": [
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 63,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 63,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 66,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 68,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 48,
+        "hand": "L"
+       }
+      ]
+     },
+     "steps": [
+      {
+       "hand": "L",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Prima la sinistra da sola: è lei che regge il ritmo."
+      },
+      {
+       "hand": "R",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Ora la destra da sola."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 0.75,
+       "loops": 2,
+       "text": "Le due mani insieme, a tempo e un po' più piano."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 1.0,
+       "loops": 2,
+       "text": "Le due mani insieme, a velocità normale."
+      }
+     ]
+    },
+    {
+     "id": "s3",
+     "type": "exercise",
+     "title": "Quattro colori su Sol",
+     "text": "La stessa sequenza partendo da Sol.",
+     "song": {
+      "title": "Quattro colori su Sol",
+      "timeSignature": [
+       4,
+       4
+      ],
+      "keyFifths": 0,
+      "bpm": 60,
+      "notes": [
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 55,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 59,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 55,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 58,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 55,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 58,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 61,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 55,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 59,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 63,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 43,
+        "hand": "L"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 43,
+        "hand": "L"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 43,
+        "hand": "L"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 43,
+        "hand": "L"
+       }
+      ]
+     },
+     "steps": [
+      {
+       "hand": "L",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Prima la sinistra da sola: è lei che regge il ritmo."
+      },
+      {
+       "hand": "R",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Ora la destra da sola."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 0.75,
+       "loops": 2,
+       "text": "Le due mani insieme, a tempo e un po' più piano."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 1.0,
+       "loops": 2,
+       "text": "Le due mani insieme, a velocità normale."
+      }
+     ]
+    },
+    {
+     "id": "s4",
+     "type": "exercise",
+     "title": "Il Si diminuito",
+     "text": "L'accordo che precede il Do maggiore: tensione e risoluzione.",
+     "song": {
+      "title": "Il Si diminuito",
+      "timeSignature": [
+       4,
+       4
+      ],
+      "keyFifths": 0,
+      "bpm": 60,
+      "notes": [
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 59,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 59,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 47,
+        "hand": "L"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 47,
+        "hand": "L"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 48,
+        "hand": "L"
+       }
+      ]
+     },
+     "steps": [
+      {
+       "hand": "L",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Prima la sinistra da sola: è lei che regge il ritmo."
+      },
+      {
+       "hand": "R",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Ora la destra da sola."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 0.75,
+       "loops": 2,
+       "text": "Le due mani insieme, a tempo e un po' più piano."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 1.0,
+       "loops": 2,
+       "text": "Le due mani insieme, a velocità normale."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "l4",
+   "title": "Rivolti",
+   "description": "Le stesse note, in un altro ordine.",
+   "slides": [
+    {
+     "id": "s1",
+     "type": "text",
+     "title": "Cambiare la nota più bassa",
+     "body": "Un rivolto usa le stesse note della triade, ma cambia quale sta in basso. Il primo rivolto parte dalla terza, il secondo dalla quinta. I rivolti permettono di spostarsi poco fra un accordo e l'altro, con la mano più comoda."
+    },
+    {
+     "id": "s2",
+     "type": "exercise",
+     "title": "Sol in tre posizioni",
+     "text": "Fondamentale, primo rivolto, secondo rivolto e ritorno.",
+     "song": {
+      "title": "Sol in tre posizioni",
+      "timeSignature": [
+       4,
+       4
+      ],
+      "keyFifths": 1,
+      "bpm": 60,
+      "notes": [
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 55,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 59,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 59,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 71,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 55,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 59,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 43,
+        "hand": "L"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 43,
+        "hand": "L"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 43,
+        "hand": "L"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 43,
+        "hand": "L"
+       }
+      ]
+     },
+     "steps": [
+      {
+       "hand": "L",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Prima la sinistra da sola: è lei che regge il ritmo."
+      },
+      {
+       "hand": "R",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Ora la destra da sola."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 0.75,
+       "loops": 2,
+       "text": "Le due mani insieme, a tempo e un po' più piano."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 1.0,
+       "loops": 2,
+       "text": "Le due mani insieme, a velocità normale."
+      }
+     ]
+    },
+    {
+     "id": "s3",
+     "type": "exercise",
+     "title": "Fa in tre posizioni",
+     "text": "Lo stesso gesto su Fa maggiore.",
+     "song": {
+      "title": "Fa in tre posizioni",
+      "timeSignature": [
+       4,
+       4
+      ],
+      "keyFifths": -1,
+      "bpm": 60,
+      "notes": [
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 72,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 72,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 77,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 72,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 77,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 81,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 72,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 53,
+        "hand": "L"
+       }
+      ]
+     },
+     "steps": [
+      {
+       "hand": "L",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Prima la sinistra da sola: è lei che regge il ritmo."
+      },
+      {
+       "hand": "R",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Ora la destra da sola."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 0.75,
+       "loops": 2,
+       "text": "Le due mani insieme, a tempo e un po' più piano."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 1.0,
+       "loops": 2,
+       "text": "Le due mani insieme, a velocità normale."
+      }
+     ]
+    },
+    {
+     "id": "s4",
+     "type": "exercise",
+     "title": "Re minore in tre posizioni",
+     "text": "I rivolti di una triade minore.",
+     "song": {
+      "title": "Re minore in tre posizioni",
+      "timeSignature": [
+       4,
+       4
+      ],
+      "keyFifths": -1,
+      "bpm": 60,
+      "notes": [
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 74,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 74,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 77,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 50,
+        "hand": "L"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 50,
+        "hand": "L"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 50,
+        "hand": "L"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 50,
+        "hand": "L"
+       }
+      ]
+     },
+     "steps": [
+      {
+       "hand": "L",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Prima la sinistra da sola: è lei che regge il ritmo."
+      },
+      {
+       "hand": "R",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Ora la destra da sola."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 0.75,
+       "loops": 2,
+       "text": "Le due mani insieme, a tempo e un po' più piano."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 1.0,
+       "loops": 2,
+       "text": "Le due mani insieme, a velocità normale."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "l5",
+   "title": "Accordi di settima",
+   "description": "Una quarta nota per più colore.",
+   "slides": [
+    {
+     "id": "s1",
+     "type": "text",
+     "title": "La settima",
+     "body": "Aggiungendo alla triade una quarta nota, a distanza di settima, si ottiene un accordo di settima. La settima di dominante suona instabile e chiede di risolvere. La settima maggiore suona morbida e jazz. Tieni sempre le quattro note insieme."
+    },
+    {
+     "id": "s2",
+     "type": "exercise",
+     "title": "Sol settima verso Do",
+     "text": "L'accordo di dominante che risolve sulla tonica.",
+     "song": {
+      "title": "Sol settima verso Do",
+      "timeSignature": [
+       4,
+       4
+      ],
+      "keyFifths": 0,
+      "bpm": 60,
+      "notes": [
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 55,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 59,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 55,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 59,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 43,
+        "hand": "L"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 43,
+        "hand": "L"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 48,
+        "hand": "L"
+       }
+      ]
+     },
+     "steps": [
+      {
+       "hand": "L",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Prima la sinistra da sola: è lei che regge il ritmo."
+      },
+      {
+       "hand": "R",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Ora la destra da sola."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 0.75,
+       "loops": 2,
+       "text": "Le due mani insieme, a tempo e un po' più piano."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 1.0,
+       "loops": 2,
+       "text": "Le due mani insieme, a velocità normale."
+      }
+     ]
+    },
+    {
+     "id": "s3",
+     "type": "exercise",
+     "title": "Do settima verso Fa",
+     "text": "La stessa idea, un passo più in là.",
+     "song": {
+      "title": "Do settima verso Fa",
+      "timeSignature": [
+       4,
+       4
+      ],
+      "keyFifths": -1,
+      "bpm": 60,
+      "notes": [
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 70,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 72,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 70,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 72,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 53,
+        "hand": "L"
+       }
+      ]
+     },
+     "steps": [
+      {
+       "hand": "L",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Prima la sinistra da sola: è lei che regge il ritmo."
+      },
+      {
+       "hand": "R",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Ora la destra da sola."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 0.75,
+       "loops": 2,
+       "text": "Le due mani insieme, a tempo e un po' più piano."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 1.0,
+       "loops": 2,
+       "text": "Le due mani insieme, a velocità normale."
+      }
+     ]
+    },
+    {
+     "id": "s4",
+     "type": "exercise",
+     "title": "Do maggiore settima e La minore settima",
+     "text": "Due accordi di settima morbidi, alternati.",
+     "song": {
+      "title": "Do maggiore settima e La minore settima",
+      "timeSignature": [
+       4,
+       4
+      ],
+      "keyFifths": 0,
+      "bpm": 60,
+      "notes": [
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 71,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 57,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 71,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 57,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 45,
+        "hand": "L"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 45,
+        "hand": "L"
+       }
+      ]
+     },
+     "steps": [
+      {
+       "hand": "L",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Prima la sinistra da sola: è lei che regge il ritmo."
+      },
+      {
+       "hand": "R",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Ora la destra da sola."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 0.75,
+       "loops": 2,
+       "text": "Le due mani insieme, a tempo e un po' più piano."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 1.0,
+       "loops": 2,
+       "text": "Le due mani insieme, a velocità normale."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "l6",
+   "title": "Cadenze",
+   "description": "Le sequenze che concludono una frase.",
+   "slides": [
+    {
+     "id": "s1",
+     "type": "text",
+     "title": "Concludere",
+     "body": "La cadenza è la sequenza di accordi che chiude una frase musicale. La più comune parte dalla tonica, va alla sottodominante e alla dominante, e torna alla tonica. In jazz si usa spesso il giro due-cinque-uno, con accordi di settima."
+    },
+    {
+     "id": "s2",
+     "type": "exercise",
+     "title": "Cadenza in Re",
+     "text": "Re, Sol, La, Re.",
+     "song": {
+      "title": "Cadenza in Re",
+      "timeSignature": [
+       4,
+       4
+      ],
+      "keyFifths": 2,
+      "bpm": 60,
+      "notes": [
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 66,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 55,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 59,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 57,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 61,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 66,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 50,
+        "hand": "L"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 43,
+        "hand": "L"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 45,
+        "hand": "L"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 50,
+        "hand": "L"
+       }
+      ]
+     },
+     "steps": [
+      {
+       "hand": "L",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Prima la sinistra da sola: è lei che regge il ritmo."
+      },
+      {
+       "hand": "R",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Ora la destra da sola."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 0.75,
+       "loops": 2,
+       "text": "Le due mani insieme, a tempo e un po' più piano."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 1.0,
+       "loops": 2,
+       "text": "Le due mani insieme, a velocità normale."
+      }
+     ]
+    },
+    {
+     "id": "s3",
+     "type": "exercise",
+     "title": "Cadenza in La",
+     "text": "La, Re, Mi, La.",
+     "song": {
+      "title": "Cadenza in La",
+      "timeSignature": [
+       4,
+       4
+      ],
+      "keyFifths": 3,
+      "bpm": 60,
+      "notes": [
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 57,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 61,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 66,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 68,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 71,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 57,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 61,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 45,
+        "hand": "L"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 50,
+        "hand": "L"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 52,
+        "hand": "L"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 45,
+        "hand": "L"
+       }
+      ]
+     },
+     "steps": [
+      {
+       "hand": "L",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Prima la sinistra da sola: è lei che regge il ritmo."
+      },
+      {
+       "hand": "R",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Ora la destra da sola."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 0.75,
+       "loops": 2,
+       "text": "Le due mani insieme, a tempo e un po' più piano."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 1.0,
+       "loops": 2,
+       "text": "Le due mani insieme, a velocità normale."
+      }
+     ]
+    },
+    {
+     "id": "s4",
+     "type": "exercise",
+     "title": "Cadenza in Si bemolle",
+     "text": "Si bemolle, Mi bemolle, Fa, Si bemolle.",
+     "song": {
+      "title": "Cadenza in Si bemolle",
+      "timeSignature": [
+       4,
+       4
+      ],
+      "keyFifths": -2,
+      "bpm": 60,
+      "notes": [
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 58,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 63,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 70,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 72,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 58,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 46,
+        "hand": "L"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 51,
+        "hand": "L"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 46,
+        "hand": "L"
+       }
+      ]
+     },
+     "steps": [
+      {
+       "hand": "L",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Prima la sinistra da sola: è lei che regge il ritmo."
+      },
+      {
+       "hand": "R",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Ora la destra da sola."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 0.75,
+       "loops": 2,
+       "text": "Le due mani insieme, a tempo e un po' più piano."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 1.0,
+       "loops": 2,
+       "text": "Le due mani insieme, a velocità normale."
+      }
+     ]
+    },
+    {
+     "id": "s5",
+     "type": "exercise",
+     "title": "Il giro due-cinque-uno in Fa",
+     "text": "Sol minore settima, Do settima, Fa maggiore settima.",
+     "song": {
+      "title": "Il giro due-cinque-uno in Fa",
+      "timeSignature": [
+       4,
+       4
+      ],
+      "keyFifths": -1,
+      "bpm": 60,
+      "notes": [
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 55,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 58,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 62,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 60,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 64,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 67,
+        "hand": "R"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 70,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 72,
+        "hand": "R"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 76,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 65,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 69,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 72,
+        "hand": "R"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 76,
+        "hand": "R"
+       },
+       {
+        "beat": 0.0,
+        "dur": 4.0,
+        "key": 43,
+        "hand": "L"
+       },
+       {
+        "beat": 4.0,
+        "dur": 4.0,
+        "key": 48,
+        "hand": "L"
+       },
+       {
+        "beat": 8.0,
+        "dur": 4.0,
+        "key": 53,
+        "hand": "L"
+       },
+       {
+        "beat": 12.0,
+        "dur": 4.0,
+        "key": 53,
+        "hand": "L"
+       }
+      ]
+     },
+     "steps": [
+      {
+       "hand": "L",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Prima la sinistra da sola: è lei che regge il ritmo."
+      },
+      {
+       "hand": "R",
+       "mode": "wait",
+       "speed": 1.0,
+       "loops": 1,
+       "text": "Ora la destra da sola."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 0.75,
+       "loops": 2,
+       "text": "Le due mani insieme, a tempo e un po' più piano."
+      },
+      {
+       "hand": "B",
+       "mode": "tempo",
+       "speed": 1.0,
+       "loops": 2,
+       "text": "Le due mani insieme, a velocità normale."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

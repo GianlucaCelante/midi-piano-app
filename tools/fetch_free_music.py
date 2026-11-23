@@ -70,12 +70,29 @@ def list_mid_urls(composer: str, instrument: str, limit: int):
              "view": 1, "lilyversion": ""})
         html = get(f"{BASE}/cgibin/make-table.cgi?{q}").decode("utf-8", "replace")
         mids = list(dict.fromkeys(re.findall(r'https://www\.mutopiaproject\.org/ftp/[^"\s]+?\.mid', html)))
+        remember_listing(html)
         new = [m for m in mids if m not in found]
         if not new:
             break
         found.extend(new)
         start += 10
     return found[:limit]
+
+
+LISTING = {}  # url .mid -> (titolo, licenza) letti dall'elenco: servono quando il file .ly non è scaricabile
+
+
+def remember_listing(html: str):
+    """Ogni brano dell'elenco ha titolo, licenza (link a legal.html) e link al .mid: si tengono come ripiego."""
+    for block in html.split("piece-info.cgi?id=")[1:]:
+        mid = re.search(r'https://www\.mutopiaproject\.org/ftp/[^"\s]+?\.mid', block)
+        lic = re.search(r'legal\.html#[^"]*"[^>]*>([^<]*)<', block)
+        if not mid or not lic:
+            continue
+        head = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", html[html.find(block) - 700:html.find(block)]))
+        m = re.findall(r"([^<>]{3,120}?) by ([^<>]{3,60}?) \(", head)
+        title = m[-1][0].strip() if m else None
+        LISTING[mid.group(0)] = (title, m[-1][1].strip() if m else None, lic.group(1).strip())
 
 
 def slug(path: str) -> str:
@@ -161,20 +178,23 @@ def main() -> int:
     saved = skipped = 0
     for mid_url in list_mid_urls(args.composer, args.instrument, args.limit):
         sid = slug(mid_url.split("/ftp/")[1])
+        ly = ""
         try:
             ly = get(mid_url.rsplit(".", 1)[0] + ".ly").decode("utf-8", "replace")
         except Exception as e:  # noqa: BLE001
-            print(f"SKIP {sid}: impossibile leggere i metadati ({e})")
-            skipped += 1
-            continue
-        raw_license = ly_field(ly, "license") or ly_field(ly, "copyright") or ""
+            if mid_url not in LISTING:
+                print(f"SKIP {sid}: impossibile leggere i metadati ({e})")
+                skipped += 1
+                continue
+        listed = LISTING.get(mid_url, (None, None, ""))
+        raw_license = ly_field(ly, "license") or ly_field(ly, "copyright") or listed[2] or ""
         norm = normalize_license(raw_license)
         if norm is None:
             print(f"SKIP {sid}: licenza non ammessa o ignota ({raw_license!r})")
             skipped += 1
             continue
         label, attribution = norm
-        title = " - ".join(p for p in (ly_field(ly, "title"), ly_field(ly, "subtitle")) if p) or sid
+        title = " - ".join(p for p in (ly_field(ly, "title"), ly_field(ly, "subtitle")) if p) or listed[0] or sid
         try:
             data = get(mid_url)
         except Exception as e:  # noqa: BLE001
@@ -189,7 +209,7 @@ def main() -> int:
         by_id[sid] = {
             "id": sid,
             "title": title,
-            "composer": ly_field(ly, "composer"),
+            "composer": ly_field(ly, "composer") or listed[1],
             "file": f"{sid}.mid",
             "origin": "Mutopia Project",
             "license": label,

@@ -21,7 +21,7 @@ HANDS = ("R", "L")
 STEP_HANDS = ("R", "L", "B")
 MODES = ("wait", "tempo")
 SPEEDS = (0.5, 0.75, 1.0)
-EXPECTED_COURSES = 14
+EXPECTED_COURSES = 23
 
 errors = []
 
@@ -192,6 +192,15 @@ def check_course(course, where, stats):
                 req(sl, "text", is_str, sw, "stringa")
                 hands = check_song(sl.get("song"), sw + " song", stats)
                 check_steps(sl.get("steps"), hands, sw)
+                if "touch" in sl and sl["touch"] not in ("target", "even", "cresc", "dim"):
+                    err(sw, "touch deve essere target, even, cresc o dim")
+                if "pedal" in sl:
+                    pl = sl["pedal"]
+                    okp = isinstance(pl, list) and pl and all(isinstance(e, dict) and is_num(e.get("beat")) and e["beat"] >= 0 and isinstance(e.get("down"), bool) for e in pl)
+                    if not okp:
+                        err(sw, "pedal deve essere una lista di {beat, down}")
+                    elif any(a_["down"] == b_["down"] for a_, b_ in zip(sorted(pl, key=lambda e: e["beat"]), sorted(pl, key=lambda e: e["beat"])[1:])):
+                        err(sw, "i cambi di pedale devono alternarsi giu'/su")
                 stats["exercises"] += 1
             else:
                 err(sw, "type deve essere 'text' o 'exercise'")
