@@ -78,6 +78,11 @@ class SheetData(
     val timeChangesList: List<com.gianlucacelante.midipiano.song.TimeChange> = emptyList(),
     val keyChangesList: List<com.gianlucacelante.midipiano.song.KeyChange> = emptyList(),
     val simplifiedSpans: List<ClosedFloatingPointRange<Double>> = emptyList(),
+    /** Verso dei gambi degli accordi sotto trave (lo decide il gruppo, non la singola nota): serve a nomi e legature. */
+    val beamStemUp: Map<Chord, Boolean> = emptyMap(),
+    /** Spazi in più sopra il rigo acuto / sotto il rigo basso quando ci sono note molto alte o molto basse (tagli addizionali + nome): così non vengono tagliate. */
+    val topExtra: Float = 0f,
+    val bottomExtra: Float = 0f,
 ) {
     fun keyFifthsAt(sec: Double): Int { var r = keyFifths; for (c in keyChangesList) { if (c.timeSec <= sec + 1e-6) r = c.fifths else break }; return r }
     fun timeAt(sec: Double): Pair<Int, Int> { var r = timeAtStart; for (c in timeChangesList) { if (c.timeSec <= sec + 1e-6) r = c.numerator to c.denominator else break }; return r }
@@ -95,6 +100,8 @@ class SheetData(
             val rests = byClef.values.flatMap { Rests.compute(it, song) }.sortedBy { it.startSec }
             val identity = java.util.Collections.newSetFromMap(java.util.IdentityHashMap<Chord, Boolean>())
             identity.addAll(Beaming.beamed(groups))
+            val beamUp = java.util.IdentityHashMap<Chord, Boolean>()
+            for (g in groups) for (c in g.chords) beamUp[c] = g.stemUp
             val keySigs = Clef.values().associateWith { NotationLayout.keySignature(song.keyFifths, it) }
             val allFifths = (listOf(song.keyFifths) + song.keyChanges.map { it.fifths }).distinct()
             val byFifths = allFifths.associateWith { f -> Clef.values().associateWith { NotationLayout.keySignature(f, it) } }
@@ -106,7 +113,10 @@ class SheetData(
             val extra = changes.associate { c -> c.timeSec to (0.8 + (c.key?.let { abs(it) * 1.1 + 0.4 } ?: 0.0) + (if (c.time != null) 2.4 else 0.0)) }
             return SheetData(chords, groups, identity, keySigs, rests, song.chordSymbols.sortedBy { it.timeSec }, song.barLines, song.keyFifths, song.timeNumerator, song.timeDenominator, song.durationSec, (song.barLines.firstOrNull() ?: Double.MAX_VALUE) < song.barDurationSec * 0.9, SpacingMap.build(chords, song.secPerBeat, song.barLines, song.durationSec, song::beatsBetween, extra),
                 changes = changes, keySigsByFifths = byFifths, maxKeyCount = allFifths.maxOf { abs(it) }, timeAtStart = song.timeNumerator to song.timeDenominator,
-                timeChangesList = song.timeChanges, keyChangesList = song.keyChanges, simplifiedSpans = song.simplifiedSpans)
+                timeChangesList = song.timeChanges, keyChangesList = song.keyChanges, simplifiedSpans = song.simplifiedSpans, beamStemUp = beamUp,
+                // spazio che serve sopra le note più alte (testa + nome + eventuale scostamento per la legatura) e sotto le più basse, oltre ai 5 spazi di margine
+                topExtra = (chords.filter { it.clef == Clef.TREBLE }.maxOfOrNull { c -> (c.highest.position - 8) / 2f + 2.3f + (if (c.notes.any { it.tieNext } && !c.stemUp) 1.9f else 0f) }?.let { it - 5f + 0.3f } ?: 0f).coerceAtLeast(0f),
+                bottomExtra = (chords.filter { it.clef == Clef.BASS }.maxOfOrNull { c -> (0 - c.lowest.position) / 2f + 3.2f + (if (c.notes.any { it.tieNext } && c.stemUp) 1.9f else 0f) }?.let { it - 5f + 0.3f } ?: 0f).coerceAtLeast(0f))
         }
     }
 }
@@ -130,10 +140,11 @@ private val TIME_DIGITS = Array(10) { String(Character.toChars(0xE080 + it)) }
 private val Paper = Color(0xFFF8F9FB) // bianco-azzurro, come in Flowkey
 private val Ink = Color(0xFF1B1B1B)
 private val StaffLine = Color(0xFF555555)
-private val PlayedInk = Color(0xFF1C1C1C) // come in Flowkey: le note già suonate restano scure (diverso da Ink solo per il confronto interno)
+internal val PlayedInk = Color(0xFF1C1C1C) // come in Flowkey: le note già suonate restano scure (diverso da Ink solo per il confronto interno)
 private val DimInk = Color(0xFFC4C4C4)
 private val CurrentInk = Color(0xFFE65100)
-private val MissedInk = Color(0xFFD32F2F)
+internal val MissedInk = Color(0xFFD32F2F)
+internal val OffBeatInk = Color(0xFFE69500) // colpita ma non perfettamente a tempo: ambra, distinta dal rosso delle note sbagliate/mancate
 private val CursorBand = Color(0x22000000)
 private val LoopHandleInk = Color(0xFFF07F00)
 private val GlowShort = Color(0xFFFFC107)    // note brevi: ambra
@@ -185,6 +196,8 @@ fun SheetMusicView(
     /** Letto in fase di disegno: true = scorrimento ammorbidito (play); false = posizione esatta (fermo o trascinato col dito). */
     smoothScroll: () -> Boolean = { true },
     onLoopEdit: (Int, Int) -> Unit = { _, _ -> },
+    /** Un tasto fuori tempo rispetto a una pausa: le pause interessate si colorano (rosso = troppo presto o in pausa, arancio = in ritardo). */
+    restFlash: com.gianlucacelante.midipiano.practice.TimingFeedback? = null,
 ) {
     val context = LocalContext.current
     val typeface = remember { Typeface.createFromAsset(context.assets, "fonts/Bravura.otf") }
@@ -194,12 +207,13 @@ fun SheetMusicView(
     val fade = remember { FadeCache() }
     val chordPaint = remember { Paint(Paint.ANTI_ALIAS_FLAG).apply { color = android.graphics.Color.rgb(40, 40, 40); this.typeface = Typeface.create(Typeface.SERIF, Typeface.BOLD) } }
     val lyricPaint = remember { Paint(Paint.ANTI_ALIAS_FLAG).apply { color = android.graphics.Color.rgb(40, 40, 40); textAlign = Paint.Align.CENTER; this.typeface = Typeface.SERIF } }
+    val headBounds = remember { android.graphics.Rect() }
     val namePaint = remember { Paint(Paint.ANTI_ALIAS_FLAG).apply { color = android.graphics.Color.rgb(70, 70, 70); textAlign = Paint.Align.CENTER; isFakeBoldText = true } }
 
     val localScrub = remember { androidx.compose.runtime.mutableFloatStateOf(Float.NaN) } // posizione del dito, letta dal disegno
     val barStartsList = remember(sheet) { listOf(0.0) + sheet.barLines }
     val gestures = Modifier.pointerInput(sheet, loopBars) {
-        val s = minOf(13.dp.toPx(), size.height / SYSTEM_SPACES)
+        val s = minOf(13.dp.toPx(), size.height / (SYSTEM_SPACES + sheet.topExtra + sheet.bottomExtra))
         val cursorX = size.width / 2f
         val sp = sheet.spacing
         fun barIndexAt(t: Double): Int { // numero di battuta (1..n) che contiene l'istante t
@@ -279,13 +293,14 @@ fun SheetMusicView(
         val time = localScrub.floatValue.takeUnless { it.isNaN() } ?: timeProvider()
         paint.typeface = typeface
         // Un "spazio" del rigo: ~13 dp (Flowkey ~10, ma qui la tastiera e' piu' bassa e lo spartito ha piu' spazio); mai oltre l'altezza disponibile
-        val s = minOf(13.dp.toPx(), size.height / SYSTEM_SPACES)
-        val top = (size.height - SYSTEM_SPACES * s) / 2f // il sistema di righi sta al centro dell'area
+        val spaces = SYSTEM_SPACES + sheet.topExtra + sheet.bottomExtra // più spazio se ci sono note molto alte o molto basse
+        val s = minOf(13.dp.toPx(), size.height / spaces)
+        val top = (size.height - spaces * s) / 2f // il sistema di righi sta al centro dell'area
         paint.textSize = 4f * s
 
         // Geometria verticale (in spazi): margine 5, violino 4, intervallo 6, basso 4, margine 5
-        val trebleBottom = top + 9f * s
-        val bassBottom = top + 9f * s + STAFF_GAP_SPACES * s
+        val trebleBottom = top + (9f + sheet.topExtra) * s
+        val bassBottom = trebleBottom + STAFF_GAP_SPACES * s
         val keyCount = sheet.maxKeyCount
         val panelW = (5.8f + keyCount * 1.1f + 3.2f) * s
         val cursorX = size.width / 2f // il cursore sta al centro, come in Flowkey
@@ -304,7 +319,7 @@ fun SheetMusicView(
         drawRect(Paper, Offset.Zero, size)
         // Chiavi e righi scorrono con la musica: all'inizio stanno subito a sinistra della prima nota, poi restano fissi a sinistra
         val firstX = xOf(sheet.firstSec)
-        val panelX = maxOf(0f, firstX - 2.6f * s - panelW)
+        val panelX = maxOf(0f, firstX - 4.2f * s - panelW)
         val notesLeft = panelX + panelW
         val endPx = if (sp.hasEnd) cursorX + ((sp.endX - xNow) * s).toFloat() else Float.MAX_VALUE
         drawStaves(s, trebleBottom, bassBottom, panelX, minOf(size.width, endPx))
@@ -316,6 +331,13 @@ fun SheetMusicView(
             val tRight = sp.timeAt(xNow + ((size.width - cursorX) / s + 3.0)).toFloat()
             numberPaint.textSize = 1.7f * s
             namePaint.textSize = 1.5f * s
+            // misura vera della testa nera (una volta a fotogramma): per centrare l'anello
+            val hb = headBounds
+            paint.getTextBounds(HEAD_BLACK, 0, HEAD_BLACK.length, hb)
+            val headInkCx = (hb.left + hb.right) / 2f
+            val headInkCy = (hb.top + hb.bottom) / 2f
+            val headInkW = (hb.right - hb.left).toFloat()
+            val headInkH = (hb.bottom - hb.top).toFloat()
             loopSec?.let { loop ->
                 val x1 = bx(loop.start).coerceAtLeast(notesLeft)
                 val x2 = bx(loop.endInclusive).coerceAtMost(size.width)
@@ -341,7 +363,21 @@ fun SheetMusicView(
                 if (x in notesLeft..size.width) {
                     drawLine(StaffLine, Offset(x, trebleBottom - 4f * s), Offset(x, bassBottom), strokeWidth = 1.5f)
                     val label = (index + (if (sheet.firstBarIsPickup) 1 else 2)).toString() // con l'attacco in levare la prima battuta intera e' la 1
-                    canvas.drawText(label, x - 0.3f * s - numberPaint.measureText(label), trebleBottom - 4.8f * s, numberPaint) // numero della battuta che inizia qui
+                    // numero della battuta che inizia qui: dopo la stanghetta (a sinistra finirebbe sulle ultime note della battuta prima) e più in alto se sotto ci sono note alte
+                    val nx = x + 0.3f * s
+                    val nw = numberPaint.measureText(label)
+                    var ny = trebleBottom - 4.8f * s
+                    val numChords = sheet.chords
+                    var k = findFirst(numChords.size, (bar - 1.0).toFloat()) { numChords[it].startSec }
+                    while (k < numChords.size) {
+                        val ch = numChords[k++]
+                        val cxk = xOf(ch.startSec)
+                        if (cxk - HEAD_WIDTH * s > nx + nw) break
+                        if (ch.clef != Clef.TREBLE || cxk + HEAD_WIDTH * s < nx) continue
+                        val rise = if (ch.hasStem && ch.stemUp) 3.6f * s else if (!ch.stemUp && showNoteNames) 1.9f * s else 1.0f * s
+                        ny = minOf(ny, yOf(Clef.TREBLE, ch.highest.position) - rise - 0.3f * s)
+                    }
+                    canvas.drawText(label, nx, ny.coerceAtLeast(1.5f * s), numberPaint)
                 }
             }
 
@@ -363,16 +399,33 @@ fun SheetMusicView(
             lyricPaint.textSize = 1.9f * s
             val symbols = sheet.chordSymbols
             var cs = findFirst(symbols.size, tLeft - 2f) { symbols[it].timeSec }
+            val allChords = sheet.chords
             while (cs < symbols.size && symbols[cs].timeSec <= tRight) {
                 val sym = symbols[cs++]
-                canvas.drawText(sym.text, xOf(sym.timeSec) + 0.3f * s, trebleBottom - 6.9f * s, chordPaint)
+                val sx = xOf(sym.timeSec) + 0.3f * s
+                val sw = chordPaint.measureText(sym.text)
+                // la sigla sta sopra il rigo, ma sale se sotto di lei ci sono note alte (con il loro gambo o nome): non le copre mai
+                var top = Float.MAX_VALUE
+                var k = findFirst(allChords.size, (sym.timeSec - 1.0).toFloat()) { allChords[it].startSec }
+                while (k < allChords.size) {
+                    val ch = allChords[k++]
+                    val cxk = xOf(ch.startSec)
+                    if (cxk - (HEAD_WIDTH * s) > sx + sw) break
+                    if (ch.clef != Clef.TREBLE || cxk + (HEAD_WIDTH * s) < sx) continue
+                    val rise = if (ch.hasStem && ch.stemUp) 3.6f * s else if (!ch.stemUp && showNoteNames) 1.9f * s else 1.0f * s
+                    top = minOf(top, yOf(Clef.TREBLE, ch.highest.position) - rise)
+                }
+                canvas.drawText(sym.text, sx, minOf(trebleBottom - 6.9f * s, top - 0.5f * s).coerceAtLeast(2.1f * s), chordPaint)
             }
 
             val rests = sheet.rests
             var r = findFirst(rests.size, tLeft) { rests[it].startSec }
             while (r < rests.size && rests[r].startSec <= tRight) {
                 val rest = rests[r++]
-                drawRest(rest, xOf(rest.startSec), s, ::yOf, ::glyph)
+                val flash = if (restFlash != null && restFlash.covers(rest.startSec, rest.endSec)) {
+                    if (restFlash.kind == com.gianlucacelante.midipiano.practice.TimingKind.LATE || restFlash.kind == com.gianlucacelante.midipiano.practice.TimingKind.TOO_SHORT) Color(0xFFF2A33A) else Color(0xFFE5484D)
+                } else null
+                drawRest(rest, xOf(rest.startSec), s, ::yOf, ::glyph, flash)
             }
 
             val chords = sheet.chords
@@ -390,7 +443,18 @@ fun SheetMusicView(
                         val text = if (hyphen) raw.dropLast(1) else raw
                         val lx = cx
                         val half = lyricPaint.measureText(text) / 2f
-                        val ly = trebleBottom + 3.8f * s
+                        var ly = trebleBottom + (if (showNoteNames) 5.6f else 3.8f) * s // con i nomi delle note la sillaba scende: nomi e testo non si sovrappongono
+                        // se nel basso ci sono note che salgono sopra il rigo proprio sotto la sillaba, la sillaba sale (ma non oltre i nomi delle note acute)
+                        var bassTop = Float.MAX_VALUE
+                        var trebleLow = trebleBottom
+                        var bk = findFirst(chords.size, (c.startSec - 0.8).toFloat()) { chords[it].startSec }
+                        while (bk < chords.size && chords[bk].startSec <= c.startSec + 1.0) {
+                            val o = chords[bk++]
+                            if (abs(xOf(o.startSec) - lx) > half + headW) continue
+                            if (o.clef == Clef.BASS) bassTop = minOf(bassTop, yOf(Clef.BASS, o.highest.position) - 0.9f * s)
+                            else trebleLow = maxOf(trebleLow, yOf(Clef.TREBLE, o.lowest.position) + (if (showNoteNames) 2.4f else 1.2f) * s)
+                        }
+                        if (bassTop < ly + 0.4f * s) ly = maxOf(bassTop - 0.25f * s, trebleLow + 2.1f * s).coerceAtMost(ly)
                         canvas.drawText(text, lx, ly, lyricPaint)
                         if (!hyphenFrom.isNaN()) canvas.drawText("-", (hyphenFrom + lx - half) / 2f, ly, lyricPaint) // trattino al centro fra le due sillabe
                         hyphenFrom = if (hyphen) lx + half else Float.NaN
@@ -409,18 +473,22 @@ fun SheetMusicView(
                         n.beats <= 2.0 -> GlowLong
                         else -> GlowVeryLong
                     }
-                    val gx = cx + (if (n.shifted) headW else 0f) // il centro della testa
-                    val gy = yOf(c.clef, n.position)
-                    // alone molto tenue e un anello sottile attorno alla testa: la nota resta nera e leggibile
-                    drawCircle(base.copy(alpha = 0.06f + 0.10f * left), (1.4f + 0.3f * left) * s, Offset(gx, gy))
-                    drawCircle(base.copy(alpha = 0.55f + 0.40f * left), (0.95f + 0.2f * left) * s, Offset(gx, gy), style = Stroke(0.15f * s))
+                    // il centro è quello dell'inchiostro della testa (non della sua cella): così l'anello è esattamente attorno alla nota
+                    val gx = cx - headW / 2f + (if (n.shifted) headW else 0f) + headInkCx
+                    val gy = yOf(c.clef, n.position) + headInkCy
+                    val ow = headInkW + 0.45f * s
+                    val oh = headInkH + 0.45f * s
+                    // alone appena percettibile e un anello sottile aderente alla testa: la nota resta nera e leggibile
+                    drawOval(base.copy(alpha = 0.10f + 0.10f * left), Offset(gx - ow / 2f - 0.15f * s, gy - oh / 2f - 0.15f * s), Size(ow + 0.3f * s, oh + 0.3f * s))
+                    drawOval(base.copy(alpha = 0.55f + 0.40f * left), Offset(gx - ow / 2f, gy - oh / 2f), Size(ow, oh), style = Stroke(0.12f * s))
                 }
-                drawChord(c, cx, s, ::yOf, ::glyph, stem = !beamedChord, names = if (showNoteNames) namePaint else null) { n -> inkFor(n, noteState, hand) }
+                val up = sheet.beamStemUp[c] ?: c.stemUp // sotto trave decide il gruppo
+                drawChord(c, cx, s, ::yOf, ::glyph, stem = !beamedChord, names = if (showNoteNames) namePaint else null, stemUp = up) { n -> inkFor(n, noteState, hand) }
                 for (n in c.notes) { // legatura: arco fino alla parte successiva, dalla parte opposta al gambo
                     if (n.tieNext) {
                         val x1 = cx + headW + (if (n.dotted) 0.95f * s else 0.2f * s)
                         val x2 = xOf(n.startSec + n.durationSec) - headW * 0.15f
-                        drawTie(x1, x2, yOf(c.clef, n.position), if (n.stemUp) 1f else -1f, s)
+                        drawTie(x1, x2, yOf(c.clef, n.position), if (up) 1f else -1f, s)
                     }
                 }
             }
@@ -433,7 +501,10 @@ fun SheetMusicView(
         }
 
         // Dissolvenza: le note che scorrono verso sinistra sfumano prima di sparire sotto la chiave
-        drawRect(fade.brush(notesLeft, 7f * s), Offset(notesLeft, 0f), Size(7f * s, size.height))
+        // (all'inizio la prima nota è appena a destra della chiave: nessuna dissolvenza finché non ha cominciato a passarle sotto)
+        val scrolled = (panelW + 4.2f * s - firstX).coerceAtLeast(0f)
+        val fadeAlpha = (scrolled / (7f * s)).coerceIn(0f, 1f)
+        if (fadeAlpha > 0f) drawRect(fade.brush(notesLeft, 7f * s), Offset(notesLeft, 0f), Size(7f * s, size.height), alpha = fadeAlpha)
         drawStaves(s, trebleBottom, bassBottom, notesLeft, notesLeft + 7f * s) // le linee del rigo restano piene
 
         // Doppia stanghetta finale: sottile + spessa, dopo di essa il rigo non continua
@@ -496,29 +567,31 @@ private class FadeCache {
     }
 }
 
-private val ghostPaths = object : LinkedHashMap<List<Float>, Path>(8, 0.75f, true) {
-    override fun removeEldestEntry(eldest: MutableMap.MutableEntry<List<Float>, Path>?) = size > 8
+/** Percorsi dei righi (linee piene e tratteggio fantasma) per una larghezza e una scala: si costruiscono una volta sola. */
+private class StaffPaths(s: Float, trebleBottom: Float, bassBottom: Float, width: Float) {
+    val lines = Path().also { p -> StaffGeometry.staffLines(s, trebleBottom, bassBottom, width).let { a -> for (i in 0 until a.size / 4) p.addRect(androidx.compose.ui.geometry.Rect(a[i * 4], a[i * 4 + 1], a[i * 4 + 2], a[i * 4 + 3])) } }
+    val ghost = Path().also { p -> StaffGeometry.ghostDashes(s, trebleBottom, bassBottom, width).let { a -> for (i in 0 until a.size / 4) p.addRect(androidx.compose.ui.geometry.Rect(a[i * 4], a[i * 4 + 1], a[i * 4 + 2], a[i * 4 + 3])) } }
 }
 
-private fun ghostPath(s: Float, trebleBottom: Float, bassBottom: Float, x0: Float, x1: Float): Path =
-    ghostPaths.getOrPut(listOf(s, trebleBottom, bassBottom, x0, x1)) {
-        Path().apply {
-            for (k in 1..3) for (bottom in floatArrayOf(trebleBottom, bassBottom)) for (y in floatArrayOf(bottom + k * s, bottom - (4 + k) * s)) {
-                var x = x0
-                while (x < x1) { addRect(androidx.compose.ui.geometry.Rect(x, y - 0.5f, minOf(x + 0.45f * s, x1), y + 0.5f)); x += s }
-            }
-        }
+private class StaffCache {
+    private var key: List<Float>? = null
+    private var paths: StaffPaths? = null
+    fun get(s: Float, trebleBottom: Float, bassBottom: Float, width: Float): StaffPaths {
+        val c = paths
+        val k = key
+        if (c != null && k != null && k[0] == s && k[1] == trebleBottom && k[2] == bassBottom && k[3] == width) return c
+        return StaffPaths(s, trebleBottom, bassBottom, width).also { paths = it; key = StaffGeometry.key(s, trebleBottom, bassBottom, width) }
     }
+}
+private val staffCache = StaffCache()
 
 private fun DrawScope.drawStaves(s: Float, trebleBottom: Float, bassBottom: Float, x0: Float, x1: Float) {
-    // Linee supplementari "fantasma": tratteggiate e quasi trasparenti, tre sopra e tre sotto ogni rigo.
-    // Il tratteggio è un unico percorso costruito una volta (con PathEffect si ricalcolava a ogni fotogramma).
-    drawPath(ghostPath(s, trebleBottom, bassBottom, x0, x1), GhostLine)
-    for (line in 0..4) {
-        val y1 = trebleBottom - line * s
-        val y2 = bassBottom - line * s
-        drawLine(StaffLine, Offset(x0, y1), Offset(x1, y1), strokeWidth = 1.5f)
-        drawLine(StaffLine, Offset(x0, y2), Offset(x1, y2), strokeWidth = 1.5f)
+    // Linee supplementari "fantasma" (tratteggiate, quasi trasparenti) e linee dei righi: due percorsi costruiti una volta
+    // per tutta la larghezza; qui si ritagliano sul tratto richiesto.
+    val st = staffCache.get(s, trebleBottom, bassBottom, size.width)
+    clipRect(left = x0, top = 0f, right = x1, bottom = size.height) {
+        drawPath(st.ghost, GhostLine)
+        drawPath(st.lines, StaffLine)
     }
 }
 
@@ -540,6 +613,7 @@ private fun inkFor(n: StaffNote, noteState: (StaffNote) -> NoteState, hand: Hand
     hand != Hand.BOTH && n.hand != hand -> DimInk // l'altra mano: solo come contesto
     else -> when (noteState(n)) {
         NoteState.PLAYED -> PlayedInk
+        NoteState.PLAYED_OFF -> OffBeatInk // giusta ma non perfetta: un po' presto o un po' tardi
         NoteState.CURRENT -> Ink // la nota corrente resta nera: la evidenzia il bagliore
         NoteState.UPCOMING -> Ink
         NoteState.MISSED -> MissedInk
@@ -561,6 +635,7 @@ private fun DrawScope.drawChord(
     glyph: (String, Float, Float, Color) -> Unit,
     stem: Boolean,
     names: Paint?,
+    stemUp: Boolean = chord.stemUp,
     inkOf: (StaffNote) -> Color,
 ) {
     val clef = chord.clef
@@ -585,11 +660,32 @@ private fun DrawScope.drawChord(
         val x = left + if (n.shifted) headW else 0f
         val y = yOf(clef, n.position)
         glyph(if (n.hasStem) (if (n.filled) HEAD_BLACK else HEAD_HALF) else HEAD_WHOLE, x, y, inkOf(n))
-        if (names != null) { // nome in solfeggio sotto la testa (o sopra se il gambo scende)
-            val down = !chord.stemUp
-            drawContext.canvas.nativeCanvas.drawText(n.noteName, x + headW / 2f, if (down) y - 1.1f * s else y + 2.0f * s, names)
+        if (names != null && notes.size == 1 && !n.tieFromPrev) { // nome in solfeggio (non sulla nota legata: non si preme di nuovo) sotto la testa (o sopra se il gambo scende)
+            val down = !stemUp
+            val lift = if (n.tieNext) 1.9f * s else 0f // la legatura passa dalla parte del nome: il nome si scosta
+            drawContext.canvas.nativeCanvas.drawText(n.noteName, x + headW / 2f, if (down) y - 1.1f * s - lift else y + 2.0f * s + lift, names)
         }
         if (n.dotted) glyph(DOT, x + headW + 0.35f * s, if (n.position % 2 == 0) y - 0.5f * s else y, inkOf(n))
+    }
+
+    if (names != null && notes.size > 1 && !notes.all { it.tieFromPrev }) {
+        // accordo: un'unica etichetta con i nomi dal basso all'alto (uno per testa si sovrapporrebbero), sotto la nota più bassa o sopra la più alta se il gambo scende
+        val label = chord.namesLabel
+        val down = !stemUp
+        // negli accordi del basso l'etichetta va sotto (anche sotto il gambo): sopra finirebbe contro il testo del brano, che sta fra i due righi
+        val lift = if (notes.any { it.tieNext }) 1.9f * s else 0f // la legatura passa dalla parte dell'etichetta: l'etichetta si scosta
+        val y = when {
+            clef == Clef.BASS -> yOf(clef, chord.lowest.position) + (if (down) 3.5f * s + 1.8f * s else 2.0f * s) + lift
+            down -> yOf(clef, chord.highest.position) - 1.1f * s - lift
+            else -> yOf(clef, chord.lowest.position) + 2.0f * s + lift
+        }
+        // l'etichetta non deve essere più larga dello spazio fra due accordi vicini: si rimpicciolisce per starci
+        val full = names.measureText(label)
+        val maxW = 4.4f * s
+        val saved = names.textSize
+        if (full > maxW) names.textSize = saved * (maxW / full).coerceAtLeast(0.6f)
+        drawContext.canvas.nativeCanvas.drawText(label, centerX, y, names)
+        names.textSize = saved
     }
 
     if (!stem || !chord.hasStem) return
@@ -614,13 +710,7 @@ private fun DrawScope.drawBeamGroup(
 ) {
     val chords = group.chords
     val clef = chords[0].clef
-    var minLow = Int.MAX_VALUE
-    var maxHigh = Int.MIN_VALUE
-    for (c in chords) {
-        if (c.lowest.position < minLow) minLow = c.lowest.position
-        if (c.highest.position > maxHigh) maxHigh = c.highest.position
-    }
-    val up = (4 - minLow) >= (maxHigh - 4)
+    val up = group.stemUp
     val stemLen = 3.3f * s
     val headW = HEAD_WIDTH * s
 
@@ -676,6 +766,7 @@ private fun DrawScope.drawRest(
     s: Float,
     yOf: (Clef, Int) -> Float,
     glyph: (String, Float, Float, Color) -> Unit,
+    flash: Color? = null,
 ) {
     val (code, dotted) = when {
         rest.beats >= 4.0 -> 0xE4E3 to false
@@ -689,8 +780,12 @@ private fun DrawScope.drawRest(
         else -> 0xE4E8 to false
     }
     val y = yOf(rest.clef, if (code == 0xE4E3) 6 else 4) // la pausa di semibreve pende dalla quarta linea; le altre stanno sulla centrale
-    glyph(REST_GLYPHS.getValue(code), x + 0.5f * s, y, Ink)
-    if (dotted) glyph(DOT, x + 2.1f * s, yOf(rest.clef, 5), Ink)
+    if (flash != null) { // pausa evidenziata: fondino colorato dietro il simbolo
+        drawRoundRect(flash.copy(alpha = 0.22f), Offset(x - 0.1f * s, yOf(rest.clef, 4) - 1.7f * s), Size(2.8f * s, 3.4f * s), androidx.compose.ui.geometry.CornerRadius(0.5f * s))
+    }
+    val ink = flash ?: Ink
+    glyph(REST_GLYPHS.getValue(code), x + 0.5f * s, y, ink)
+    if (dotted) glyph(DOT, x + 2.1f * s, yOf(rest.clef, 5), ink)
 }
 
 private fun DrawScope.drawTimeSignature(

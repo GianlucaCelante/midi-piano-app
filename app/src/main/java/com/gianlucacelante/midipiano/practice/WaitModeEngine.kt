@@ -15,6 +15,7 @@ class WaitModeEngine(private val steps: List<Step>) {
         private set
     var mistakes: Int = 0
         private set
+    private var lastWrongNanos = Long.MIN_VALUE
     private val remaining = HashSet<Int>()
     private val pressedAt = HashMap<Int, Long>() // tasto del passo -> istante (ns) dell'ultima pressione valida
 
@@ -36,21 +37,28 @@ class WaitModeEngine(private val steps: List<Step>) {
         if (isFinished) return NoteResult.IGNORED
         val step = currentStep ?: return NoteResult.IGNORED
         if (key !in step.keys) {
-            mistakes++
+            countMistake(nowNanos)
             return NoteResult.WRONG
         }
         expire(nowNanos)
         if (key in pressedAt) { // già premuta (e ancora valida): non conta due volte
-            mistakes++
+            countMistake(nowNanos)
             return NoteResult.WRONG
         }
         pressedAt[key] = nowNanos
+        lastWrongNanos = Long.MIN_VALUE // un passo giusto chiude il gesto sbagliato precedente
         remaining.clear()
         remaining.addAll(step.keys.filter { it !in pressedAt })
         if (remaining.isNotEmpty()) return NoteResult.CORRECT
         index++
         loadStep()
         return if (isFinished) NoteResult.FINISHED else NoteResult.STEP_COMPLETED
+    }
+
+    /** Più tasti sbagliati nello stesso gesto (un accordo con tasti vicini di troppo) sono un solo errore. */
+    private fun countMistake(nowNanos: Long) {
+        val folded = lastWrongNanos != Long.MIN_VALUE && nowNanos - lastWrongNanos <= WRONG_CLUSTER_NS
+        if (!folded) { lastWrongNanos = nowNanos; mistakes++ } // la finestra resta ancorata al primo tasto del gesto
     }
 
     /** Dimentica le note del passo premute da più di [CHORD_WINDOW_NS]. */
@@ -65,11 +73,13 @@ class WaitModeEngine(private val steps: List<Step>) {
     fun restart(from: Int = 0) {
         index = from.coerceIn(0, steps.size)
         mistakes = 0
+        lastWrongNanos = Long.MIN_VALUE
         loadStep()
     }
 
     companion object {
         const val CHORD_WINDOW_NS = 350_000_000L
+        const val WRONG_CLUSTER_NS = 150_000_000L
     }
 
     private fun loadStep() {

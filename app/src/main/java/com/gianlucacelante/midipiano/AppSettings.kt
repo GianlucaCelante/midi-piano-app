@@ -17,8 +17,6 @@ data class Settings(
     val dailyGoalMinutes: Int = 10,
     /** Sul loop in "A tempo": un giro pulito accelera di un gradino, uno sbagliato rallenta. */
     val speedTrainer: Boolean = false,
-    /** Tutte le versioni di ogni brano sono subito disponibili (altrimenti si sbloccano suonando la precedente fino in fondo). */
-    val unlockAll: Boolean = false,
     val fallingNotes: Boolean = false,
     val onboarded: Boolean = false,
     /** La guida del player (modalità, mani, loop, velocità, mappa errori) è stata vista. */
@@ -27,6 +25,9 @@ data class Settings(
     val fingers: Boolean = true,
     /** Ora del promemoria giornaliero (0-23), -1 = spento. */
     val reminderHour: Int = -1,
+    /** Routine quotidiana scelta (id del file in assets/routines) e quanti esercizi farne ogni giorno (0 = tutti). */
+    val routineId: String = "routine-base",
+    val routineSize: Int = 0,
 )
 
 class AppSettings(context: Context) {
@@ -51,19 +52,20 @@ class AppSettings(context: Context) {
         visualBeat = prefs.getBoolean("visualBeat", true),
         dailyGoalMinutes = prefs.getInt("dailyGoal", 10),
         speedTrainer = prefs.getBoolean("speedTrainer", false),
-        unlockAll = prefs.getBoolean("unlockAll", false),
         fallingNotes = prefs.getBoolean("fallingNotes", false),
         onboarded = prefs.getBoolean("onboarded", false),
         playerGuideSeen = prefs.getBoolean("playerGuideSeen", false),
         mic = prefs.getBoolean("mic", false),
         fingers = prefs.getBoolean("fingers", true),
         reminderHour = prefs.getInt("reminderHour", -1),
+        routineId = prefs.getString("routineId", "routine-base") ?: "routine-base",
+        routineSize = prefs.getInt("routineSize", 0),
     )
 
     fun save(s: Settings) {
         prefs.edit()
             .putBoolean("sound", s.sound).putBoolean("metronome", s.metronome).putBoolean("countIn", s.countIn)
-            .putBoolean("midiSounds", s.midiSounds).putBoolean("noteNames", s.noteNames).putBoolean("backing", s.backing).putBoolean("visualBeat", s.visualBeat).putInt("dailyGoal", s.dailyGoalMinutes).putBoolean("speedTrainer", s.speedTrainer).putBoolean("unlockAll", s.unlockAll).putBoolean("fallingNotes", s.fallingNotes).putBoolean("onboarded", s.onboarded).putBoolean("playerGuideSeen", s.playerGuideSeen).putBoolean("mic", s.mic).putBoolean("fingers", s.fingers).putInt("reminderHour", s.reminderHour)
+            .putBoolean("midiSounds", s.midiSounds).putBoolean("noteNames", s.noteNames).putBoolean("backing", s.backing).putBoolean("visualBeat", s.visualBeat).putInt("dailyGoal", s.dailyGoalMinutes).putBoolean("speedTrainer", s.speedTrainer).putBoolean("fallingNotes", s.fallingNotes).putBoolean("onboarded", s.onboarded).putBoolean("playerGuideSeen", s.playerGuideSeen).putBoolean("mic", s.mic).putBoolean("fingers", s.fingers).putInt("reminderHour", s.reminderHour).putString("routineId", s.routineId).putInt("routineSize", s.routineSize)
             .apply()
     }
 }

@@ -4,6 +4,9 @@ package com.gianlucacelante.midipiano.notation
 data class Chord(val clef: Clef, val startSec: Double, val notes: List<StaffNote>) {
     private val sorted = notes.sortedBy { it.position }
 
+    /** I nomi delle note dal basso all'alto («do mi sol»), costruiti una sola volta: si disegnano a ogni fotogramma. */
+    val namesLabel: String by lazy(LazyThreadSafetyMode.NONE) { sorted.joinToString(" ") { it.noteName } }
+
     val lowest: StaffNote get() = sorted.first()
     val highest: StaffNote get() = sorted.last()
 

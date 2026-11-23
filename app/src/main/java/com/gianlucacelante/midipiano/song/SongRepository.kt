@@ -43,11 +43,12 @@ class SongRepository(private val context: Context) {
      * Importa un file MIDI o MusicXML scelto dall'utente: lo legge, lo prova con i parser dell'app e solo
      * se si apre lo copia fra i brani personali. Il file resta sul dispositivo (licenza "personale").
      */
-    fun importSong(uri: Uri, displayName: String): SongEntry {
+    fun importSong(uri: Uri, displayName: String, meta: ImportMeta? = null): SongEntry {
         val ext = displayName.substringAfterLast('.', "").lowercase()
         require(ext in IMPORT_EXTENSIONS) { "Formato non supportato: usa un file .mid, .musicxml, .xml, .mxl oppure un file di accordi (.txt)" }
         val bytes = context.contentResolver.openInputStream(uri)?.use { it.readBytes(MAX_IMPORT_BYTES) }
             ?: throw IllegalArgumentException("Impossibile leggere il file")
+        val tidy = meta ?: ImportMetaGuess.guess(displayName, bytes)
         val base = displayName.substringBeforeLast('.').ifBlank { "brano" }
         val slug = slugify(base)
         val existing = userEntries()
@@ -55,15 +56,25 @@ class SongRepository(private val context: Context) {
         var n = 2
         while (existing.any { it.id == id }) id = "user-$slug-${n++}"
         val file = "$id.$ext"
-        val entry = SongEntry(id, base.replace('_', ' ').replace('-', ' ').trim().ifBlank { "Brano importato" }, null, "$USER_PREFIX$file",
-            "File importato", "Personale", false, null)
+        val entry = SongEntry(id, tidy.title, tidy.composer, "$USER_PREFIX$file",
+            "File importato" + (tidy.credit?.let { " · Foto: $it" } ?: ""), "Personale", false, null)
         parse(entry, bytes) // se non si apre, lancia e non si salva nulla
         userDir.mkdirs()
         File(userDir, file).writeBytes(bytes)
+        tidy.cover?.let { c -> File(context.filesDir, "user_covers").apply { mkdirs() }.let { File(it, "$id.jpg").writeBytes(c) } }
         val arr = JSONArray()
         (existing + entry).forEach { e -> arr.put(toJson(e)) }
         File(userDir, "index.json").writeText(arr.toString(2))
         return entry
+    }
+
+    /** La foto di copertina di un brano importato, se c'è. */
+    fun userCover(id: String): File? = File(File(context.filesDir, "user_covers"), "$id.jpg").takeIf { it.exists() }
+
+    /** Cancella tutti i brani importati (e le loro foto). */
+    fun clearUserSongs() {
+        userDir.deleteRecursively()
+        File(context.filesDir, "user_covers").deleteRecursively()
     }
 
     private fun parse(entry: SongEntry, bytes: ByteArray, arpeggio: Boolean = false): Song = when (entry.format) {

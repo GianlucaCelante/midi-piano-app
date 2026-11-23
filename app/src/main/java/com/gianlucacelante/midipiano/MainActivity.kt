@@ -38,7 +38,6 @@ import com.gianlucacelante.midipiano.learn.Courses
 import com.gianlucacelante.midipiano.ui.CourseScreen
 import com.gianlucacelante.midipiano.ui.CoursesScreen
 import com.gianlucacelante.midipiano.ui.HomeScreen
-import com.gianlucacelante.midipiano.ui.LessonScreen
 import com.gianlucacelante.midipiano.ui.OnboardingDialog
 import com.gianlucacelante.midipiano.ui.ProfileScreen
 import com.gianlucacelante.midipiano.ui.ProgressScreen
@@ -76,8 +75,12 @@ class MainActivity : ComponentActivity() {
     /** Solo debug: permette di avviare da adb la simulazione di esecuzione di un brano. */
     private val autoplayReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
+            if (intent.action == "com.gianlucacelante.midipiano.IMPORT_DIR") {
+                viewModel.debugImportFolder(java.io.File(getExternalFilesDir(null), "import"), intent.getBooleanExtra("replace", false))
+                return
+            }
             if (intent.action == "com.gianlucacelante.midipiano.AUTOPLAY_EXERCISE") {
-                viewModel.debugAutoplayExercise(intent.getIntExtra("jitter", 20))
+                viewModel.debugAutoplayExercise(intent.getIntExtra("jitter", 20), intent.getFloatExtra("hold", 0.95f).toDouble())
                 return
             }
             val query = intent.getStringExtra("song") ?: return
@@ -102,7 +105,7 @@ class MainActivity : ComponentActivity() {
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         if (BuildConfig.DEBUG) {
             ContextCompat.registerReceiver(
-                this, autoplayReceiver, IntentFilter("com.gianlucacelante.midipiano.AUTOPLAY").apply { addAction("com.gianlucacelante.midipiano.AUTOPLAY_EXERCISE") }, ContextCompat.RECEIVER_EXPORTED,
+                this, autoplayReceiver, IntentFilter("com.gianlucacelante.midipiano.AUTOPLAY").apply { addAction("com.gianlucacelante.midipiano.AUTOPLAY_EXERCISE"); addAction("com.gianlucacelante.midipiano.IMPORT_DIR") }, ContextCompat.RECEIVER_EXPORTED,
             )
         }
         setContent {
@@ -133,16 +136,17 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 private fun App(vm: MidiViewModel) {
-    val practice by vm.practice.collectAsState()
-    val pressed by vm.pressed.collectAsState()
-    val press by vm.press.collectAsState()
-    val wrongKeys by vm.wrong.collectAsState()
+    // lo stato dell'esercizio cambia a ogni nota: qui si legge solo «c'è o no» (App non si ricompone a ogni nota), il resto lo legge PracticeHost
+    val practiceState = vm.practice.collectAsState()
+    val practiceOpen by remember { androidx.compose.runtime.derivedStateOf { practiceState.value != null } }
+    val pressedState = vm.pressed.collectAsState()
     val songs by vm.songs.collectAsState()
     val levels by vm.songLevels.collectAsState()
     val versions by vm.songVersions.collectAsState()
     val preview by vm.preview.collectAsState()
     val takes by vm.takes.collectAsState()
     val chordSongs by vm.chordSongs.collectAsState()
+    val variants by vm.songVariants.collectAsState()
     val importedSong by vm.imported.collectAsState()
     val context = androidx.compose.ui.platform.LocalContext.current
     val importLauncher = rememberLauncherForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
@@ -152,6 +156,9 @@ private fun App(vm: MidiViewModel) {
         }
     }
     val courses by vm.courses.collectAsState()
+    val routines by vm.routines.collectAsState()
+    val stats by vm.stats.collectAsState()
+    val records by vm.records.collectAsState()
     val progress by vm.progressView.collectAsState()
     val settings by vm.settingsState.collectAsState()
     val devices by vm.devices.collectAsState()
@@ -164,7 +171,6 @@ private fun App(vm: MidiViewModel) {
 
     var tab by rememberSaveable { mutableStateOf(Tab.HOME) }
     var courseId by rememberSaveable { mutableStateOf<String?>(null) }
-    var lessonId by rememberSaveable { mutableStateOf<String?>(null) }
     // schermate di allenamento a tutto campo: "chords" (accordi) e "keytest" (prova della tastiera)
     var training by rememberSaveable { mutableStateOf<String?>(null) }
     val kbCheck by vm.keyboardCheck.collectAsState()
@@ -194,61 +200,52 @@ private fun App(vm: MidiViewModel) {
         else permissionLauncher.launch(BlePermissions.required(Build.VERSION.SDK_INT).toTypedArray())
     }
 
-    val current = practice
-    if (current == null && !settings.onboarded) OnboardingDialog(onFinish = { vm.updateSettings(settings.copy(onboarded = true)) })
-    if (current != null) {
-        BackHandler(onBack = vm::closeSong)
-        PracticeScreen(
-            snapshot = current, pressed = pressed, wrongKeys = wrongKeys, clockTime = clockTime,
-            onBack = vm::closeSong, onHand = vm::setHand, onMode = vm::setMode, onPlayPause = vm::togglePlay,
-            onSpeed = vm::setSpeed, onTranspose = vm::setTranspose, onReview = vm::reviewBars, onReviewExercise = vm::reviewExerciseBars, onListenFirst = vm::listenFirst, onSkipListen = vm::skipListenFirst, press = press, hasTake = vm.hasTake(), replaying = preview.playing, onReplay = vm::toggleTakeReplay, onSettings = applySettings, onLoop = vm::setLoop, onSeekBar = vm::seekToBar,
-            onRestart = vm::restart, onSeek = vm::seek, onFrame = vm::onFrame,
-            onExerciseNext = {
-                val next = current.exercise?.let { Courses.nextExercise(courses, it.slideId) }
-                if (current.exercise?.slideId?.let { com.gianlucacelante.midipiano.learn.SightReading.isSight(it) } == true) vm.openSight()
-                else if (next != null) vm.openExercise(next) else vm.closeSong()
-            },
-            onExerciseRetry = vm::retryExercise, onExit = vm::closeSong,
-            onKeyDown = vm::pressKey, onKeyUp = vm::releaseKey, modifier = bg,
-            nextExercise = current.exercise?.let { Courses.nextExercise(courses, it.slideId) },
-            nextLessonTitle = current.exercise?.let { ex -> Courses.nextExercise(courses, ex.slideId)?.let { n -> Courses.lessonOf(courses, n.id)?.title } },
-            nextIsNewLesson = current.exercise?.let { ex -> Courses.nextExercise(courses, ex.slideId)?.let { n -> Courses.lessonOf(courses, n.id)?.id != Courses.lessonOf(courses, ex.slideId)?.id } } ?: false,
-            previewing = preview.playing,
-            onPreviewNext = { if (preview.playing) vm.stopPreview() else current.exercise?.let { ex -> Courses.nextExercise(courses, ex.slideId)?.let(vm::previewExercise) } },
-            onStopPreview = vm::stopPreview,
-            midiStatus = if (devices.isEmpty()) "Nessuna tastiera collegata. Collegala con USB (OTG) o dal Bluetooth nelle Impostazioni dell'app." else "Collegato: ${devices.joinToString()}",
-        )
+    if (!practiceOpen && !settings.onboarded) OnboardingDialog(onFinish = { vm.updateSettings(settings.copy(onboarded = true)) })
+    if (practiceOpen) {
+        PracticeHost(vm, practiceState, clockTime, applySettings, bg)
         return
     }
 
     val course = courses.firstOrNull { it.id == courseId }
-    val lesson = course?.lessons?.firstOrNull { it.id == lessonId }
     if (training != null) BackHandler { training = null }
     if (tab == Tab.COURSES && course != null && training == null) {
-        BackHandler { if (lesson != null) lessonId = null else courseId = null }
+        BackHandler { courseId = null }
     }
 
     var detail by remember { mutableStateOf<com.gianlucacelante.midipiano.song.SongEntry?>(null) }
-    androidx.compose.runtime.CompositionLocalProvider(com.gianlucacelante.midipiano.ui.LocalSongVersions provides versions, com.gianlucacelante.midipiano.ui.LocalChordSongs provides chordSongs) {
+    var detailVariant by remember { mutableStateOf<com.gianlucacelante.midipiano.song.SongEntry?>(null) } // arrangiamento scelto nella scheda (null = il brano stesso)
+    androidx.compose.runtime.CompositionLocalProvider(com.gianlucacelante.midipiano.ui.LocalSongVersions provides versions, com.gianlucacelante.midipiano.ui.LocalChordSongs provides chordSongs, com.gianlucacelante.midipiano.ui.LocalSongVariants provides variants) {
     Row(Modifier.fillMaxSize().background(FlowColors.Navy).safeDrawingPadding()) {
         MainNavRail(tab, { tab = it; training = null })
         Box(Modifier.weight(1f).fillMaxHeight()) {
             if (training == "chords") com.gianlucacelante.midipiano.ui.ChordTrainerScreen(
-                progress, pressed, onKeyDown = vm::pressKey, onKeyUp = vm::releaseKey, onPlayChord = vm::playChord, onAnswer = vm::recordChordAnswer, onBack = { training = null },
+                progress, pressedState.value, onKeyDown = vm::pressKey, onKeyUp = vm::releaseKey, onPlayChord = vm::playChord, onAnswer = vm::recordChordAnswer, onBack = { training = null },
+            ) else if (training == "ear") com.gianlucacelante.midipiano.ui.EarTrainerScreen(
+                progress, pressedState.value, onKeyDown = vm::pressKey, onKeyUp = vm::releaseKey, onPlay = { vm.playSequence(it) }, onAnswer = vm::recordEarAnswer, onBack = { training = null },
             ) else if (training == "keytest") com.gianlucacelante.midipiano.ui.KeyboardCheckScreen(
-                kbCheck, devices, onStart = vm::startKeyboardCheck, onShareLog = { com.gianlucacelante.midipiano.shareLog(context) }, onBack = { training = null },
+                kbCheck, devices, onStart = vm::startKeyboardCheck, onShareLog = { com.gianlucacelante.midipiano.shareLog(context) }, onBack = { vm.stopKeyboardCheck(); training = null },
             ) else when (tab) {
-                Tab.HOME -> HomeScreen(progress, courses, songs, levels, onOpenExercise = vm::openExercise, onOpenSong = { detail = it }, onSeeAllSongs = { tab = Tab.SONGS }, dailyGoalMinutes = settings.dailyGoalMinutes)
-                Tab.SONGS -> SongsScreen(songs, levels, progress.favorites, error, vm::dismissError, onOpen = { detail = it }, onImport = { importLauncher.launch(arrayOf("*/*")) })
+                Tab.HOME -> HomeScreen(
+                    progress, courses, songs, levels, onOpenExercise = vm::openExercise, onOpenSong = { detail = it }, onSeeAllSongs = { tab = Tab.SONGS }, dailyGoalMinutes = settings.dailyGoalMinutes,
+                    routines = routines, routineId = settings.routineId, routineSize = settings.routineSize, onStartRoutine = vm::startRoutine,
+                    onRoutineSettings = { id, size -> vm.updateSettings(settings.copy(routineId = id, routineSize = size)) },
+                )
+                Tab.SONGS -> SongsScreen(
+                    songs, levels, progress.favorites, error, vm::dismissError, onOpen = { detail = it }, onImport = { importLauncher.launch(arrayOf("*/*")) },
+                    takes = takes, replayingTake = if (preview.playing) vm.replayingTakeName() else null, onReplayTake = vm::toggleSavedTake, onDeleteTake = vm::deleteTake,
+                )
                 Tab.SEARCH -> SearchScreen(songs, levels, progress.favorites, onOpen = { detail = it })
                 Tab.COURSES -> when {
-                    course == null -> CoursesScreen(courses, progress, onOpenCourse = { courseId = it.id }, onSight = vm::openSight, onChords = { training = "chords" })
-                    lesson == null -> CourseScreen(course, progress, onBack = { courseId = null }, onOpenLesson = { lessonId = it.id })
-                    else -> LessonScreen(lesson, progress, onBack = { lessonId = null }, onOpenExercise = vm::openExercise)
+                    course == null -> CoursesScreen(courses, progress, onOpenCourse = { courseId = it.id })
+                    else -> CourseScreen(course, progress, onBack = { courseId = null }, onOpenExercise = vm::openExercise)
                 }
+                Tab.EXERCISES -> com.gianlucacelante.midipiano.ui.ExercisesScreen(
+                    courses, songs, levels, progress, routines, settings.routineId, settings.routineSize, onStartRoutine = vm::startRoutine,
+                    onSight = vm::openSight, onChords = { training = "chords" }, onEar = { training = "ear" }, onOpenExercise = vm::openExercise, onOpenSong = { detail = it },
+                )
                 Tab.PROGRESS -> ProgressScreen(
-                    progress, songs, takes, replayingTake = if (preview.playing) vm.replayingTakeName() else null,
-                    onReplayTake = vm::toggleSavedTake, onDeleteTake = vm::deleteTake, onOpenSong = { detail = it },
+                    progress, songs + variants.values.flatten().map { it.entry }, onOpenSong = { detail = vm.repEntry(it.id) ?: it },
+                    stats = stats, records = records, onOpenExercise = { id -> (courses.flatMap { it.exercises } + routines.flatMap { it.exercises }).firstOrNull { it.id == id }?.let(vm::openExercise) },
                 )
                 Tab.PROFILE -> ProfileScreen(
                     progress, devices, vm.midiSupported, bleScanning, bleFound, settings,
@@ -257,16 +254,57 @@ private fun App(vm: MidiViewModel) {
             }
         }
     }
-    androidx.compose.runtime.LaunchedEffect(importedSong) { importedSong?.let { detail = it; vm.consumeImported() } }
-    detail?.let { d ->
+    androidx.compose.runtime.LaunchedEffect(importedSong) { importedSong?.let { detail = vm.repEntry(it.id) ?: it; vm.consumeImported() } }
+    detail?.let { d0 ->
+        val d = vm.repEntry(d0.id) ?: d0 // l'elenco può essere stato rifatto mentre la scheda era aperta: si riprende il brano giusto
+        val act = detailVariant ?: d // l'arrangiamento scelto (o il brano stesso)
         SongDetailDialog(
             d, levels[d.id] ?: 1, d.id in progress.favorites,
-            onToggleFavorite = { vm.toggleFavorite(d.id) }, onDismiss = { detail = null },
-            onLearn = { mode, speed, version, style -> vm.openSong(d, mode, speed, version, style) },
-            onPreview = { v, st -> vm.startPreview(d, v, st) }, onStopPreview = vm::stopPreview,
-            preview = preview, onTogglePreview = { v, st -> vm.togglePreview(d, v, st) },
-            songsDone = progress.songsDone, unlockAll = settings.unlockAll,
+            onToggleFavorite = { vm.toggleFavorite(d.id) }, onDismiss = { detail = null; detailVariant = null },
+            onLearn = { mode, speed, version, style -> vm.openSong(act, mode, speed, version, style) },
+            onPreview = { v, st -> vm.startPreview(act, v, st) }, onStopPreview = vm::stopPreview,
+            preview = preview, onTogglePreview = { v, st -> vm.togglePreview(act, v, st) },
+            onVariant = { detailVariant = it },
         )
     }
     }
+}
+
+/** La schermata di studio: legge da sola lo stato (che cambia a ogni nota) senza far ricomporre tutta App. */
+@Composable
+private fun PracticeHost(
+    vm: MidiViewModel,
+    practiceState: androidx.compose.runtime.State<PracticeSnapshot?>,
+    clockTime: androidx.compose.runtime.State<Float>,
+    applySettings: (Settings) -> Unit,
+    bg: Modifier,
+) {
+    val current = practiceState.value ?: return
+    val pressed by vm.pressed.collectAsState()
+    val press by vm.press.collectAsState()
+    val wrongKeys by vm.wrong.collectAsState()
+    val courses by vm.courses.collectAsState()
+    val preview by vm.preview.collectAsState()
+    val devices by vm.devices.collectAsState()
+    BackHandler(onBack = vm::onPracticeBack)
+    PracticeScreen(
+        snapshot = current, pressed = pressed, wrongKeys = wrongKeys, clockTime = clockTime,
+        onBack = vm::onPracticeBack, onHand = vm::setHand, onMode = vm::setMode, onPlayPause = vm::togglePlay,
+        onSpeed = vm::setSpeed, onTranspose = vm::setTranspose, onReview = vm::reviewBars, onReviewExercise = vm::reviewExerciseBars, onListenFirst = vm::listenFirst, onSkipListen = vm::skipListenFirst, press = press, hasTake = vm.hasTake(), replaying = preview.playing, onReplay = vm::toggleTakeReplay, onSettings = applySettings, onLoop = vm::setLoop, onSeekBar = vm::seekToBar,
+        onRestart = vm::restart, onSeek = vm::seek, onFrame = vm::onFrame,
+        onExerciseNext = {
+            val next = current.exercise?.let { if (it.routinePos != null) it.routineNext else Courses.nextExercise(courses, it.slideId) }
+            if (current.exercise?.slideId?.let { com.gianlucacelante.midipiano.learn.SightReading.isSight(it) } == true) vm.openSight()
+            else if (next != null) vm.openExercise(next) else vm.closeSong()
+        },
+        onExerciseRetry = vm::retryExercise, onExit = vm::closeSong, onEndReview = vm::endExerciseReview,
+        onKeyDown = vm::pressKey, onKeyUp = vm::releaseKey, modifier = bg,
+        nextExercise = current.exercise?.let { if (it.routinePos != null) it.routineNext else Courses.nextExercise(courses, it.slideId) },
+        nextLessonTitle = current.exercise?.let { ex -> if (ex.routinePos != null) "Routine quotidiana" else Courses.nextExercise(courses, ex.slideId)?.let { n -> Courses.lessonOf(courses, n.id)?.title } },
+        nextIsNewLesson = current.exercise?.let { ex -> if (ex.routinePos != null) false else Courses.nextExercise(courses, ex.slideId)?.let { n -> Courses.lessonOf(courses, n.id)?.id != Courses.lessonOf(courses, ex.slideId)?.id } } ?: false,
+        previewing = preview.playing,
+        onPreviewNext = { if (preview.playing) vm.stopPreview() else current.exercise?.let { ex -> Courses.nextExercise(courses, ex.slideId)?.let(vm::previewExercise) } },
+        onStopPreview = vm::stopPreview, onTogglePedal = vm::togglePedal, onSkipStep = vm::skipOptionalStep, onRestartRun = vm::restartExerciseRun,
+        midiStatus = if (devices.isEmpty()) "Nessuna tastiera collegata. Collegala con USB (OTG) o dal Bluetooth nelle Impostazioni dell'app." else "Collegato: ${devices.joinToString()}",
+    )
 }

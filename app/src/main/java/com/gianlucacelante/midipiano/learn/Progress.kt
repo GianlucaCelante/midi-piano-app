@@ -20,6 +20,29 @@ class Progress {
     var totalPracticeSeconds: Long = 0
         private set
     var lastExerciseId: String? = null
+    private val routineEx = HashMap<LocalDate, MutableSet<String>>() // routine quotidiana: esercizi fatti in un giorno
+    private val routineDays = HashSet<LocalDate>() // giorni in cui la routine è stata completata
+
+    fun markRoutineExercise(date: LocalDate, exerciseId: String) { routineEx.getOrPut(date) { HashSet() }.add(exerciseId) }
+    fun routineExercisesDone(date: LocalDate): Set<String> = routineEx[date]?.toSet() ?: emptySet()
+    fun markRoutineComplete(date: LocalDate) { routineDays.add(date) }
+    fun routineCompleted(date: LocalDate): Boolean = date in routineDays
+    fun routineDaysDone(): Int = routineDays.size
+
+    /** Giorni consecutivi con la routine completata; se oggi non è ancora fatta si parte da ieri (la serie non si perde prima di sera). */
+    fun routineStreak(today: LocalDate): Int {
+        var d = if (today in routineDays) today else today.minusDays(1)
+        var n = 0
+        while (d in routineDays) { n++; d = d.minusDays(1) }
+        return n
+    }
+
+    private val exerciseSteps = HashMap<String, Int>() // passo raggiunto negli esercizi lasciati a metà
+
+    /** Il passo da cui riprendere un esercizio cominciato (0 se non c'è nulla di salvato). */
+    fun stepOf(exerciseId: String): Int = exerciseSteps[exerciseId] ?: 0
+    fun setStep(exerciseId: String, step: Int) { if (step > 0) exerciseSteps[exerciseId] = step else exerciseSteps.remove(exerciseId) }
+    fun clearStep(exerciseId: String) { exerciseSteps.remove(exerciseId) }
     /** Lettura a prima vista: livello raggiunto (1-5) e melodie finite. */
     var sightLevel: Int = 1
         private set
@@ -30,6 +53,18 @@ class Progress {
     var chordCorrectTotal: Int = 0
     var chordRoundCorrect: Int = 0
     var chordRoundAsked: Int = 0
+
+    /** Allenamento dell'orecchio: livello, risposte giuste in tutto e nell'ultimo gruppo di 10, per «intervalli» e «melodia». */
+    class EarStat { var level = 1; var total = 0; var ok = 0; var asked = 0 }
+    val ear: Map<String, EarStat> = mapOf("interval" to EarStat(), "melody" to EarStat())
+
+    fun recordEarAnswer(kind: String, correct: Boolean) {
+        val st = ear[kind] ?: return
+        st.asked++
+        if (correct) { st.ok++; st.total++ }
+        val nl = com.gianlucacelante.midipiano.practice.EarQuiz.adjustLevel(st.level, st.ok, st.asked)
+        if (nl != st.level || st.asked >= 10) { st.level = nl; st.asked = 0; st.ok = 0 }
+    }
 
     fun recordSight(stars: Int) {
         sightDone++
@@ -75,6 +110,7 @@ class Progress {
     fun setDailyPick(day: LocalDate, kind: String, id: String) {
         if (day.isAfter(LocalDate.now().minusDays(KEEP_DAYS_PICKS))) dailyPicks.putIfAbsent("$day|$kind", id)
     }
+    fun clearDailyPick(day: LocalDate, kind: String) { dailyPicks.remove("$day|$kind") }
     fun markDailyDone(day: LocalDate, kind: String) { dailyDone.add("$day|$kind") }
     fun isDailyDone(day: LocalDate, kind: String): Boolean = "$day|$kind" in dailyDone
 
@@ -119,7 +155,12 @@ class Progress {
         put("dailyDone", JSONArray(dailyDone.toList()))
         lastSongId?.let { put("lastSong", it); put("lastSongV", lastSongVersion) }
         lastExerciseId?.let { put("last", it) }
+        if (exerciseSteps.isNotEmpty()) put("steps", JSONObject(exerciseSteps as Map<*, *>))
+        if (routineDays.isNotEmpty() || routineEx.isNotEmpty()) put("routine", JSONObject()
+            .put("days", JSONArray(routineDays.map { it.toString() }))
+            .put("ex", JSONObject().apply { routineEx.forEach { (d, ids) -> put(d.toString(), JSONArray(ids.toList())) } }))
         put("sight", JSONObject().put("level", sightLevel).put("done", sightDone))
+        put("ear", JSONObject().apply { ear.forEach { (k, v) -> put(k, JSONObject().put("level", v.level).put("total", v.total).put("ok", v.ok).put("asked", v.asked)) } })
         put("chords", JSONObject().put("level", chordLevel).put("total", chordCorrectTotal).put("ok", chordRoundCorrect).put("asked", chordRoundAsked))
     }.toString()
 
@@ -144,11 +185,23 @@ class Progress {
             runCatching { p.lastSongId = o.optString("lastSong", "").ifEmpty { null }; p.lastSongVersion = o.optInt("lastSongV", 3) }
             runCatching { o.optJSONArray("songsDone")?.let { a -> for (i in 0 until a.length()) runCatching { p.songsDone.add(a.getString(i)) } } }
             runCatching { p.lastExerciseId = o.optString("last", "").ifEmpty { null } }
+            runCatching { o.optJSONObject("routine")?.let { r ->
+                r.optJSONArray("days")?.let { a -> for (i in 0 until a.length()) runCatching { p.routineDays.add(LocalDate.parse(a.getString(i))) } }
+                r.optJSONObject("ex")?.let { m -> m.keys().forEach { k -> runCatching {
+                    val d = LocalDate.parse(k)
+                    if (d.isAfter(LocalDate.now().minusDays(KEEP_DAYS))) { val a = m.getJSONArray(k); for (i in 0 until a.length()) p.markRoutineExercise(d, a.getString(i)) }
+                } } }
+            } }
+            runCatching { o.optJSONObject("steps")?.let { m -> m.keys().forEach { k -> runCatching { val v = m.getInt(k); if (v > 0) p.exerciseSteps[k] = v } } } }
             runCatching { o.optJSONObject("sight")?.let { p.sightLevel = it.optInt("level", 1).coerceIn(1, SightReading.MAX_LEVEL); p.sightDone = it.optInt("done", 0) } }
             runCatching { o.optJSONObject("chords")?.let {
                 p.chordLevel = it.optInt("level", 1).coerceIn(1, com.gianlucacelante.midipiano.practice.ChordQuiz.MAX_LEVEL)
                 p.chordCorrectTotal = it.optInt("total", 0); p.chordRoundCorrect = it.optInt("ok", 0); p.chordRoundAsked = it.optInt("asked", 0)
             } }
+            runCatching { o.optJSONObject("ear")?.let { e -> p.ear.forEach { (k, st) -> e.optJSONObject(k)?.let {
+                st.level = it.optInt("level", 1).coerceIn(1, com.gianlucacelante.midipiano.practice.EarQuiz.MAX_LEVEL)
+                st.total = it.optInt("total", 0); st.ok = it.optInt("ok", 0); st.asked = it.optInt("asked", 0)
+            } } } }
             return p
         }
     }

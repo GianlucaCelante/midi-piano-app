@@ -14,7 +14,7 @@ class BundledCoursesTest {
     @Test
     fun everyCourseLoadsWithLessonsAndExercises() {
         val all = courses()
-        assertEquals(14, all.size) // 3 corsi base + 9 di progressione + "Leggere la musica" + "Pedale e dinamica"
+        assertEquals(23, all.size) // 3 corsi base + 9 di progressione + "Leggere la musica" + "Pedale e dinamica" + 9 corsi aggiunti
         all.forEach { c ->
             assertTrue("${c.id}: poche lezioni", c.lessons.size in 5..6)
             assertTrue("${c.id}: nessun esercizio", c.exercises.isNotEmpty())
@@ -32,7 +32,7 @@ class BundledCoursesTest {
         for (e in courses().flatMap { it.exercises }) {
             assertTrue("${e.id}: senza note", e.song.notes.isNotEmpty())
             assertTrue("${e.id}: durata non valida", e.song.durationSec in 1.0..120.0)
-            assertTrue("${e.id}: passi mancanti", e.steps.size in 1..4)
+            assertTrue("${e.id}: passi mancanti", e.steps.size in 1..5) // fino a 4 nel JSON, più il passo a velocità normale aggiunto dopo una prova rallentata finale
             for (s in e.steps) {
                 if (s.hand != Hand.BOTH) assertTrue("${e.id}: nessuna nota per la mano ${s.hand}", e.song.notes.any { it.hand == s.hand })
                 assertTrue("${e.id}: velocità non valida", s.speed in 0.25..1.5)
@@ -61,6 +61,6 @@ class BundledCoursesTest {
 
     @Test
     fun theTotalNumberOfExercisesIsAsExpected() {
-        assertEquals(170, courses().sumOf { it.exercises.size })
+        assertEquals(300, courses().sumOf { it.exercises.size })
     }
 }

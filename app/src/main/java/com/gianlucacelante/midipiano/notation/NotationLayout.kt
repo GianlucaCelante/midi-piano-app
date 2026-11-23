@@ -37,28 +37,26 @@ data class StaffNote(
     val tieFromPrev: Boolean = false,
 ) {
     val stemUp: Boolean get() = position < 4 // dalla linea centrale in su il gambo scende
+    // Le proprietà di durata sono lette per ogni nota a ogni fotogramma: si calcolano una volta sola, alla creazione.
     /** Terzina: 1/6, 1/3, 2/3 o 4/3 di quarto (tre note nello spazio di due). */
-    val isTriplet: Boolean
-        get() = TRIPLET_VALUES.any { kotlin.math.abs(beats - it) < 2e-3 }
+    val isTriplet: Boolean = TRIPLET_VALUES.any { kotlin.math.abs(beats - it) < 2e-3 }
 
     /** Valore col punto di valore (3/2 del valore base): 0,375 / 0,75 / 1,5 / 3 quarti. */
-    val dotted: Boolean
-        get() = !isTriplet && DOTTED_VALUES.any { kotlin.math.abs(beats - it) < 1e-6 }
+    val dotted: Boolean = !isTriplet && DOTTED_VALUES.any { kotlin.math.abs(beats - it) < 1e-6 }
 
     /** Valore scritto senza il punto (e per le terzine il valore "normale"): serve a decidere testa, gambo e code. */
-    private val baseBeats: Double get() = if (isTriplet) beats * 1.5 else if (dotted) beats / 1.5 else beats
+    private val baseBeats: Double = if (isTriplet) beats * 1.5 else if (dotted) beats / 1.5 else beats
 
-    val hasStem: Boolean get() = baseBeats < 4.0
-    val filled: Boolean get() = baseBeats < 2.0
+    val hasStem: Boolean = baseBeats < 4.0
+    val filled: Boolean = baseBeats < 2.0
 
     /** Numero di code (1 = croma, 2 = semicroma, 3 = biscroma). */
-    val flags: Int
-        get() = when {
-            baseBeats >= 1.0 -> 0
-            baseBeats >= 0.5 -> 1
-            baseBeats >= 0.25 -> 2
-            else -> 3
-        }
+    val flags: Int = when {
+        baseBeats >= 1.0 -> 0
+        baseBeats >= 0.5 -> 1
+        baseBeats >= 0.25 -> 2
+        else -> 3
+    }
 
     /** Nome in solfeggio come è scritta la nota (si♭ e non la♯ in una tonalità a bemolli); calcolato una volta sola. */
     val noteName: String by lazy(LazyThreadSafetyMode.NONE) { NoteNames.spelled(key, position + clef.bottomDiatonic) }
@@ -75,7 +73,8 @@ data class StaffNote(
 
 data class KeySignatureSymbol(val accidental: Accidental, val position: Int)
 
-enum class NoteState { PLAYED, CURRENT, UPCOMING, MISSED }
+/** PLAYED_OFF: colpita ma non perfettamente a tempo (un po' presto o un po' tardi). */
+enum class NoteState { PLAYED, PLAYED_OFF, CURRENT, UPCOMING, MISSED }
 
 /** Motore di notazione: trasforma un brano in note posizionate su due righi (chiave di violino e di basso). */
 object NotationLayout {

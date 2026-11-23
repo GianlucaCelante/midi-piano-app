@@ -67,6 +67,19 @@ data class ExerciseStatus(
     val runsRequired: Int,
     val message: String?,
     val stars: Int?,
+    /** Il passo corrente è facoltativo (la prova rallentata): si può saltare. */
+    val canSkip: Boolean = false,
+    /** Pedale richiesto in questo momento dall'esercizio (true = giù), null se l'esercizio non lo chiede. */
+    val pedalExpected: Boolean? = null,
+    val pedalDown: Boolean = false,
+    /** Dopo alcuni giri falliti: le battute da ripassare (null se non serve). */
+    val reviewRange: IntRange? = null,
+    /** Ripasso lento in corso (battute): l'esercizio è in pausa e si torna con «Fine ripasso». */
+    val reviewing: IntRange? = null,
+    /** Dentro la routine quotidiana: (posizione, totale) e l'esercizio successivo (null se è l'ultimo o se sono tutti fatti). */
+    val routinePos: Pair<Int, Int>? = null,
+    val routineNext: ExerciseSlide? = null,
+    val routineComplete: Boolean = false,
 )
 
 /** Progressi dell'utente in forma immutabile per l'interfaccia. */
@@ -96,7 +109,26 @@ data class ProgressSnapshot(
     val sightDone: Int = 0,
     val chordLevel: Int = 1,
     val chordCorrect: Int = 0,
+    val intervalLevel: Int = 1,
+    val intervalCorrect: Int = 0,
+    val melodyLevel: Int = 1,
+    val melodyCorrect: Int = 0,
+    /** Routine quotidiana: esercizi fatti oggi, giorni consecutivi, completata oggi, giorni completati in tutto. */
+    val routineDoneToday: Set<String> = emptySet(),
+    val routineStreak: Int = 0,
+    val routineCompletedToday: Boolean = false,
+    val routineTotalToday: Int = 0,
+    val routineQueueIds: List<String> = emptyList(),
+    val routineTargeted: Int = 0,
+    val routineDays: Int = 0,
+    /** Per il calendario: cosa è stato fatto negli ultimi sei mesi (solo i giorni con qualcosa). */
+    val dayFlags: Map<LocalDate, DayFlags> = emptyMap(),
 )
+
+/** Cosa è successo in un giorno: secondi di pratica, sfide e routine completate. */
+data class DayFlags(val seconds: Long, val songDone: Boolean, val trialDone: Boolean, val routineDone: Boolean, val practiced: Boolean) {
+    val any: Boolean get() = seconds > 0 || songDone || trialDone || routineDone || practiced
+}
 
 /** Istantanea immutabile della sessione di studio, da mostrare in UI. */
 /** Anteprima audio della scheda del brano. */
@@ -142,6 +174,12 @@ data class PracticeSnapshot(
     /** Note dei passi successivi (anteprima in chiaro sulla tastiera): tasto -> mano, e tasto -> dito. */
     val upcomingHands: Map<Int, Hand> = emptyMap(),
     val upcomingFingers: Map<Int, Int> = emptyMap(),
+    /** Quanto mostrare ogni nota in arrivo (0..1): più è vicina più si vede. */
+    val upcomingWeights: Map<Int, Float> = emptyMap(),
+    /** A tempo: istante d'attacco (secondi del brano) di ogni nota in arrivo; la visibilità si calcola a ogni fotogramma. */
+    val upcomingTimes: Map<Int, Double> = emptyMap(),
+    /** L'ultimo tasto fuori tempo rispetto a una pausa (troppo presto / troppo tardi / durante la pausa), con un numero progressivo. */
+    val timingFeedback: com.gianlucacelante.midipiano.practice.TimingFeedback? = null,
     /** Semitoni di trasposizione del brano aperto, e se si può trasporre (solo brani liberi con note). */
     val transpose: Int = 0,
     val canTranspose: Boolean = false,
@@ -154,6 +192,8 @@ data class PracticeSnapshot(
     /** Movimento corrente (1.. n) e movimenti nella battuta, per il metronomo visivo; null se non serve. */
     val beatInBar: Int? = null,
     val beatsInBar: Int = 4,
+    /** Scarto medio di tempo e distanza fra le note degli accordi, a fine giro "A tempo". */
+    val timing: com.gianlucacelante.midipiano.practice.TimingSummary? = null,
 )
 
 class MidiViewModel(app: Application) : AndroidViewModel(app) {
@@ -183,7 +223,7 @@ class MidiViewModel(app: Application) : AndroidViewModel(app) {
     private val mic = MicInput(
         app,
         onNoteOn = { note, velocity -> noteOn(note, velocity, fromMidi = true).also { } },
-        onNoteOff = { note -> _pressed.update { it - note }; _wrong.update { it - note } },
+        onNoteOff = { note -> noteReleased(note); _pressed.update { it - note }; _wrong.update { it - note } },
     )
     @Volatile private var settings = appSettings.load()
     private var lastBeatIdx = Int.MIN_VALUE
@@ -194,9 +234,28 @@ class MidiViewModel(app: Application) : AndroidViewModel(app) {
 
     // Corsi, esercizi e progressi
     private val courseRepository = CourseRepository(app)
+    private val routineRepository = com.gianlucacelante.midipiano.learn.RoutineRepository(app)
+    private val runStore = com.gianlucacelante.midipiano.learn.RunStore(app)
+    private var runRecords: List<com.gianlucacelante.midipiano.learn.RunRecord> = emptyList()
+    private val _records = MutableStateFlow<List<com.gianlucacelante.midipiano.learn.RunRecord>>(emptyList())
+    /** Tutti i giri registrati (per il calendario e il riepilogo dei giorni). */
+    val records: StateFlow<List<com.gianlucacelante.midipiano.learn.RunRecord>> = _records
+    private val _stats = MutableStateFlow(com.gianlucacelante.midipiano.learn.Analytics.compute(emptyList()))
+    /** Statistiche calcolate da tutti i giri registrati. */
+    val stats: StateFlow<com.gianlucacelante.midipiano.learn.StatsReport> = _stats
+    private val _routines = MutableStateFlow<List<Course>>(emptyList())
+    /** Routine quotidiane disponibili. */
+    val routines: StateFlow<List<Course>> = _routines
+    /** La routine in corso (gli esercizi di oggi); null fuori da una routine. */
+    private var routineQueue: List<ExerciseSlide>? = null
+    private var runStartNanos = System.nanoTime()
     private val progressStore = ProgressStore(app)
     private val progress: Progress = progressStore.load()
     private var runner: ExerciseRunner? = null
+    /** Ripasso lento di alcune battute dentro l'esercizio: l'esercizio resta aperto e si riprende da dove era. */
+    private var reviewLoop: IntRange? = null
+    private var runGeneration = 0 // cambia a ogni ripartenza del giro: il job ritardato di fine giro non deve azzerare un giro già ripartito
+    private val struggle = com.gianlucacelante.midipiano.learn.StruggleTracker()
     private var currentExercise: ExerciseSlide? = null
     private var exerciseMessage: String? = null
     private var exerciseStars: Int? = null
@@ -216,8 +275,21 @@ class MidiViewModel(app: Application) : AndroidViewModel(app) {
     private var transposeSemis = 0
     private var openedVersion = com.gianlucacelante.midipiano.learn.Simplifier.ORIGINAL
     private var songDoneRecorded = false
+    private var lastTiming: com.gianlucacelante.midipiano.practice.TimingFeedback? = null
+    private var timingCounter = 0L
+    private var lastTimingNanos = 0L
     private var runHandled = false
-    private var practiceStartNanos = 0L
+    // forza dei tasti e pedale del giro in corso (esercizi con «touch» o «pedal»)
+    private val runVel = ArrayList<Int>()
+    private val runTarget = ArrayList<Int?>()
+    private var runHits = 0
+    private val pedalLog = ArrayList<Pair<Double, Boolean>>()
+    @Volatile private var pedalDown = false
+    private var lastPedalExpected: Boolean? = null
+    private fun resetRunData() { runVel.clear(); runTarget.clear(); runHits = 0; pedalLog.clear(); runStartNanos = System.nanoTime() }
+    private var practiceMark = 0L // ultimo istante di attività contato nel tempo di pratica
+    private var practiceAccumNanos = 0L // tempo attivo accumulato dalla sessione in corso (non ancora salvato)
+    private var partialRun = false // il giro è ripartito a metà (cursore trascinato): non vale come giro riuscito
 
     private val _pressed = MutableStateFlow<Set<Int>>(emptySet())
     val pressed: StateFlow<Set<Int>> = _pressed
@@ -244,6 +316,23 @@ class MidiViewModel(app: Application) : AndroidViewModel(app) {
     private val _courses = MutableStateFlow<List<Course>>(emptyList())
     val courses: StateFlow<List<Course>> = _courses
 
+    private val _songVariants = MutableStateFlow<Map<String, List<com.gianlucacelante.midipiano.song.Variant>>>(emptyMap())
+    /** Brani che esistono in più arrangiamenti (id del brano mostrato -> arrangiamenti, dal più facile). */
+    val songVariants: StateFlow<Map<String, List<com.gianlucacelante.midipiano.song.Variant>>> = _songVariants
+    @Volatile private var variantToRep: Map<String, String> = emptyMap()
+    /** L'id del brano mostrato negli elenchi per un arrangiamento (o l'id stesso). */
+    fun repOf(id: String): String = variantToRep[id] ?: id
+    fun repEntry(id: String): SongEntry? = _songs.value.firstOrNull { it.id == repOf(id) }
+
+    private fun applyGroups(entries: List<SongEntry>, levels: Map<String, Int>, loaded: Map<String, Song>) {
+        fun similar(a: Song, b: Song): Boolean = a.notes.size >= 20 && b.notes.size >= 20 &&
+            kotlin.math.abs(a.notes.size - b.notes.size) <= 0.3 * maxOf(a.notes.size, b.notes.size) && kotlin.math.abs(a.durationSec - b.durationSec) <= 3.0
+        val groups = com.gianlucacelante.midipiano.song.SongGroups.build(entries, { levels[it] ?: 3 }, { a, b -> val x = loaded[a]; val y = loaded[b]; x != null && y != null && similar(x, y) }, { loaded[it]?.notes?.size ?: 0 })
+        variantToRep = groups.flatMap { g -> g.memberIds.map { it to g.rep.id } }.toMap() // anche le voci scartate perché doppie
+        _songVariants.value = groups.filter { it.variants.size > 1 }.associate { it.rep.id to it.variants }
+        _songs.value = groups.map { it.rep }
+    }
+
     private val _songLevels = MutableStateFlow<Map<String, Int>>(emptyMap())
     val songLevels: StateFlow<Map<String, Int>> = _songLevels
 
@@ -266,32 +355,45 @@ class MidiViewModel(app: Application) : AndroidViewModel(app) {
     private val _kbState = MutableStateFlow(kbCheck.state)
     /** Stato della prova guidata della tastiera (si aggiorna con gli eventi MIDI veri, non con i tasti sullo schermo). */
     val keyboardCheck: StateFlow<com.gianlucacelante.midipiano.practice.KeyboardCheck.State> = _kbState
-    fun startKeyboardCheck() { synchronized(kbCheck) { kbCheck.reset(_devices.value.isNotEmpty()); _kbState.value = kbCheck.state } }
+    /** La prova tastiera è aperta: solo allora i suoi passi finiscono nel registro (altrimenti sporcano le sessioni di studio). */
+    @Volatile private var kbCheckOpen = false
+    fun stopKeyboardCheck() { kbCheckOpen = false }
+
+    private fun publishKbCheck(before: com.gianlucacelante.midipiano.practice.KeyboardCheck.State) {
+        val now = kbCheck.state
+        _kbState.value = now
+        if (!kbCheckOpen) return
+        for (step in now.done - before.done) AppLog.i("PROVA", "passo superato: ${step.title}")
+        if (now.allDone && !before.allDone) AppLog.i("PROVA", "tutti i passi superati (note viste: ${now.rangeText ?: "-"}, ultima forza ${now.lastVelocity})")
+    }
+    fun startKeyboardCheck() { kbCheckOpen = true; synchronized(kbCheck) { val b = kbCheck.state; kbCheck.reset(_devices.value.isNotEmpty()); AppLog.i("PROVA", "prova tastiera avviata"); publishKbCheck(b.copy(done = emptySet())) } }
 
     private val input = MidiInput(
         context = app,
         onEvent = { event ->
             when (event) {
-                is MidiEvent.NoteOn -> { AppLog.i("MIDI", "on nota=${event.note} vel=${event.velocity}"); synchronized(kbCheck) { kbCheck.onNoteOn(event.note, event.velocity); _kbState.value = kbCheck.state }; noteOn(event.note, event.velocity, fromMidi = true) }
+                is MidiEvent.NoteOn -> { AppLog.i("MIDI", "on nota=${event.note} vel=${event.velocity}"); synchronized(kbCheck) { val b = kbCheck.state; kbCheck.onNoteOn(event.note, event.velocity); publishKbCheck(b) }; noteOn(event.note, event.velocity, fromMidi = true) }
                 is MidiEvent.NoteOff -> {
                     AppLog.i("MIDI", "off nota=${event.note}")
                     synchronized(kbCheck) { kbCheck.onNoteOff(event.note) }
                     take.noteOff(event.note, System.nanoTime())
+                    noteReleased(event.note)
                     _pressed.update { it - event.note }
                     _wrong.update { it - event.note }
                     if (settings.midiSounds) audio.noteOff(event.note)
                 }
                 is MidiEvent.Control -> if (event.controller == 64) { // pedale di risonanza
                     AppLog.i("MIDI", "pedale ${if (event.value >= 64) "giù" else "su"}")
-                    synchronized(kbCheck) { kbCheck.onPedal(event.value); _kbState.value = kbCheck.state }
+                    synchronized(kbCheck) { val b = kbCheck.state; kbCheck.onPedal(event.value); publishKbCheck(b) }
                     if (settings.midiSounds) audio.sustain(event.value >= 64)
+                    onPedalChanged(event.value >= 64)
                 }
             }
         },
         onDevicesChanged = { names ->
             AppLog.i("MIDI", "dispositivi: ${if (names.isEmpty()) "nessuno" else names.joinToString()}")
             _devices.value = names
-            synchronized(kbCheck) { kbCheck.onConnection(names.isNotEmpty()); _kbState.value = kbCheck.state }
+            synchronized(kbCheck) { val b = kbCheck.state; kbCheck.onConnection(names.isNotEmpty()); publishKbCheck(b) }
             // Scollegando una tastiera (anche se ne resta un'altra) le sue note premute non arriveranno più a "off"
             if (names.size < deviceCount) _pressed.value = emptySet()
             deviceCount = names.size
@@ -477,6 +579,28 @@ class MidiViewModel(app: Application) : AndroidViewModel(app) {
     private val _imported = MutableStateFlow<SongEntry?>(null)
     /** Ultimo brano importato (la schermata lo apre nella scheda del brano). */
     val imported: StateFlow<SongEntry?> = _imported
+    /** Solo debug: importa in sequenza tutti i file di una cartella (uno alla volta, per non rovinare l'indice dei brani personali). */
+    fun debugImportFolder(dir: java.io.File, replace: Boolean = false) {
+        viewModelScope.launch(Dispatchers.IO) {
+            if (replace) repository.clearUserSongs()
+            // meta.json (facoltativo): per ogni file titolo, autore, nome della foto (cartella covers/) e credito della foto
+            val metaJson = runCatching { org.json.JSONObject(java.io.File(dir, "meta.json").readText()) }.getOrNull()
+            val files = dir.listFiles()?.filter { it.isFile && it.extension.lowercase() in com.gianlucacelante.midipiano.song.SongRepository.IMPORT_EXTENSIONS }?.sortedBy { it.name }.orEmpty()
+            var ok = 0
+            for (f in files) {
+                try {
+                    val m = metaJson?.optJSONObject(f.name)?.let { o ->
+                        val cover = o.optString("cover", "").takeIf { it.isNotBlank() }?.let { java.io.File(java.io.File(dir, "covers"), it) }?.takeIf { it.exists() }?.readBytes()
+                        com.gianlucacelante.midipiano.song.ImportMeta(o.getString("title"), o.optString("composer", "").ifBlank { null }, o.optString("credit", "").ifBlank { null }, cover)
+                    }
+                    repository.importSong(android.net.Uri.fromFile(f), f.name, m); ok++; AppLog.i("IMPORT", "importato «${f.name}»")
+                } catch (e: Exception) { AppLog.w("IMPORT", "non importato «${f.name}»: ${e.message}") }
+            }
+            AppLog.i("IMPORT", "cartella finita: $ok su ${files.size}")
+            refreshSongs()
+        }
+    }
+
     fun consumeImported() { _imported.value = null }
 
     init {
@@ -486,6 +610,7 @@ class MidiViewModel(app: Application) : AndroidViewModel(app) {
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 _courses.value = courseRepository.load()
+                _routines.value = routineRepository.load()
                 publishProgress() // con i corsi caricati si può scegliere la prova del giorno
             } catch (e: Exception) {
                 run { AppLog.w("ERRORE", "Impossibile leggere i corsi: ${e.message}"); _error.value = "Impossibile leggere i corsi: ${e.message}" }
@@ -493,18 +618,39 @@ class MidiViewModel(app: Application) : AndroidViewModel(app) {
         }
         publishProgress()
         viewModelScope.launch(Dispatchers.IO) { refreshTakes() }
+        viewModelScope.launch(Dispatchers.IO) { runRecords = runStore.load(); publishStats() }
+    }
+
+    private fun publishStats() { val all = runRecords; _records.value = all; _stats.value = com.gianlucacelante.midipiano.learn.Analytics.compute(all); publishProgress() }
+
+    /** Registra un giro (finito, fallito o lasciato a metà) con tutto ciò che si è potuto misurare. */
+    private fun recordRun(s: PracticeSession, source: String, id: String, title: String, step: Int, outcome: String, stars: Int) {
+        val st = s.runStats()
+        val timed = s.mode == StudyMode.TEMPO
+        val r = com.gianlucacelante.midipiano.learn.RunRecord(
+            whenMillis = System.currentTimeMillis(), source = source, id = id, title = title, step = step, mode = s.mode.name, hand = s.hand.name, speed = s.speed,
+            outcome = outcome, durationSec = ((System.nanoTime() - runStartNanos) / 1e9).coerceIn(0.0, 3600.0),
+            hits = playedNotes(s), misses = if (timed) s.misses else 0, wrong = s.wrongNotes,
+            accuracy = if (timed) s.accuracy else playedNotes(s).toDouble() / (playedNotes(s) + s.wrongNotes).coerceAtLeast(1), stars = stars,
+            noteHits = st.noteHits, early = st.early, late = st.late, offBeat = st.offBeat, meanDevMs = st.meanDevMs, meanAbsDevMs = st.meanAbsDevMs,
+            restEarly = st.restEarly, restLate = st.restLate, restInRest = st.restInRest, holdShort = st.holdShort, holdLong = st.holdLong,
+            barErrors = st.barErrors, wrongKeys = st.wrongKeys, missedKeys = st.missedKeys, routine = routineQueue != null,
+        )
+        runRecords = runRecords + r
+        viewModelScope.launch(Dispatchers.IO) { runStore.append(r); publishStats() }
     }
 
     private fun refreshSongs() {
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 val entries = repository.entries()
-                _songs.value = entries
+                applyGroups(entries, emptyMap(), emptyMap()) // subito l'elenco, poi si rifà col contenuto
                 // difficoltà stimata di ogni brano incluso (si legge una volta sola, in secondo piano)
                 val loadedAll = entries.mapNotNull { e -> runCatching { e to repository.load(e) }.getOrNull() }
                 _songLevels.value = loadedAll.associate { (e, sg) -> e.id to Difficulty.of(sg) }
                 _chordSongs.value = loadedAll.filter { (_, sg) -> sg.chordChart || sg.chordSymbols.isNotEmpty() }.associate { (e, sg) -> e.id to sg.chordChart }
                 _songVersions.value = loadedAll.associate { (e, sg) -> e.id to com.gianlucacelante.midipiano.learn.Simplifier.availableVersions(sg) }
+                applyGroups(entries, _songLevels.value, loadedAll.associate { (e, sg) -> e.id to sg })
                 publishProgress() // con i brani caricati si può scegliere la canzone del giorno
             } catch (e: Exception) {
                 run { AppLog.w("ERRORE", "Impossibile leggere l'elenco brani: ${e.message}"); _error.value = "Impossibile leggere l'elenco brani: ${e.message}" }
@@ -533,6 +679,7 @@ class MidiViewModel(app: Application) : AndroidViewModel(app) {
                     openedVersion = version
                     if (mode != null) session?.setMode(mode, System.nanoTime())
                     if (speed != null) session?.setSpeed(speed, System.nanoTime())
+                    publishLocked() // modalità e velocità appena applicate
                 }
                 audio.start()
                 _error.value = null
@@ -544,7 +691,27 @@ class MidiViewModel(app: Application) : AndroidViewModel(app) {
         }
     }
 
-    private fun startSessionLocked(loaded: Song, exercise: ExerciseSlide?) {
+    /** Conta il tempo di pratica solo se si sta davvero facendo qualcosa: ogni intervallo tra due attività vale al massimo 20 s. */
+    private fun touchPractice(now: Long) {
+        if (practiceMark > 0L) practiceAccumNanos += (now - practiceMark).coerceIn(0L, 20_000_000_000L)
+        practiceMark = now
+    }
+
+    /** Salva nel totale il tempo attivo accumulato (a ogni cambio di esercizio, uscita o app in secondo piano). */
+    private fun commitPracticeLocked() {
+        val secs = practiceAccumNanos / 1_000_000_000L
+        practiceAccumNanos = 0L
+        practiceMark = 0L
+        if (secs >= 5) {
+            progress.recordPractice(secs.coerceAtMost(1800L), LocalDate.now())
+            progressStore.save(progress)
+            publishProgress()
+        }
+    }
+
+    private fun startSessionLocked(loaded: Song, exercise: ExerciseSlide?, startStep: Int = 0) {
+        commitPracticeLocked() // il tempo dell'esercizio precedente non si perde
+        partialRun = false
         AppLog.i("PLAYER", "apre «${loaded.title}» note=${loaded.notes.size} durata=${"%.1f".format(loaded.durationSec)}s battute=${loaded.barCount} esercizio=${exercise?.id ?: "-"}")
         song = loaded
         songExpressive = com.gianlucacelante.midipiano.practice.Dynamics.isExpressive(loaded.notes.map { it.velocity })
@@ -553,7 +720,9 @@ class MidiViewModel(app: Application) : AndroidViewModel(app) {
         if (exercise != null) transposeSemis = 0
         songDoneRecorded = false
         take.clear()
-        val first = exercise?.steps?.firstOrNull()
+        val firstIdx = exercise?.let { ExerciseRunner.startStep(startStep, it.steps.size) } ?: 0
+        val first = exercise?.steps?.getOrNull(firstIdx)
+        reviewLoop = null
         val sess = PracticeSession(loaded, first?.hand ?: Hand.BOTH)
         sess.countInEnabled = settings.countIn
         sess.speedTrainer = settings.speedTrainer
@@ -565,13 +734,16 @@ class MidiViewModel(app: Application) : AndroidViewModel(app) {
         keyRange = FallingNotes.keyboardRange(loaded.notes)
         meta = Triple(loaded.title, loaded.composer, loaded.source.license)
         scheduler = NoteScheduler(loaded.notes, sess.hand)
-        runner = exercise?.let { ExerciseRunner(it.steps) }
+        runner = exercise?.let { ExerciseRunner(it.steps, firstIdx) }
+        struggle.reset()
         currentExercise = exercise
         exerciseMessage = null
         exerciseStars = null
         runHandled = false
+        resetRunData()
         if (first != null) applyStep(sess, first)
-        practiceStartNanos = System.nanoTime()
+        practiceMark = System.nanoTime()
+        lastTiming = null
         _clockTime.value = 0f
         if (settings.mic) mic.start()
         publishLocked()
@@ -583,20 +755,58 @@ class MidiViewModel(app: Application) : AndroidViewModel(app) {
         scheduler = NoteScheduler(s.song.notes, step.hand)
         s.setMode(step.mode, now)
         s.setSpeed(step.speed, now)
+        struggle.reset() // un passo nuovo (anche saltato) non eredita le difficoltà del precedente
+        partialRun = false
+        runGeneration++
         s.restart(now) // ogni passo riparte dall'inizio (con il conto alla rovescia): senza, il giro nuovo eredita la fine del precedente
         _clockTime.value = s.currentTimeSec.toFloat()
         runHandled = false
+        resetRunData()
     }
 
     /** Apre un esercizio di un corso: parte dal primo passo, con mano, modalità e velocità del passo. */
     fun openExercise(slide: ExerciseSlide) {
         stopPreview()
-        if (!com.gianlucacelante.midipiano.learn.SightReading.isSight(slide.id)) progress.lastExerciseId = slide.id // anche lasciato a metà: da qui si riprende
+        if (routineQueue?.none { it.id == slide.id } == true) routineQueue = null // un esercizio fuori dalla routine la interrompe
+        if (!com.gianlucacelante.midipiano.learn.SightReading.isSight(slide.id) && !isRoutineSlide(slide.id)) progress.lastExerciseId = slide.id // anche lasciato a metà: da qui si riprende
         progressStore.save(progress)
         publishProgress()
         openJob?.cancel()
-        synchronized(lock) { startSessionLocked(slide.song, slide) }
+        // un esercizio lasciato a metà riparte dall'ultimo passo raggiunto (le melodie a prima vista sono sempre nuove)
+        val resumeAt = if (com.gianlucacelante.midipiano.learn.SightReading.isSight(slide.id)) 0 else progress.stepOf(slide.id)
+        synchronized(lock) { startSessionLocked(slide.song, slide, resumeAt) }
+        if (resumeAt > 0) AppLog.i("PLAYER", "esercizio ripreso dal passo ${resumeAt + 1}")
         audio.start()
+    }
+
+    /**
+     * Gli esercizi della routine di oggi: la routine base più, in coda, quelli dei corsi in cui si sbaglia di più. Il piano si fissa
+     * quando si comincia (e non cambia più nella giornata); prima di allora è solo un'anteprima.
+     */
+    private fun routineQueueFor(course: Course, store: Boolean): List<ExerciseSlide> {
+        val today = LocalDate.now()
+        val index = (_courses.value + _routines.value).flatMap { it.exercises }.associateBy { it.id }
+        progress.dailyPick(today, "routine")?.let { saved ->
+            val ids = saved.split(",").filter { it.isNotEmpty() }
+            val slides = ids.mapNotNull { index[it] }
+            if (slides.isNotEmpty() && slides.size == ids.size) return slides
+        }
+        val ids = com.gianlucacelante.midipiano.learn.RoutinePlan.planIds(course, settings.routineSize, _stats.value.hardest.map { it.id }.filter { it in index && !com.gianlucacelante.midipiano.learn.SightReading.isSight(it) })
+        if (store && ids.isNotEmpty()) { progress.setDailyPick(today, "routine", ids.joinToString(",")); progressStore.save(progress) }
+        return ids.mapNotNull { index[it] }
+    }
+
+    private fun isRoutineSlide(id: String) = id.startsWith("routine-") || routineQueue?.any { it.id == id } == true
+
+    /** Comincia la routine di oggi: parte dal primo esercizio non ancora fatto (o dal primo, se sono già tutti fatti). */
+    fun startRoutine() {
+        val course = _routines.value.firstOrNull { it.id == settings.routineId } ?: _routines.value.firstOrNull() ?: return
+        val queue = routineQueueFor(course, store = true)
+        if (queue.isEmpty()) return
+        val next = com.gianlucacelante.midipiano.learn.RoutinePlan.nextTodo(queue, progress.routineExercisesDone(LocalDate.now())) ?: queue.first()
+        routineQueue = queue
+        AppLog.i("ROUTINE", "inizia «${course.title}»: ${queue.size} esercizi (${queue.count { e -> course.exercises.none { it.id == e.id } }} mirati sugli errori), parte da ${next.title}")
+        openExercise(next)
     }
 
     /** Lettura a prima vista: una melodia nuova del livello raggiunto. */
@@ -609,6 +819,7 @@ class MidiViewModel(app: Application) : AndroidViewModel(app) {
     fun retryExercise() {
         stopPreview()
         val ex = currentExercise ?: return
+        progress.clearStep(ex.id); progressStore.save(progress) // «Riprova» è davvero dal primo passo
         synchronized(lock) { startSessionLocked(ex.song, ex) }
     }
 
@@ -616,9 +827,21 @@ class MidiViewModel(app: Application) : AndroidViewModel(app) {
         val ex = currentExercise ?: return null
         val r = runner ?: return null
         val step = r.currentStep
+        val ss = session
         return ExerciseStatus(
             ex.id, ex.title, ex.text, r.stepIndex, r.totalSteps, step?.text ?: "",
             r.runsInStep, step?.loops ?: 1, exerciseMessage, exerciseStars,
+            canSkip = step?.optional == true && !r.isDone && exerciseStars == null,
+            pedalExpected = if (ex.pedal != null && ss != null && ss.mode == StudyMode.TEMPO) ex.pedal.stateAt(ss.currentTimeSec) else null,
+            pedalDown = pedalDown,
+            reviewRange = if (exerciseStars == null && ss != null && reviewLoop == null) struggle.reviewRange(ss.song.barCount) else null,
+            reviewing = reviewLoop,
+            routinePos = routineQueue?.let { q -> q.indexOfFirst { it.id == ex.id }.takeIf { it >= 0 }?.let { it + 1 to q.size } },
+            routineNext = routineQueue?.let { q ->
+                val done = progress.routineExercisesDone(LocalDate.now())
+                com.gianlucacelante.midipiano.learn.RoutinePlan.nextAfter(q, ex.id, done) ?: com.gianlucacelante.midipiano.learn.RoutinePlan.nextTodo(q, done + ex.id) // dopo l'ultimo, quelli saltati prima
+            },
+            routineComplete = routineQueue?.let { com.gianlucacelante.midipiano.learn.RoutinePlan.isComplete(it, progress.routineExercisesDone(LocalDate.now())) } == true,
         )
     }
 
@@ -628,6 +851,7 @@ class MidiViewModel(app: Application) : AndroidViewModel(app) {
         if (currentExercise != null || songDoneRecorded || s.mode == StudyMode.LISTEN || !s.isFinished) return
         songDoneRecorded = true
         progress.recordSongDone(id, openedVersion)
+        recordRun(s, "song", id, song?.title ?: id, -1, "finished", 0)
         if (s.mode == StudyMode.TEMPO) { // un giro a tempo finito: precisione, battute più sbagliate e registrazione
             val worst = s.barReport().filter { it.notes > 0 && it.errors > 0 }.sortedByDescending { it.errors }.take(3).map { it.bar }.sorted()
             progress.recordRun(id, s.accuracy, worst)
@@ -639,10 +863,60 @@ class MidiViewModel(app: Application) : AndroidViewModel(app) {
                 refreshTakes()
             }
         }
-        if (id == progress.dailyPick(LocalDate.now(), "song")) progress.markDailyDone(LocalDate.now(), "song")
+        if (repOf(id) == progress.dailyPick(LocalDate.now(), "song")?.let(::repOf)) progress.markDailyDone(LocalDate.now(), "song")
         progressStore.save(progress)
         publishProgress()
         AppLog.i("PLAYER", "brano finito: $id versione=$openedVersion")
+    }
+
+    /** L'esercizio è finito: stelle, progressi e prova del giorno. */
+    private fun finishExerciseLocked(ex: ExerciseSlide, stars: Int) {
+        exerciseStars = stars
+        exerciseMessage = null
+        if (com.gianlucacelante.midipiano.learn.SightReading.isSight(ex.id)) { // melodia generata: conta solo il livello
+            progress.recordSight(stars)
+            AppLog.i("LETTURA", "melodia finita: stelle=$stars livello ora=${progress.sightLevel}")
+        } else {
+            progress.recordExercise(ex.id, stars)
+            progress.clearStep(ex.id) // finito: la prossima volta si ricomincia dal primo passo
+            routineQueue?.let { q ->
+                if (q.any { it.id == ex.id }) { // esercizio della routine di oggi
+                    val today = LocalDate.now()
+                    progress.markRoutineExercise(today, ex.id)
+                    if (com.gianlucacelante.midipiano.learn.RoutinePlan.isComplete(q, progress.routineExercisesDone(today))) progress.markRoutineComplete(today)
+                }
+            }
+            if (stars > 0 && ex.id == progress.dailyPick(LocalDate.now(), "trial")) progress.markDailyDone(LocalDate.now(), "trial")
+            if (!isRoutineSlide(ex.id)) progress.lastExerciseId = ex.id // la routine non sposta il punto di ripresa dei corsi
+        }
+        progressStore.save(progress)
+        publishProgress()
+    }
+
+    /** Salva il passo raggiunto: uscendo e riaprendo l'esercizio si riparte da lì. */
+    private fun saveStepLocked(ex: ExerciseSlide, step: Int) {
+        if (com.gianlucacelante.midipiano.learn.SightReading.isSight(ex.id)) return
+        progress.setStep(ex.id, step)
+        if (!isRoutineSlide(ex.id)) progress.lastExerciseId = ex.id
+        progressStore.save(progress)
+    }
+
+    /** Salta la prova rallentata (facoltativa): si passa al passo dopo o l'esercizio si chiude con le stelle già prese. */
+    fun skipOptionalStep() = synchronized(lock) {
+        val r = runner ?: return@synchronized
+        val ex = currentExercise ?: return@synchronized
+        val sess = session ?: return@synchronized
+        when (val outcome = r.skipOptionalStep()) {
+            is RunOutcome.Done -> { runHandled = true; sess.pause(System.nanoTime()); finishExerciseLocked(ex, outcome.stars) }
+            is RunOutcome.StepAdvanced -> {
+                exerciseMessage = null
+                saveStepLocked(ex, outcome.newIndex)
+                r.currentStep?.let { applyStep(sess, it) }
+                if (sess.mode == StudyMode.TEMPO) sess.play(System.nanoTime())
+            }
+            else -> return@synchronized
+        }
+        publishLocked()
     }
 
     /** A fine giro dice se è riuscito, assegna le stelle e fa avanzare l'esercizio. */
@@ -650,10 +924,18 @@ class MidiViewModel(app: Application) : AndroidViewModel(app) {
         val s = session ?: return
         val r = runner ?: return
         val ex = currentExercise ?: return
-        if (runHandled || !s.isFinished || r.isDone || s.mode == StudyMode.LISTEN) return
+        if (runHandled || !s.isFinished || r.isDone || s.mode == StudyMode.LISTEN || reviewLoop != null) return
         runHandled = true
+        if (partialRun) { // giro ripartito a metà: non vale, si rifà dall'inizio
+            partialRun = false
+            exerciseMessage = "Eri ripartito a metà: ora il giro dall'inizio."
+            scheduleRunRestart(ex, r, runGeneration, advanced = false)
+            return
+        }
+        val stepBefore = r.stepIndex
+        val errorsByBar = barErrors(s) // prima di qualunque ripartenza
         val allowed = max(2, s.totalSteps / 8)
-        val passed: Boolean
+        var passed: Boolean
         val stars: Int
         if (s.mode == StudyMode.WAIT) {
             passed = s.mistakes <= allowed
@@ -663,40 +945,55 @@ class MidiViewModel(app: Application) : AndroidViewModel(app) {
             // la velocità la prescrive il passo (l'utente non può cambiarla): il tetto delle 2 stelle sotto il 99 % non vale negli esercizi
             stars = Awards.stars(StudyMode.TEMPO, 1.0, s.accuracy, s.mistakes)
         }
-        val outcome = r.onRunFinished(passed, stars)
-        when (outcome) {
-            is RunOutcome.NextRun -> exerciseMessage = "Bene! Ancora ${outcome.runsLeft} ${if (outcome.runsLeft == 1) "volta" else "volte"}."
-            is RunOutcome.Retry -> exerciseMessage = "Riprova: non è ancora un giro pulito."
-            is RunOutcome.StepAdvanced -> exerciseMessage = "Passo superato! Ora il successivo."
-            is RunOutcome.Done -> {
-                exerciseStars = outcome.stars
-                exerciseMessage = null
-                if (com.gianlucacelante.midipiano.learn.SightReading.isSight(ex.id)) progress.recordSight(outcome.stars) // melodia generata: conta solo il livello
-                else {
-                    progress.recordExercise(ex.id, outcome.stars)
-                    if (outcome.stars > 0 && ex.id == progress.dailyPick(LocalDate.now(), "trial")) progress.markDailyDone(LocalDate.now(), "trial")
-                    progress.lastExerciseId = ex.id
-                }
-                progressStore.save(progress)
-                publishProgress()
-            }
+        // tocco e pedale: contano solo se la tastiera dà la forza vera / si è usato il pedale
+        val notes = ArrayList<String>()
+        var extraFail = false
+        ex.touch?.let { goal ->
+            com.gianlucacelante.midipiano.practice.Touch.evaluate(goal, runVel, runTarget, runHits)?.let { t -> notes += t.text; if (!t.passed) extraFail = true }
         }
-        if (outcome !is RunOutcome.Done) {
-            viewModelScope.launch { // si ricomincia dopo un attimo, così si legge il messaggio
-                delay(1600)
-                synchronized(lock) {
-                    val sess = session ?: return@launch
-                    if (currentExercise !== ex || runner !== r) return@launch
-                    exerciseMessage = null
-                    val step = r.currentStep
-                    if (outcome is RunOutcome.StepAdvanced && step != null) applyStep(sess, step) else {
-                        sess.restart(System.nanoTime())
-                        runHandled = false
-                        _clockTime.value = sess.currentTimeSec.toFloat()
-                    }
-                    if (sess.mode == StudyMode.TEMPO) sess.play(System.nanoTime())
-                    publishLocked()
+        if (ex.pedal != null && s.mode == StudyMode.TEMPO) {
+            val tol = (ex.song.secPerBeat * 0.5).coerceIn(0.35, 0.7)
+            val pr = ex.pedal.judge(pedalLog.toList(), tol)
+            notes += pr.text
+            if (!pr.passed) extraFail = true
+            AppLog.i("PEDALE", "giro: cambi giusti=${pr.matched}/${pr.expected} di troppo=${pr.extras} fatti=${pedalLog.size}")
+        }
+        if (notes.isNotEmpty()) AppLog.i("TOCCO", "giro: ${notes.joinToString(" ")} forze=${runVel.take(24)}")
+        if (extraFail) passed = false
+        val noteText = notes.joinToString(" ")
+        val generation = runGeneration
+        val outcome = r.onRunFinished(passed, stars)
+        AppLog.i("GIRO", com.gianlucacelante.midipiano.learn.RunLog.finished(
+            ex.id, stepBefore, s.mode.name, s.speed, playedNotes(s), if (s.mode == StudyMode.TEMPO) s.mistakes - s.wrongNotes else 0, s.wrongNotes, s.accuracy, stars, passed, outcome::class.simpleName ?: "?"))
+        recordRun(s, "exercise", ex.id, ex.title, stepBefore, if (passed) "passed" else "failed", stars)
+        if (outcome is RunOutcome.Retry) struggle.onFailedRun(errorsByBar) else struggle.onGoodRun()
+        if (outcome is RunOutcome.StepAdvanced) saveStepLocked(ex, outcome.newIndex) // i passi superati restano salvati
+        when (outcome) {
+            is RunOutcome.NextRun -> exerciseMessage = "Bene! Ancora ${outcome.runsLeft} ${if (outcome.runsLeft == 1) "volta" else "volte"}." + if (noteText.isNotEmpty()) " $noteText" else ""
+            is RunOutcome.Retry -> exerciseMessage = (if (extraFail) "Riprova. " else "Riprova: non è ancora un giro pulito. ") + noteText
+            is RunOutcome.StepAdvanced -> exerciseMessage = "Passo superato! Ora il successivo." + if (noteText.isNotEmpty()) " $noteText" else ""
+            is RunOutcome.Done -> finishExerciseLocked(ex, outcome.stars)
+        }
+        if (outcome !is RunOutcome.Done) scheduleRunRestart(ex, r, generation, advanced = outcome is RunOutcome.StepAdvanced)
+    }
+
+    /** Dopo un attimo (si legge il messaggio) il giro ricomincia, o parte il passo nuovo, se nel frattempo non è già ripartito. */
+    private fun scheduleRunRestart(ex: ExerciseSlide, r: ExerciseRunner, generation: Int, advanced: Boolean) {
+        viewModelScope.launch {
+            delay(1600)
+            synchronized(lock) {
+                val sess = session ?: return@launch
+                if (currentExercise !== ex || runner !== r || generation != runGeneration) return@launch // nel frattempo il giro è già ripartito
+                exerciseMessage = null
+                val step = r.currentStep
+                if (advanced && step != null) applyStep(sess, step) else {
+                    sess.restart(System.nanoTime())
+                    runHandled = false
+                    resetRunData()
+                    _clockTime.value = sess.currentTimeSec.toFloat()
                 }
+                if (sess.mode == StudyMode.TEMPO) sess.play(System.nanoTime())
+                publishLocked()
             }
         }
     }
@@ -734,15 +1031,25 @@ class MidiViewModel(app: Application) : AndroidViewModel(app) {
             val d = today.minusDays(back.toLong())
             d to when { progress.isDailyDone(d, "song") && progress.isDailyDone(d, "trial") -> 2; progress.practicedOn(d) || progress.isDailyDone(d, "song") || progress.isDailyDone(d, "trial") -> 1; else -> 0 }
         }
+        val routineBase = _routines.value.let { rs -> rs.firstOrNull { it.id == settings.routineId } ?: rs.firstOrNull() }
+        val routineQueueNow = routineBase
+            ?.let { routineQueueFor(it, store = false) }?.takeIf { it.isNotEmpty() } // dimensione e routine di adesso: cambiarle a metà giornata non lascia stati incoerenti
         val runs = progress.songsWithRuns().associateWith { progress.runsOf(it) }
         _progress.value = ProgressSnapshot(
             progress.allStars(), progress.streak(LocalDate.now()), progress.totalPracticeSeconds,
             progress.favoriteIds(), progress.lastExerciseId, progress.exercisesDone(), progress.songsDoneIds(),
-            progress.secondsOn(today), progress.lastSongId, progress.lastSongVersion,
-            progress.dailyPick(today, "song"), progress.dailyPick(today, "trial"), progress.isDailyDone(today, "song"), progress.isDailyDone(today, "trial"),
+            progress.secondsOn(today), progress.lastSongId?.let(::repOf), progress.lastSongVersion,
+            progress.dailyPick(today, "song")?.let(::repOf), progress.dailyPick(today, "trial"), progress.isDailyDone(today, "song"), progress.isDailyDone(today, "trial"),
             com.gianlucacelante.midipiano.learn.Stats.minutesByDay(progress, today, 14), calendar, runs,
             runs.keys.associateWith { progress.weakBarsOf(it) }, achievements,
             progress.sightLevel, progress.sightDone, progress.chordLevel, progress.chordCorrectTotal,
+            progress.ear.getValue("interval").level, progress.ear.getValue("interval").total, progress.ear.getValue("melody").level, progress.ear.getValue("melody").total,
+            routineDoneToday = progress.routineExercisesDone(today), routineStreak = progress.routineStreak(today),
+            routineCompletedToday = routineQueueNow?.let { com.gianlucacelante.midipiano.learn.RoutinePlan.isComplete(it, progress.routineExercisesDone(today)) } ?: progress.routineCompleted(today), routineTotalToday = routineQueueNow?.size ?: 0, routineQueueIds = routineQueueNow?.map { it.id }.orEmpty(), routineTargeted = routineQueueNow?.count { e -> routineBase?.exercises?.none { it.id == e.id } == true } ?: 0, routineDays = progress.routineDaysDone(),
+            dayFlags = (0L..179L).associate { back ->
+                val d = today.minusDays(back)
+                d to DayFlags(progress.secondsOn(d), progress.isDailyDone(d, "song"), progress.isDailyDone(d, "trial"), progress.routineCompleted(d), progress.practicedOn(d))
+            }.filterValues { it.any },
         )
     }
 
@@ -756,16 +1063,18 @@ class MidiViewModel(app: Application) : AndroidViewModel(app) {
         _pressed.value = emptySet() // niente tasti "rimasti accesi" uscendo dalla schermata
         _wrong.value = emptySet()
         synchronized(lock) {
-            session?.pause(System.nanoTime())
-            if (practiceStartNanos > 0L) {
-                val secs = ((System.nanoTime() - practiceStartNanos) / 1_000_000_000L).coerceAtMost(1800L)
-                if (secs >= 10) {
-                    progress.recordPractice(secs, LocalDate.now())
-                    progressStore.save(progress)
-                    publishProgress()
-                }
-                practiceStartNanos = 0L
+            val sOut = session
+            val exOut = currentExercise
+            if (sOut != null && exOut != null && exerciseStars == null && !sOut.isFinished && reviewLoop == null && playedNotes(sOut) + sOut.wrongNotes >= 3) {
+                recordRun(sOut, "exercise", exOut.id, exOut.title, runner?.stepIndex ?: 0, "abandoned", 0) // uscito a metà giro
             }
+            val freeId = openedSongId
+            if (sOut != null && exOut == null && freeId != null && sOut.mode == StudyMode.TEMPO && !sOut.isFinished && playedNotes(sOut) + sOut.wrongNotes >= 3) {
+                recordRun(sOut, "song", freeId, song?.title ?: freeId, -1, "abandoned", 0) // brano libero a tempo lasciato a metà
+            }
+            routineQueue = null
+            sOut?.pause(System.nanoTime())
+            commitPracticeLocked()
             session = null
             song = null
             runner = null
@@ -786,7 +1095,12 @@ class MidiViewModel(app: Application) : AndroidViewModel(app) {
     /** Salta a una posizione del brano (0..1), dalla barra di avanzamento. Negli esercizi non si salta. */
     fun seek(fraction: Float) = withSession { s ->
         AppLog.i("PLAYER", "salto a ${"%.0f".format(fraction * 100)}%")
-        if (currentExercise != null) return@withSession // saltando alla fine si otterrebbero le stelle senza suonare
+        if (currentExercise != null && reviewLoop == null) {
+            // saltando avanti si otterrebbero le stelle senza suonare; tornando indietro si ricomincia il giro, ma dal punto in cui si lascia il cursore
+            val target = fraction.coerceIn(0f, 1f) * s.song.durationSec
+            if (com.gianlucacelante.midipiano.learn.seekRestartsExerciseRun(target, s.currentTimeSec, exerciseStars != null)) restartRunLocked(s, fromSec = target, reason = "indietro")
+            return@withSession
+        }
         val now = System.nanoTime()
         val t = fraction.coerceIn(0f, 1f) * s.song.durationSec
         s.seekTo(t, now) // per tempo: vale per tutte le modalità (in "aspetta" si ferma sul passo corrispondente)
@@ -797,8 +1111,39 @@ class MidiViewModel(app: Application) : AndroidViewModel(app) {
         _clockTime.value = s.currentTimeSec.toFloat()
     }
 
+    /** Ricomincia il giro in corso dell'esercizio (stesso passo) da [fromSec] (0 = dall'inizio); i giri già riusciti restano. */
+    private fun restartRunLocked(s: PracticeSession, fromSec: Double = 0.0, reason: String = "da capo") {
+        val now = System.nanoTime()
+        // un giro cominciato davvero e lasciato a metà conta come tentativo non riuscito (serve a capire dove si fatica)
+        val ex = currentExercise
+        if (ex != null && !s.isFinished && playedNotes(s) + s.wrongNotes >= 3) {
+            AppLog.i("GIRO", com.gianlucacelante.midipiano.learn.RunLog.abandoned(ex.id, runner?.stepIndex ?: 0, s.mode.name, s.currentTimeSec, playedNotes(s), s.wrongNotes, reason))
+            recordRun(s, "exercise", ex.id, ex.title, runner?.stepIndex ?: 0, "abandoned", 0)
+            struggle.onFailedRun(barErrors(s))
+        }
+        AppLog.i("PLAYER", "esercizio: giro ricominciato da ${"%.1f".format(fromSec)} s")
+        audio.allNotesOff()
+        runGeneration++
+        s.restart(now)
+        partialRun = fromSec > 0.05
+        if (fromSec > 0.05) { s.seekTo(fromSec, now); lastListenTime = fromSec - 1e-9 }
+        runHandled = false
+        resetRunData()
+        exerciseMessage = null
+        _clockTime.value = s.currentTimeSec.toFloat()
+        if (s.mode == StudyMode.TEMPO) s.play(now)
+    }
+
+    /** Note/passi suonati bene in questo giro: a tempo le note colpite, in «Impara» i passi completati. */
+    private fun playedNotes(s: PracticeSession): Int = if (s.mode == StudyMode.WAIT) s.stepsPlayedThisRun else s.hits
+
+    private fun barErrors(s: PracticeSession): Map<Int, Int> = s.barReport().filter { it.errors > 0 }.associate { it.bar to it.errors }
+
+    /** Il tasto «Da capo» della barra dell'esercizio. */
+    fun restartExerciseRun() = withSession { s -> if (currentExercise != null && exerciseStars == null) restartRunLocked(s) }
+
     fun seekToBar(bar: Int) = withSession { s ->
-        if (currentExercise != null) return@withSession
+        if (currentExercise != null && reviewLoop == null) return@withSession
         s.seekToBar(bar, System.nanoTime())
         audio.allNotesOff()
         lastListenTime = s.currentTimeSec - 1e-9
@@ -841,6 +1186,7 @@ class MidiViewModel(app: Application) : AndroidViewModel(app) {
     fun listenFirst() = withSession { s ->
         if (s.isPreviewing || s.mode == StudyMode.LISTEN) return@withSession
         AppLog.i("PLAYER", "anteprima di ascolto")
+        runGeneration++ // un job di fine giro già in attesa non deve toccare l'anteprima
         take.clear()
         s.beginPreview(System.nanoTime())
         scheduler = NoteScheduler(s.song.notes, Hand.BOTH)
@@ -871,18 +1217,47 @@ class MidiViewModel(app: Application) : AndroidViewModel(app) {
         AppLog.i("PLAYER", "ripasso mirato dell'esercizio ${ex.id}: battute $first-$last")
         stopPreview()
         synchronized(lock) {
-            startSessionLocked(ex.song, null)
             val s = session ?: return
             val now = System.nanoTime()
-            s.setMode(StudyMode.WAIT, now)
-            s.setSpeed(0.75, now)
+            audio.allNotesOff()
+            runGeneration++ // un job di fine giro già in attesa non deve interferire col ripasso
+            reviewLoop = first..last // l'esercizio resta aperto (passo, giri, stelle): il ripasso non conta niente
+            // lo stesso tipo di prova del passo in cui si è (mano, modalità, velocità): a tempo se si stava suonando a tempo
+            val step = runner?.currentStep
+            s.setHand(step?.hand ?: s.hand)
+            scheduler = NoteScheduler(s.song.notes, s.hand)
+            s.setMode(step?.mode ?: StudyMode.WAIT, now)
+            s.setSpeed(step?.speed ?: 0.75, now)
             s.setLoopBars(first, last)
             s.restart(now)
+            if (s.mode == StudyMode.TEMPO) s.play(now)
+            exerciseMessage = null
             _clockTime.value = s.currentTimeSec.toFloat()
             publishLocked()
         }
         audio.start()
     }
+
+    /** Fine del ripasso: si torna all'esercizio dal passo in cui si era (o al riepilogo se era già finito). */
+    fun endExerciseReview() = synchronized(lock) {
+        val s = session ?: return@synchronized
+        if (reviewLoop == null) return@synchronized
+        AppLog.i("PLAYER", "fine ripasso: si torna all'esercizio")
+        reviewLoop = null
+        audio.allNotesOff()
+        s.setLoopBars(null, null)
+        val step = runner?.currentStep
+        if (exerciseStars == null && step != null) {
+            applyStep(s, step)
+            if (s.mode == StudyMode.TEMPO) s.play(System.nanoTime())
+        } else {
+            s.restart(System.nanoTime()) // esercizio finito: si rivede il riepilogo
+        }
+        publishLocked()
+    }
+
+    /** Indietro: durante un ripasso si torna all'esercizio, altrimenti si esce. */
+    fun onPracticeBack() { if (reviewLoop != null) endExerciseReview() else closeSong() }
 
     /** Ripasso: loop sulle battute indicate, ricominciando da lì. */
     fun reviewBars(first: Int, last: Int) = withSession {
@@ -909,6 +1284,7 @@ class MidiViewModel(app: Application) : AndroidViewModel(app) {
         if (!new.sound) audio.allNotesOff()
         if (new.metronome != old.metronome) lastBeatIdx = Int.MIN_VALUE
         if (new.reminderHour != old.reminderHour) com.gianlucacelante.midipiano.Reminder.apply(getApplication(), new.reminderHour)
+        if (new.routineId != old.routineId || new.routineSize != old.routineSize) { progress.clearDailyPick(LocalDate.now(), "routine"); progressStore.save(progress); publishProgress() } // un'altra routine o dimensione: il piano di oggi si rifà
         publishLocked() // senza sessione non fa nulla: le impostazioni sono comunque salvate
     }
 
@@ -917,6 +1293,7 @@ class MidiViewModel(app: Application) : AndroidViewModel(app) {
         synchronized(lock) {
             val s = session ?: return
             if (!s.isPlaying) return
+            touchPractice(System.nanoTime())
             val t = s.tick(frameNanos)
             _clockTime.value = t.songTimeSec.toFloat()
             clickOnBeats(s, t.songTimeSec)
@@ -928,9 +1305,12 @@ class MidiViewModel(app: Application) : AndroidViewModel(app) {
             val expected = s.expectedKeys
             val beatIdx = if (settings.visualBeat && s.mode != StudyMode.WAIT) (song?.beatIndexAt(t.songTimeSec) ?: -1) else -1
             val beatChanged = beatIdx != lastBeatIdxShown
+            val pedalNow = currentExercise?.pedal?.let { if (s.mode == StudyMode.TEMPO) it.stateAt(t.songTimeSec) else null }
+            val pedalChanged = pedalNow != lastPedalExpected
+            lastPedalExpected = pedalNow
             if (t.finished && s.isPreviewing) endListenFirstLocked(s) // l'anteprima è finita: si torna pronti a suonare
             else if (t.finished) { checkRunFinishedLocked(); recordSongDoneLocked(s) }
-            if (t.looped || t.finished || t.newMisses > 0 || beat != lastCountInBeat || bar != lastBar || expected != lastExpected || beatChanged) {
+            if (t.looped || t.finished || t.newMisses > 0 || beat != lastCountInBeat || bar != lastBar || expected != lastExpected || beatChanged || pedalChanged) {
                 lastBeatIdxShown = beatIdx
                 lastCountInBeat = beat
                 lastBar = bar
@@ -986,6 +1366,22 @@ class MidiViewModel(app: Application) : AndroidViewModel(app) {
         else if (settings.metronome && gridIdx >= 0) audio.click(accent = sg.beatGrid[gridIdx].accent)
     }
 
+    /** Il pedale è cambiato (dalla tastiera o dal pulsante): negli esercizi con pedale si segna a che punto del brano. */
+    private fun onPedalChanged(down: Boolean) = synchronized(lock) {
+        if (pedalDown == down) return@synchronized
+        pedalDown = down
+        val s = session
+        if (s != null && currentExercise?.pedal != null && s.mode == StudyMode.TEMPO && s.isPlaying && !s.isFinished) pedalLog.add(s.currentTimeSec to down)
+        publishLocked()
+    }
+
+    /** Pedale sullo schermo, per chi non ha il pedale (o per provare). */
+    fun togglePedal() {
+        val down = !pedalDown
+        if (settings.sound) audio.sustain(down)
+        onPedalChanged(down)
+    }
+
     /** Fa sentire un accordo (per l'allenamento «ascolta e riconosci»). */
     fun playChord(keys: List<Int>) {
         audio.start()
@@ -996,8 +1392,32 @@ class MidiViewModel(app: Application) : AndroidViewModel(app) {
         }
     }
 
+    private var sequenceJob: Job? = null
+
+    /** Fa sentire delle note una dopo l'altra (intervalli e dettato melodico). */
+    fun playSequence(keys: List<Int>, gapMs: Long = 650L) {
+        audio.start()
+        sequenceJob?.cancel()
+        sequenceJob = viewModelScope.launch {
+            for (k in keys) {
+                audio.noteOn(k, 85)
+                delay((gapMs * 0.8).toLong())
+                audio.noteOff(k)
+                delay((gapMs * 0.2).toLong())
+            }
+        }
+    }
+
+    fun recordEarAnswer(kind: String, correct: Boolean) = synchronized(lock) {
+        progress.recordEarAnswer(kind, correct)
+        AppLog.i("ORECCHIO", "$kind: risposta ${if (correct) "giusta" else "sbagliata"}, livello=${progress.ear.getValue(kind).level}")
+        progressStore.save(progress)
+        publishProgress()
+    }
+
     fun recordChordAnswer(correct: Boolean) = synchronized(lock) {
         progress.recordChordAnswer(correct)
+        AppLog.i("ACCORDI", "risposta ${if (correct) "giusta" else "sbagliata"}: livello=${progress.chordLevel} giuste in tutto=${progress.chordCorrectTotal}")
         progressStore.save(progress)
         publishProgress()
     }
@@ -1015,10 +1435,14 @@ class MidiViewModel(app: Application) : AndroidViewModel(app) {
         audio.allNotesOff()
         audio.stop()
         mic.stop()
+        commitPracticeLocked()
     }
 
     fun onForeground() {
-        if (session != null) audio.start()
+        if (session != null) {
+            audio.start()
+            if (settings.mic) mic.start()
+        }
     }
 
     fun dismissError() {
@@ -1032,6 +1456,7 @@ class MidiViewModel(app: Application) : AndroidViewModel(app) {
     }
 
     fun releaseKey(note: Int) {
+        noteReleased(note)
         _pressed.update { it - note }
         _wrong.update { it - note }
         audio.noteOff(note)
@@ -1044,14 +1469,42 @@ class MidiViewModel(app: Application) : AndroidViewModel(app) {
         if (settings.sound && (!fromMidi || settings.midiSounds)) audio.noteOn(note, velocity)
         synchronized(lock) {
             val s = session ?: return
+            touchPractice(now)
             val expectedBefore = s.expectedKeys
+            val targetVel = if (currentExercise?.touch != null) s.expectedNotes().firstOrNull { it.key == note }?.velocity else null
             if (fromMidi) _press.value = PressInfo(velocity, if (songExpressive) s.expectedNotes().firstOrNull { it.key == note }?.velocity else null, ++pressCounter)
+            s.checkHolds = currentExercise != null // la durata delle note si controlla negli esercizi
             val result = s.onNoteOn(note, now)
+            consumeTimingLocked(s)
             AppLog.i("NOTA", "nota=$note ${if (fromMidi) "midi" else "schermo"} esito=$result modo=${s.mode} attese=$expectedBefore t=${"%.2f".format(s.currentTimeSec)} passo=${s.stepIndex}/${s.totalSteps} errori=${s.mistakes}")
+            if (currentExercise?.touch != null && (result == com.gianlucacelante.midipiano.practice.NoteResult.CORRECT || result == com.gianlucacelante.midipiano.practice.NoteResult.STEP_COMPLETED || result == com.gianlucacelante.midipiano.practice.NoteResult.FINISHED)) {
+                runHits++
+                runVel.add(if (fromMidi) velocity else 0) // 0 = tasto sullo schermo: senza forza vera
+                runTarget.add(targetVel)
+            }
             if (result == com.gianlucacelante.midipiano.practice.NoteResult.WRONG) _wrong.update { it + note }
             if (s.mode == StudyMode.WAIT) _clockTime.value = s.currentTimeSec.toFloat()
             checkRunFinishedLocked()
+            recordSongDoneLocked(s) // un brano libero finito con l'ultima nota (es. «Impara» a orologio fermo)
             publishLocked()
+        }
+    }
+
+    /** Prende il commento di ritmo/durata appena formulato dalla sessione e lo mette a disposizione dell'interfaccia. */
+    private fun consumeTimingLocked(s: PracticeSession) {
+        val fb = s.takeTimingFeedback() ?: return
+        lastTiming = fb.copy(id = ++timingCounter)
+        lastTimingNanos = System.nanoTime()
+        AppLog.i("RITMO", "${fb.kind} ${"%.1f".format(fb.seconds)} s, ${"%.2f".format(fb.beats)} battiti (${s.mode})")
+    }
+
+    /** Un tasto è stato rilasciato: serve a giudicare per quanto a lungo è stato tenuto. */
+    private fun noteReleased(note: Int) {
+        val now = System.nanoTime()
+        synchronized(lock) {
+            val s = session ?: return
+            s.onNoteOff(note, now)
+            if (s.takeTimingFeedbackPeek()) { consumeTimingLocked(s); publishLocked() }
         }
     }
 
@@ -1077,13 +1530,17 @@ class MidiViewModel(app: Application) : AndroidViewModel(app) {
             isFinished = s.isFinished, currentTimeSec = s.currentTimeSec, durationSec = sg.durationSec, progress = s.progress,
             beatInBar = if (s.mode != StudyMode.WAIT && s.isPlaying && s.countInBeat == null) sg.beatPositionAt(s.currentTimeSec)?.first else null,
             beatsInBar = sg.beatPositionAt(s.currentTimeSec.coerceAtLeast(0.0))?.second ?: sg.beatsPerBar,
-            exerciseReview = if (currentExercise != null && (exerciseStars ?: 3) < 3) com.gianlucacelante.midipiano.practice.BarReport.reviewRange(s.barReport()) else null,
+            exerciseReview = if (currentExercise != null && reviewLoop == null && (exerciseStars ?: 3) < 3) com.gianlucacelante.midipiano.practice.BarReport.reviewRange(s.barReport()) else null,
             barStats = if (s.isFinished && currentExercise == null && s.mode != StudyMode.LISTEN) s.barReport() else emptyList(),
             listeningFirst = s.isPreviewing,
+            timing = if (s.isFinished && s.mode == StudyMode.TEMPO) s.timingSummary() else null,
             transpose = transposeSemis, canTranspose = openedEntry != null && currentExercise == null && !sg.chordChart,
             notes = notes, sheet = sheet, keyRange = keyRange, exercise = exerciseStatus(),
             noteState = noteStateFn(s, s.mode, s.expectedKeys, s.currentTimeSec),
             upcomingHands = upcoming.associate { it.key to it.hand },
+            upcomingWeights = s.upcomingWeights(upcoming),
+            upcomingTimes = if (s.mode == StudyMode.TEMPO) upcoming.associate { it.key to it.startSec } else emptyMap(),
+            timingFeedback = lastTiming?.takeIf { System.nanoTime() - lastTimingNanos < 2_200_000_000L }, // dopo 2 s non si ripropone (rotazione, ricomposizione)
             upcomingFingers = upcoming.mapNotNull { n -> fingering[com.gianlucacelante.midipiano.notation.Fingering.id(n.startSec, n.key)]?.let { n.key to it } }.toMap(),
             expectedHands = expectedNow.associate { it.key to it.hand },
             fingers = expectedNow.mapNotNull { n -> fingering[com.gianlucacelante.midipiano.notation.Fingering.id(n.startSec, n.key)]?.let { n.key to it } }.toMap(),
@@ -1097,7 +1554,8 @@ class MidiViewModel(app: Application) : AndroidViewModel(app) {
     private fun noteStateFn(s: PracticeSession, mode: StudyMode, expected: Set<Int>, time: Double): (StaffNote) -> NoteState = { n ->
         if (mode == StudyMode.TEMPO) {
             when (s.hitStateOf(n.key, n.startSec)) {
-                HitState.HIT, HitState.SKIPPED -> NoteState.PLAYED
+                HitState.HIT -> if (s.isOffBeat(n.key, n.startSec) == true) NoteState.PLAYED_OFF else NoteState.PLAYED
+                HitState.SKIPPED -> NoteState.PLAYED
                 HitState.MISSED -> NoteState.MISSED
                 else -> if (abs(n.startSec - _clockTime.value) < 0.2) NoteState.CURRENT else NoteState.UPCOMING
             }
@@ -1109,14 +1567,14 @@ class MidiViewModel(app: Application) : AndroidViewModel(app) {
     // ---- simulatore di esecuzione (solo debug): suona come farebbe una persona ----
 
     /** Suona un giro dei passi dati: a tempo (all'istante previsto ± errore) o aspettando; le note restano premute per la loro durata. */
-    private suspend fun playRun(steps: List<com.gianlucacelante.midipiano.song.Step>, mode: StudyMode, speed: Double, jitterMs: Int, rnd: Random) {
+    private suspend fun playRun(steps: List<com.gianlucacelante.midipiano.song.Step>, mode: StudyMode, speed: Double, jitterMs: Int, rnd: Random, holdFactor: Double = 0.95) {
         coroutineScope {
             if (mode == StudyMode.TEMPO) {
                 for (step in steps) {
                     val target = step.startSec + rnd.nextInt(-jitterMs, jitterMs + 1) / 1000.0 * speed
                     while (isActive && (session?.songTimeAt(System.nanoTime()) ?: return@coroutineScope) < target) delay(1)
                     if (!isActive) return@coroutineScope
-                    pressStep(step, speed)
+                    pressStep(step, speed, holdFactor = holdFactor)
                 }
             } else {
                 for ((i, step) in steps.withIndex()) {
@@ -1128,11 +1586,11 @@ class MidiViewModel(app: Application) : AndroidViewModel(app) {
         }
     }
 
-    private fun CoroutineScope.pressStep(step: com.gianlucacelante.midipiano.song.Step, speed: Double, cap: Long = Long.MAX_VALUE) {
+    private fun CoroutineScope.pressStep(step: com.gianlucacelante.midipiano.song.Step, speed: Double, cap: Long = Long.MAX_VALUE, holdFactor: Double = 0.95) {
         for (note in step.notes) {
             pressKey(note.key, note.velocity)
             launch {
-                delay(maxOf(60L, ((note.durationSec / speed * 1000 * 0.95).toLong()).coerceAtMost(cap)))
+                delay(maxOf(60L, ((note.durationSec / speed * 1000 * holdFactor).toLong()).coerceAtMost(cap)))
                 releaseKey(note.key)
             }
         }
@@ -1172,7 +1630,7 @@ class MidiViewModel(app: Application) : AndroidViewModel(app) {
     }
 
     /** Completa da solo l'esercizio aperto, passo dopo passo, finché ottiene le stelle. */
-    fun debugAutoplayExercise(jitterMs: Int) {
+    fun debugAutoplayExercise(jitterMs: Int, holdFactor: Double = 0.95) {
         autoplayJob?.cancel()
         autoplayJob = viewModelScope.launch(Dispatchers.Default) {
             val rnd = Random(7)
@@ -1188,7 +1646,7 @@ class MidiViewModel(app: Application) : AndroidViewModel(app) {
                 }
                 val stepIdx = runner?.stepIndex
                 Log.d("Autoplay", "RUN ${++runs} step=$stepIdx mode=${s.mode} hand=${s.hand} speed=${s.speed}")
-                playRun(s.song.steps(s.hand), s.mode, s.speed, jitterMs, rnd)
+                playRun(s.song.steps(s.hand), s.mode, s.speed, jitterMs, rnd, holdFactor)
                 // a tempo: il giro dura ancora fino alla fine del brano; si aspetta che finisca prima di ripartire
                 // (altrimenti le note del giro dopo cadono in quello in corso e contano come sbagliate)
                 var guard = 0

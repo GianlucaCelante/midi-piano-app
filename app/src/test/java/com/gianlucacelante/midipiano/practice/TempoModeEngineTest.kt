@@ -63,12 +63,15 @@ class TempoModeEngineTest {
     }
 
     @Test
-    fun chordNotesAreEvaluatedIndependently() {
+    fun aChordCountsAsOneUnitButNotesKeepTheirOwnState() {
         val e = engine(step(1.0, 60, 64, 67))
         e.onNoteOn(60, 1.02); e.onNoteOn(64, 1.05)
         e.onTick(1.3)
-        assertEquals(2, e.hits)
-        assertEquals(1, e.misses)
+        assertEquals(0, e.hits) // accordo incompleto: non è un colpo
+        assertEquals(1, e.misses) // ed è un errore solo, non uno per la nota mancante
+        assertEquals(2, e.noteHits)
+        assertEquals(HitState.HIT, e.stateOf(0, 60)) // sullo spartito le note restano colorate una per una
+        assertEquals(HitState.MISSED, e.stateOf(0, 67))
     }
 
     @Test

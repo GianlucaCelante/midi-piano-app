@@ -6,6 +6,14 @@ import kotlin.math.floor
 /** Accordi collegati da una trave. [maxLevel]: 1 = croma, 2 = semicroma, 3 = biscroma. */
 data class BeamGroup(val chords: List<Chord>) {
     val maxLevel: Int = chords.maxOf { it.flags }
+
+    /** Verso dei gambi di tutto il gruppo: in su se la nota più lontana dalla riga centrale è in basso (quella centrale è la posizione 4). */
+    val stemUp: Boolean = run {
+        var minLow = Int.MAX_VALUE
+        var maxHigh = Int.MIN_VALUE
+        for (c in chords) { minLow = minOf(minLow, c.lowest.position); maxHigh = maxOf(maxHigh, c.highest.position) }
+        (4 - minLow) >= (maxHigh - 4)
+    }
 }
 
 object Beaming {

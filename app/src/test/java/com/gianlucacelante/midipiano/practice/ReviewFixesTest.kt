@@ -76,6 +76,20 @@ class ReviewFixesTest {
     }
 
     @Test
+    fun countInNumberDisappearsBeforeTheFirstNoteArrives() {
+        val s = PracticeSession(song(n(0.0, 0.5, 60), n(2.0, 0.5, 62), n(3.0, 0.5, 64), n(5.0, 0.5, 65), bars = listOf(2.0, 4.0)))
+        s.setMode(StudyMode.TEMPO, 0L)
+        s.setLoopBars(2, 2)
+        s.countInEnabled = true
+        s.play(0L) // conto da -2.0 a 2.0, un movimento = 0,5 s
+        s.tick(ns(3.6)) // tempo 1.6: ultimo movimento, ancora prima di mezzo movimento dalla nota
+        assertEquals(4, s.countInBeat)
+        s.tick(ns(3.8)) // tempo 1.8: manca meno di mezzo movimento alla nota
+        assertTrue(s.isCountingIn)
+        assertNull(s.countInBeat)
+    }
+
+    @Test
     fun startingALoopDoesNotJudgeTheNotesBeforeIt() {
         val s = PracticeSession(song(n(0.0, 0.5, 60), n(2.0, 0.5, 62), n(5.0, 0.5, 65), bars = listOf(2.0, 4.0)))
         s.setMode(StudyMode.TEMPO, 0L)

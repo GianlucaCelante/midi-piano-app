@@ -153,7 +153,6 @@ fun SettingsDialog(settings: Settings, onChange: (Settings) -> Unit, onDismiss: 
                 SwitchRow("Numeri delle dita sui tasti", settings.fingers) { onChange(settings.copy(fingers = it)) }
                 SwitchRow("Nomi delle note sullo spartito", settings.noteNames) { onChange(settings.copy(noteNames = it)) }
                 SwitchRow("Allenamento progressivo (sul loop: giro pulito = più veloce, giro sporco = più lento)", settings.speedTrainer) { onChange(settings.copy(speedTrainer = it)) }
-                SwitchRow("Sblocca tutte le versioni dei brani", settings.unlockAll) { onChange(settings.copy(unlockAll = it)) }
                 SwitchRow("Note in caduta", settings.fallingNotes) { onChange(settings.copy(fallingNotes = it)) }
                 SwitchRow("Ascolta il pianoforte (microfono, una nota alla volta)", settings.mic) { onChange(settings.copy(mic = it)) }
             }

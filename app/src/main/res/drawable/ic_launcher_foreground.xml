@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp" android:viewportWidth="108" android:viewportHeight="108">
+    <!-- ombra morbida sotto i tasti -->
+    <path android:fillColor="#33000000" android:pathData="M31,37 H77 a4,4 0 0 1 4,4 V76 a4,4 0 0 1 -4,4 H31 a4,4 0 0 1 -4,-4 V41 a4,4 0 0 1 4,-4 Z" />
+    <!-- tre tasti bianchi -->
+    <path android:fillColor="#FFFFFFFF" android:pathData="M30,32 H45.3 V69 a5,5 0 0 1 -5,5 H35 a5,5 0 0 1 -5,-5 Z" />
+    <path android:fillColor="#FFFFFFFF" android:pathData="M46.3,32 H61.6 V69 a5,5 0 0 1 -5,5 H51.3 a5,5 0 0 1 -5,-5 Z" />
+    <path android:fillColor="#FFFFFFFF" android:pathData="M62.6,32 H77.9 V69 a5,5 0 0 1 -5,5 H67.6 a5,5 0 0 1 -5,-5 Z" />
+    <!-- due tasti neri -->
+    <path android:fillColor="#FF0A0F1E" android:pathData="M41.3,32 H50.3 V56 a2,2 0 0 1 -2,2 H43.3 a2,2 0 0 1 -2,-2 Z" />
+    <path android:fillColor="#FF0A0F1E" android:pathData="M57.9,32 H66.9 V56 a2,2 0 0 1 -2,2 H59.9 a2,2 0 0 1 -2,-2 Z" />
+</vector>

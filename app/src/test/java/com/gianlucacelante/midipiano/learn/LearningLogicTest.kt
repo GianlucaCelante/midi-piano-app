@@ -9,6 +9,7 @@ import org.json.JSONObject
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNotEquals
+import org.junit.Assert.assertNull
 import org.junit.Assert.assertThrows
 import org.junit.Assert.assertTrue
 import org.junit.Test
@@ -223,5 +224,60 @@ class LearningLogicTest {
         assertEquals("BW", Covers.initials("Bach Wohltemperiertes"))
         assertEquals("P", Covers.initials("Polonaise"))
         assertEquals("?", Covers.initials(""))
+    }
+
+    // ---- prova rallentata facoltativa ----
+
+    private fun slow() = LearnStep(com.gianlucacelante.midipiano.song.Hand.RIGHT, com.gianlucacelante.midipiano.practice.StudyMode.TEMPO, 0.75, 2, "")
+    private fun normal() = LearnStep(com.gianlucacelante.midipiano.song.Hand.RIGHT, com.gianlucacelante.midipiano.practice.StudyMode.TEMPO, 1.0, 2, "")
+    private fun waitStep() = LearnStep(com.gianlucacelante.midipiano.song.Hand.RIGHT, com.gianlucacelante.midipiano.practice.StudyMode.WAIT, 1.0, 1, "")
+
+    @Test
+    fun onlySlowedTempoStepsAreOptional() {
+        assertTrue(slow().optional); assertFalse(normal().optional); assertFalse(waitStep().optional)
+    }
+
+    @Test
+    fun skippingTheSlowStepGoesToTheNextOne() {
+        val r = ExerciseRunner(listOf(waitStep(), slow(), normal()))
+        r.onRunFinished(true, 3) // finito il passo «aspetta»: ora si è sulla prova rallentata
+        assertEquals(RunOutcome.StepAdvanced(2), r.skipOptionalStep())
+        assertEquals(2, r.stepIndex)
+    }
+
+    @Test
+    fun skippingTheLastSlowStepClosesTheExerciseWithTheStarsAlreadyEarned() {
+        val r = ExerciseRunner(listOf(waitStep(), slow()))
+        r.onRunFinished(true, 3) // passo «aspetta» riuscito con 3 stelle
+        assertEquals(RunOutcome.Done(3), r.skipOptionalStep())
+        assertTrue(r.isDone)
+    }
+
+    @Test
+    fun aRequiredStepCannotBeSkipped() {
+        val r = ExerciseRunner(listOf(waitStep(), normal()))
+        assertNull(r.skipOptionalStep())
+        assertEquals(0, r.stepIndex)
+    }
+
+    @Test
+    fun aSlowLastStepIsFollowedByANormalSpeedOne() {
+        val steps = Courses.withNormalSpeedAfterSlow(listOf(waitStep(), slow()))
+        assertEquals(3, steps.size)
+        assertEquals(1.0, steps.last().speed, 0.0)
+        assertFalse(steps.last().optional)
+        val r = ExerciseRunner(steps)
+        r.onRunFinished(true, 3)
+        assertEquals(RunOutcome.StepAdvanced(2), r.skipOptionalStep()) // saltando la rallentata si va al tempo normale, non alla fine
+        assertFalse(r.isDone)
+        assertEquals(steps, Courses.withNormalSpeedAfterSlow(steps)) // già a posto: non si aggiunge altro
+    }
+
+    @Test
+    fun draggingTheScoreBackInAnExerciseRestartsTheRun() {
+        assertTrue(seekRestartsExerciseRun(targetSec = 2.0, currentSec = 8.0, finished = false)) // indietro: si ricomincia
+        assertFalse(seekRestartsExerciseRun(targetSec = 12.0, currentSec = 8.0, finished = false)) // avanti: non si salta
+        assertFalse(seekRestartsExerciseRun(targetSec = 7.8, currentSec = 8.0, finished = false)) // un piccolo tremolio non conta
+        assertFalse(seekRestartsExerciseRun(targetSec = 0.0, currentSec = 8.0, finished = true)) // esercizio concluso: niente
     }
 }

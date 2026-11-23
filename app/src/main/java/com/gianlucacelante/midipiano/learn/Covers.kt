@@ -34,9 +34,14 @@ object Covers {
         return generic[photoIndex(id, generic.size)]
     }
 
-    fun initials(title: String): String =
-        title.trim().split(Regex("\\s+")).filter { it.isNotEmpty() }.take(2).joinToString("") { it.first().uppercaseChar().toString() }
-            .ifEmpty { "?" }
+    private val STOP_WORDS = setOf("di", "in", "a", "da", "con", "per", "il", "lo", "la", "le", "i", "gli", "un", "una", "e", "del", "della", "dei", "of", "the", "in")
+
+    /** Le due iniziali della copertina; le parole piccole («di», «in»…) si saltano, così «Ballata in Sol» e «Ballata in Mi» si distinguono. */
+    fun initials(title: String): String {
+        val words = title.trim().split(Regex("\\s+")).filter { it.isNotEmpty() && it.first().isLetterOrDigit() }
+        val strong = words.filter { it.lowercase() !in STOP_WORDS }
+        return (if (strong.size >= 2) strong else words).take(2).joinToString("") { it.first().uppercaseChar().toString() }.ifEmpty { "?" }
+    }
 
     /** HSV -> ARGB opaco, senza dipendere da android.graphics (si prova nei test). */
     private fun hsv(h: Float, s: Float, v: Float): Long {

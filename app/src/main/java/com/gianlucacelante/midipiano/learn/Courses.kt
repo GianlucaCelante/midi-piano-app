@@ -18,6 +18,10 @@ data class ExerciseSlide(
     val text: String,
     val song: Song,
     val steps: List<LearnStep>,
+    /** Valutazione della forza dei tasti (facoltativa). */
+    val touch: com.gianlucacelante.midipiano.practice.Touch.Goal? = null,
+    /** Cambi di pedale richiesti (facoltativi). */
+    val pedal: com.gianlucacelante.midipiano.practice.PedalPlan? = null,
 ) : Slide
 
 data class Lesson(val id: String, val title: String, val description: String, val slides: List<Slide>) {
@@ -104,11 +108,22 @@ object Courses {
                 val steps = s.getJSONArray("steps")
                 ExerciseSlide(
                     id, s.getString("title"), s.optString("text", ""), song,
-                    (0 until steps.length()).map { parseStep(steps.getJSONObject(it)) },
+                    (0 until steps.length()).map { parseStep(steps.getJSONObject(it)) }.let(::withNormalSpeedAfterSlow),
+                    touch = com.gianlucacelante.midipiano.practice.Touch.parse(s.optString("touch", "").ifEmpty { null }),
+                    pedal = s.optJSONArray("pedal")?.let { a ->
+                        val spb = 60.0 / s.getJSONObject("song").getDouble("bpm")
+                        com.gianlucacelante.midipiano.practice.PedalPlan((0 until a.length()).map { i -> a.getJSONObject(i).let { com.gianlucacelante.midipiano.practice.PedalEvent(it.getDouble("beat") * spb, it.getBoolean("down")) } })
+                    },
                 )
             }
             else -> throw IllegalArgumentException("Tipo di slide sconosciuto: $type")
         }
+    }
+
+    /** Se l'ultimo passo è la prova rallentata (facoltativa), segue sempre un passo a velocità normale: saltando si arriva lì. */
+    fun withNormalSpeedAfterSlow(steps: List<LearnStep>): List<LearnStep> {
+        val last = steps.lastOrNull() ?: return steps
+        return if (last.optional) steps + LearnStep(last.hand, last.mode, 1.0, 1, "Ora a velocità normale.") else steps
     }
 
     private fun parseStep(o: JSONObject) = LearnStep(

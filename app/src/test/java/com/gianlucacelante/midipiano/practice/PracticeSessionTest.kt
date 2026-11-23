@@ -61,8 +61,8 @@ class PracticeSessionTest {
     @Test
     fun mistakesAreCountedAndResetOnRestart() {
         val s = PracticeSession(song, Hand.RIGHT)
-        s.onNoteOn(60)
-        s.onNoteOn(61)
+        s.onNoteOn(60, 0L)
+        s.onNoteOn(61, 1_000_000_000L) // un secondo dopo: un altro gesto, non lo stesso accordo
         assertEquals(2, s.mistakes)
         s.restart()
         assertEquals(0, s.mistakes)

@@ -8,29 +8,30 @@ data class KeyRect(val left: Float, val top: Float, val width: Float, val height
  * allineare le note in caduta e a capire quale tasto è stato toccato. Pura, senza dipendenze UI.
  */
 class KeyboardLayout(val range: IntRange, val widthPx: Float, val heightPx: Float) {
-    private val whiteNotes = range.filterNot(::isBlackKey)
-    val whiteKeyCount: Int = whiteNotes.size
+    /** Tasti bianchi e neri dell'intervallo, già divisi (il disegno li scorre molte volte per fotogramma). */
+    val whiteKeys: List<Int> = range.filterNot(::isBlackKey)
+    val blackKeys: List<Int> = range.filter(::isBlackKey)
+    val whiteKeyCount: Int = whiteKeys.size
     val whiteKeyWidth: Float = if (whiteKeyCount == 0) 0f else widthPx / whiteKeyCount
     private val blackWidth = whiteKeyWidth * 0.6f
     private val blackHeight = heightPx * 0.62f
 
-    /** Indice (da 0) del tasto bianco che precede o coincide con [note], per un tasto nero il bianco a sinistra. */
-    private fun whiteIndexOf(note: Int): Int {
-        var idx = 0
-        for (n in range.first until note) if (!isBlackKey(n)) idx++
-        return idx
+    // un rettangolo per nota, calcolato una volta sola: prima ogni richiesta rifaceva un ciclo e un oggetto nuovo
+    private val rects: Array<KeyRect?> = run {
+        val out = arrayOfNulls<KeyRect>(range.last - range.first + 1)
+        var whiteIdx = 0
+        for (n in range) {
+            out[n - range.first] = if (isBlackKey(n)) {
+                // Il nero sta sul confine destro del bianco che lo precede
+                KeyRect(whiteIdx * whiteKeyWidth - blackWidth / 2, 0f, blackWidth, blackHeight, true)
+            } else {
+                KeyRect(whiteIdx++ * whiteKeyWidth, 0f, whiteKeyWidth, heightPx, false)
+            }
+        }
+        out
     }
 
-    fun rectOrNull(note: Int): KeyRect? {
-        if (note !in range) return null
-        return if (isBlackKey(note)) {
-            // Il nero sta sul confine destro del bianco che lo precede
-            val boundary = whiteIndexOf(note) * whiteKeyWidth
-            KeyRect(boundary - blackWidth / 2, 0f, blackWidth, blackHeight, true)
-        } else {
-            KeyRect(whiteIndexOf(note) * whiteKeyWidth, 0f, whiteKeyWidth, heightPx, false)
-        }
-    }
+    fun rectOrNull(note: Int): KeyRect? = if (note !in range) null else rects[note - range.first]
 
     fun rect(note: Int): KeyRect = rectOrNull(note) ?: throw IllegalArgumentException("Nota fuori intervallo: $note")
 

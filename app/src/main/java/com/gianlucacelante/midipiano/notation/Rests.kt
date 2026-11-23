@@ -2,7 +2,7 @@ package com.gianlucacelante.midipiano.notation
 
 import com.gianlucacelante.midipiano.song.Song
 
-data class StaffRest(val clef: Clef, val startSec: Double, val beats: Double)
+data class StaffRest(val clef: Clef, val startSec: Double, val beats: Double, val endSec: Double = startSec)
 
 object Rests {
     /** Valori di pausa in quarti, dal più lungo: semibreve, minima col punto, minima, ... biscroma. */
@@ -43,7 +43,7 @@ object Rests {
             var t = a
             while (remaining >= MIN_GAP_BEATS) {
                 val v = VALUES.firstOrNull { it <= remaining + 1e-6 } ?: break
-                out.add(StaffRest(clef, t, v))
+                out.add(StaffRest(clef, t, v, song.secAfter(t, v)))
                 t = song.secAfter(t, v)
                 remaining -= v
             }

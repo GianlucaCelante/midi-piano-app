@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp" android:viewportWidth="108" android:viewportHeight="108">
+    <!-- per le icone tematiche: i tasti bianchi pieni, i neri come vuoti -->
+    <path android:fillColor="#FF000000" android:fillType="evenOdd"
+        android:pathData="M30,32 H77.9 V69 a5,5 0 0 1 -5,5 H35 a5,5 0 0 1 -5,-5 Z M41.3,32 H50.3 V56 a2,2 0 0 1 -2,2 H43.3 a2,2 0 0 1 -2,-2 Z M57.9,32 H66.9 V56 a2,2 0 0 1 -2,2 H59.9 a2,2 0 0 1 -2,-2 Z M45.3,58 H46.3 V74 H45.3 Z M61.6,58 H62.6 V74 H61.6 Z" />
+</vector>
